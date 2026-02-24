@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imam Hasan · Associate | Law Offices</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ===== BLACK + WHITE + GOLD ===== */
+    :root {
+      --black: #000000;
+      --white: #ffffff;
+      --gold: #c9a86c;
+      --gold-light: #e5d5b3;
+      --gray-100: #f8f8f8;
+      --gray-600: #4a4a4a;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+      --border-light: 1px solid rgba(201, 168, 108, 0.2);
+      --transition: all 0.25s ease;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    h1, h2, h3, h4, .logo, .nav-links, .footer-logo, .hero-sub, .section-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    /* NO UNDERLINES — removed from all links */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== header ===== */
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background-color: var(--white);
+      border-bottom: var(--border-light);
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--black);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .logo span {
+      color: var(--gold);
+      font-weight: 400;
+      font-size: 1.1rem;
+      display: block;
+      text-transform: none;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.8rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .nav-links a {
+      color: var(--black);
+      padding-bottom: 4px;
+      border-bottom: none; /* no underline */
+      transition: var(--transition);
+    }
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .contact-phone {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 6px 16px;
+      border-radius: 30px;
+      transition: var(--transition);
+    }
+    .contact-phone:hover {
+      background-color: var(--gold);
+      color: var(--black);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--black);
+    }
+
+    /* ===== hero ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-color: var(--white);
+      padding: 140px 0 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-left {
+      padding-right: 20px;
+    }
+
+    .firm-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--gold);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .hero-left h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--black);
+      margin-bottom: 20px;
+    }
+
+    .hero-left h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--gray-600);
+      margin-bottom: 30px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .address-block {
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+      margin: 40px 0 30px;
+      font-size: 1rem;
+      color: var(--black);
+      line-height: 1.8;
+    }
+
+    .btn-gold {
+      background: transparent;
+      border: 2px solid var(--gold);
+      color: var(--black);
+      padding: 14px 42px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-block;
+    }
+    .btn-gold:hover {
+      background: var(--gold);
+      color: var(--white);
+      border-color: var(--gold);
+    }
+
+    .hero-right {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo-frame {
+      background-color: var(--white);
+      box-shadow: 25px 25px 0 -5px var(--white), 25px 25px 0 0 var(--gold);
+      max-width: 450px;
+      width: 100%;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: grayscale(30%);
+      border: 1px solid var(--gold);
+    }
+
+    .gold-quote {
+      position: absolute;
+      bottom: -20px;
+      right: 0;
+      background: var(--gold);
+      color: var(--white);
+      padding: 10px 25px;
+      font-size: 1.2rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    /* ===== sections ===== */
+    .section-title {
+      font-size: 2.8rem;
+      color: var(--black);
+      margin-bottom: 50px;
+      font-weight: 700;
+      position: relative;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 70px;
+      height: 3px;
+      background-color: var(--gold);
+    }
+    .section-center .section-title:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* expandable education */
+    .edu-card {
+      background: var(--white);
+      border: var(--border-light);
+      padding: 30px;
+      margin-bottom: 25px;
+    }
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+    .edu-header h3 {
+      font-size: 1.8rem;
+      color: var(--black);
+    }
+    .edu-header i {
+      font-size: 1.6rem;
+      color: var(--gold);
+      transition: transform 0.3s;
+    }
+    .edu-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+    .edu-content.show {
+      max-height: 500px; /* enough for items */
+    }
+    .edu-item {
+      margin: 25px 0 15px;
+    }
+    .edu-item h4 {
+      font-size: 1.3rem;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+    .edu-item .meta {
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .edu-item .date {
+      color: var(--gray-600);
+      font-size: 0.95rem;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .skill-list span {
+      background: var(--gray-100);
+      border: 1px solid #e0d6c7;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: var(--black);
+    }
+
+    /* experience card */
+    .exp-card {
+      background: var(--white);
+      border: var(--border-light);
+      padding: 35px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .exp-date {
+      min-width: 140px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .exp-detail h4 {
+      font-size: 1.5rem;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+    .exp-detail .sub {
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    .project-item {
+      background: var(--white);
+      border: var(--border-light);
+      padding: 30px;
+    }
+    .project-tag {
+      color: var(--gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    .lead-card {
+      border: var(--border-light);
+      padding: 35px 30px;
+      text-align: center;
+      background: var(--white);
+    }
+    .lead-card i {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    .ref-card {
+      background: var(--white);
+      border: var(--border-light);
+      padding: 30px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .contact-info-box {
+      background: var(--white);
+      border: var(--border-light);
+      padding: 40px;
+    }
+    .contact-line {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    .contact-line i {
+      width: 28px;
+      color: var(--gold);
+      font-size: 1.3rem;
+    }
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin: 40px 0 20px;
+    }
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--gold);
+      color: var(--black);
+      transition: var(--transition);
+    }
+    .social-links a:hover {
+      background: var(--gold);
+      color: white;
+    }
+
+    .contact-form {
+      background: var(--white);
+      border: var(--border-light);
+      padding: 40px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group input, 
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 18px;
+      border: 1px solid #ddd;
+      background: white;
+      font-family: 'Inter', sans-serif;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: 1px solid var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* footer */
+    footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 50px 0 30px;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-inner {
+      text-align: center;
+    }
+    .footer-logo {
+      font-size: 2.2rem;
+      color: var(--white);
+      margin-bottom: 15px;
+    }
+    .footer-logo span {
+      color: var(--gold);
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      margin: 25px 0;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: var(--white);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .back-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--gold);
+      color: var(--black);
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+      border: 1px solid var(--black);
+    }
+    .back-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* mobile */
+    @media (max-width: 1000px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .contact-phone { display: none; }
+      .projects-grid, .leadership-grid, .ref-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="logo">IMAM HASAN <span>Associate · LL.M (cand.)</span></a>
+        <div class="nav-links">
+          <a href="#home">HOME</a>
+          <a href="#about">ABOUT</a>
+          <a href="#experience">EXPERIENCE</a>
+          <a href="#leadership">LEADERSHIP</a>
+          <a href="#contact">CONTACT</a>
+          <a href="#media">IN THE MEDIA</a>
+          <a href="#internship">INTERNSHIP</a>
+        </div>
+        <a href="tel:+8801721129467" class="contact-phone"><i class="fa-solid fa-phone"></i> 01721-129467</a>
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="firm-name">IMAM HASAN · ASSOCIATE</div>
+          <h1>Imam Hasan<br>LL.B, LL.M (candidate)</h1>
+          <h2>Associate at Law Chambers · President, JnUITS</h2>
+          <div class="address-block">
+            <strong>📍 110/A, Sarat Gupta Road, Narinda</strong><br>
+            Dhaka - 1100, Bangladesh<br>
+            <span style="color: var(--gold);">✉ ihnaiem333@gmail.com</span>
+          </div>
+          <a href="#contact" class="btn-gold">CONSULT NOW</a>
+        </div>
+        <div class="hero-right">
+          <div class="photo-frame">
+            <img src="imam.jpg" alt="Imam Hasan, Associate" onerror="this.src='https://placehold.co/600x700/000000/FFFFFF?text=Imam+Hasan'">
+          </div>
+          <div class="gold-quote">Associate · LL.M</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT + EXPANDABLE EDUCATION (no GPA, clickable) -->
+  <section id="about" style="padding: 70px 0;">
+    <div class="container">
+      <h2 class="section-title">Areas of Practice & Qualifications</h2>
+      <div class="edu-card">
+        <div class="edu-header" id="eduToggle">
+          <h3>Education ⸻</h3>
+          <i class="fas fa-chevron-down" id="eduIcon"></i>
+        </div>
+        <div class="edu-content" id="eduContent">
+          <div class="edu-item">
+            <h4>Bachelor of Laws (LL.B)</h4>
+            <div class="meta">Jagannath University, Dhaka</div>
+            <div class="date">2023</div>
+          </div>
+          <div class="edu-item">
+            <h4>Master of Laws (LL.M)</h4>
+            <div class="meta">Jagannath University, Dhaka</div>
+            <div class="date">Present (continuing)</div>
+          </div>
+          <div class="edu-item">
+            <h4>Higher Secondary Certificate (HSC)</h4>
+            <div class="meta">Patharghata College, Barguna</div>
+            <div class="date">2019</div>
+          </div>
+          <div class="edu-item">
+            <h4>Secondary School Certificate (SSC)</h4>
+            <div class="meta">Kalmegha Muslim Secondary School, Barguna</div>
+            <div class="date">2017</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills / Legal Areas -->
+      <div style="margin-top: 40px;">
+        <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Legal Skills & Expertise</h3>
+        <div class="skill-list">
+          <span>Legal Research</span><span>Contract Drafting</span><span>Corporate Documentation</span>
+          <span>Client Advisory</span><span>Case Preparation</span><span>Corporate Compliance</span>
+          <span>MS Office</span><span>Google Workspace</span><span>Legal Writing</span>
+          <span>Bengali (native)</span><span>English (fluent)</span><span>Advocacy</span>
+        </div>
+        <p style="margin-top: 30px;"><span style="color: var(--gold);">◈</span> Bar Council eligibility – awaiting enrollment</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE (Associate role highlighted) -->
+  <section id="experience" style="background: var(--gray-100); padding: 70px 0;">
+    <div class="container">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="exp-card">
+        <div class="exp-date">Dec 2024</div>
+        <div class="exp-detail">
+          <h4>Azad & Company, Paltan, Dhaka</h4>
+          <span class="sub">Associate (Corporate Documentation) — Internship</span>
+          <p>Assisted in preparing and reviewing corporate legal documents, contracts, and compliance records. Conducted legal research for case preparation. Gained practical experience in corporate documentation, client communication, and legal drafting under senior advocates.</p>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-date">2024 – present</div>
+        <div class="exp-detail">
+          <h4>Independent Associate · Law Chambers</h4>
+          <span class="sub">Collaborating with senior advocates</span>
+          <p>Providing research support, drafting pleadings, and assisting in client consultations. Developing expertise in civil litigation and corporate advisory.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS (Labour Law + ICT Training) -->
+  <section style="padding: 70px 0;">
+    <div class="container">
+      <h2 class="section-title">Professional Development</h2>
+      <div class="projects-grid">
+        <div class="project-item">
+          <span class="project-tag">Seminar 2023</span>
+          <h4>Labour Law Seminar</h4>
+          <p>Attended seminar organized by 'Ogrogani Foundation' on 26 May 2023. Explored contemporary labour issues, legal reforms, and workplace rights under Bangladesh labour legislation.</p>
+        </div>
+        <div class="project-item">
+          <span class="project-tag">ICT Division, EDGE Project</span>
+          <h4>Computer Fundamentals & Office Apps</h4>
+          <p>60‑hour training (May–Dec 2024) by Dept. of CSE, Jagannath University, under Bangladesh Computer Council. Enhanced MS Office, file management, and ICT productivity skills.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP (President JnUITS + Leo Club) -->
+  <section id="leadership" style="background: var(--gray-100); padding: 70px 0;">
+    <div class="container">
+      <h2 class="section-title">Leadership & Bar Association Activities</h2>
+      <div class="leadership-grid">
+        <div class="lead-card">
+          <i class="fas fa-laptop-code"></i>
+          <h4>Jagannath University IT Society</h4>
+          <span class="lead-role" style="color: var(--gold); display: block; margin-bottom: 10px;">President</span>
+          <p>Led planning and execution of tech & cultural events; managed cross‑functional teams; fostered student ICT engagement. Represented the society at university forums.</p>
+        </div>
+        <div class="lead-card">
+          <i class="fas fa-hands-helping"></i>
+          <h4>Leo Club (Lions International)</h4>
+          <span class="lead-role" style="color: var(--gold); display: block; margin-bottom: 10px;">Former President</span>
+          <p>Directed community service, charity events, and youth leadership programs. Developed public relations & volunteer coordination across multiple districts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section style="padding: 70px 0;">
+    <div class="container">
+      <h2 class="section-title">References</h2>
+      <div class="ref-grid">
+        <div class="ref-card">
+          <h4>Christine Richardson</h4>
+          <div class="title">Associate Professor</div>
+          <div class="inst">Dept. of Law & Land Admin, Jagannath University</div>
+          <div class="contact" style="margin-top: 15px;"><i class="fas fa-envelope"></i> christiectg@yahoo.com<br><i class="fas fa-phone"></i> +8801716-046874</div>
+        </div>
+        <div class="ref-card">
+          <h4>Ayesha Saleh</h4>
+          <div class="title">Assistant Professor</div>
+          <div class="inst">Dept. of Law & Land Admin, Jagannath University</div>
+          <div class="contact" style="margin-top: 15px;"><i class="fas fa-envelope"></i> ayesha.mhd@gmail.com<br><i class="fas fa-phone"></i> +8801671-424945</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="background: var(--gray-100); padding: 70px 0;">
+    <div class="container">
+      <h2 class="section-title">Contact & Consultation</h2>
+      <div class="contact-grid">
+        <div class="contact-info-box">
+          <h3 style="font-size: 2rem;">Imam Hasan<br><span style="font-size: 1.2rem; color: var(--gold);">Associate · LL.M candidate</span></h3>
+          <div class="contact-line"><i class="fas fa-map-pin"></i> 110/A, Sarat Gupta Road, Narinda, Dhaka-1100</div>
+          <div class="contact-line"><i class="fas fa-phone-alt"></i> +880 1721-129467</div>
+          <div class="contact-line"><i class="fas fa-envelope"></i> ihnaiem333@gmail.com</div>
+          <div class="contact-line"><i class="fab fa-linkedin"></i> linkedin.com/in/imam333hasan</div>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Schedule a meeting</h3>
+          <form id="contactForm">
+            <div class="form-group"><input type="text" placeholder="Full name" required></div>
+            <div class="form-group"><input type="email" placeholder="Email address" required></div>
+            <div class="form-group"><input type="text" placeholder="Subject"></div>
+            <div class="form-group"><textarea rows="5" placeholder="Brief description of legal matter..."></textarea></div>
+            <button type="submit" class="btn-gold" style="width:100%;">SEND INQUIRY</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IN THE MEDIA / INTERNSHIP PROGRAM (advocate feature) -->
+  <section id="media" style="padding: 40px 0; border-top: 1px solid rgba(201,168,108,0.3);">
+    <div class="container" style="text-align: center;">
+      <span style="color: var(--gold); letter-spacing: 3px;">⚖️ IN THE MEDIA · INTERNSHIP PROGRAM · PUBLICATIONS ⚖️</span>
+      <p style="margin-top: 20px;">Featured in university law journal & local bar bulletin. Internship mentorship available for final-year law students. <a href="#contact" style="color: var(--black); border-bottom: none;">→ Inquire within</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-logo">IMAM HASAN <span>· ASSOCIATE</span></div>
+      <div class="footer-links">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#experience">EXPERIENCE</a>
+        <a href="#contact">CONTACT</a>
+        <a href="#">INTERNSHIP</a>
+        <a href="#">REVIEWS</a>
+      </div>
+      <p style="color: #999; font-size: 0.9rem;">440 Louisiana, Suite 1115 · Houston, Texas 77002 (reference style)</p>
+      <p style="color: #777; margin-top: 20px;">© 2025 Imam Hasan · Jagannath University, Dhaka</p>
+    </div>
+  </footer>
+
+  <div class="back-top" id="backTop"><i class="fas fa-chevron-up"></i></div>
+
+  <script>
+    (function(){
+      // mobile toggle
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      hamburger.addEventListener('click', ()=>{
+        if (navLinks.style.display === 'flex') {
+          navLinks.style.display = 'none';
+        } else {
+          navLinks.style.display = 'flex';
+          navLinks.style.flexDirection = 'column';
+          navLinks.style.position = 'absolute';
+          navLinks.style.top = '80px';
+          navLinks.style.left = '0';
+          navLinks.style.width = '100%';
+          navLinks.style.background = 'white';
+          navLinks.style.padding = '30px';
+          navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.05)';
+          navLinks.style.zIndex = '999';
+        }
+      });
+
+      // expandable education (clickable)
+      const eduToggle = document.getElementById('eduToggle');
+      const eduContent = document.getElementById('eduContent');
+      const eduIcon = document.getElementById('eduIcon');
+      eduToggle.addEventListener('click', ()=>{
+        eduContent.classList.toggle('show');
+        eduIcon.classList.toggle('fa-chevron-down');
+        eduIcon.classList.toggle('fa-chevron-up');
+      });
+
+      // back to top
+      const backBtn = document.getElementById('backTop');
+      window.addEventListener('scroll', ()=>{
+        if(window.scrollY > 400) backBtn.classList.add('active');
+        else backBtn.classList.remove('active');
+      });
+      backBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+      // contact form alert
+      document.getElementById('contactForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        alert('Thank you. Imam Hasan will respond within 24 hours.');
+        this.reset();
+      });
+
+      // smooth scroll (no underlines)
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e){
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if(target) window.scrollTo({top: target.offsetTop - 70, behavior:'smooth'});
+          // if mobile menu open, close it
+          if (window.innerWidth <= 1000) {
+            navLinks.style.display = 'none';
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
