@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Imam Hasan · Associate | Law Offices</title>
+  <title>Imam Hasan · Associate Lawyer | Azad & Company</title>
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
@@ -16,34 +16,34 @@
       box-sizing: border-box;
     }
 
-    /* ===== BLACK + WHITE + GOLD ===== */
+    /* ===== MODERN ADVOCATE STYLE ===== */
     :root {
-      --black: #000000;
+      --deep-teal: #1a4b4b;
+      --cream: #fbf7f0;
+      --terracotta: #b86b4c;
+      --gold: #d4af37;
+      --charcoal: #2a2a2a;
       --white: #ffffff;
-      --gold: #c9a86c;
-      --gold-light: #e5d5b3;
-      --gray-100: #f8f8f8;
-      --gray-600: #4a4a4a;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-      --border-light: 1px solid rgba(201, 168, 108, 0.2);
-      --transition: all 0.25s ease;
+      --shadow-sm: 0 10px 30px -10px rgba(26, 75, 75, 0.1);
+      --shadow-hover: 0 20px 40px -15px rgba(26, 75, 75, 0.2);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--white);
-      color: var(--black);
+      background-color: var(--cream);
+      color: var(--charcoal);
       line-height: 1.6;
-      font-weight: 300;
+      font-weight: 400;
+      overflow-x: hidden;
     }
 
-    h1, h2, h3, h4, .logo, .nav-links, .footer-logo, .hero-sub, .section-title {
+    h1, h2, h3, h4, .logo, .nav-links, .footer-logo {
       font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      letter-spacing: 0.01em;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
 
-    /* NO UNDERLINES — removed from all links */
     a {
       text-decoration: none;
       color: inherit;
@@ -56,94 +56,144 @@
       padding: 0 20px;
     }
 
-    /* ===== header ===== */
+    /* ===== MODERN HEADER ===== */
     header {
       position: fixed;
       width: 100%;
       top: 0;
-      background-color: var(--white);
-      border-bottom: var(--border-light);
+      background: rgba(251, 247, 240, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+      border-bottom: 2px solid var(--gold);
     }
 
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 0;
+      padding: 20px 0;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-img {
+      width: 45px;
+      height: 45px;
+      background: var(--deep-teal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 1.5rem;
+      font-weight: bold;
+      border: 2px solid var(--gold);
     }
 
     .logo {
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--black);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--deep-teal);
+      text-transform: none;
+      letter-spacing: -0.5px;
+      position: relative;
     }
     .logo span {
-      color: var(--gold);
-      font-weight: 400;
-      font-size: 1.1rem;
+      color: var(--terracotta);
+      font-weight: 500;
+      font-size: 1rem;
       display: block;
-      text-transform: none;
-      letter-spacing: 0.5px;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .nav-links {
       display: flex;
-      gap: 2.8rem;
-      font-size: 0.95rem;
-      font-weight: 500;
+      gap: 2.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
     }
     .nav-links a {
-      color: var(--black);
-      padding-bottom: 4px;
-      border-bottom: none; /* no underline */
-      transition: var(--transition);
+      color: var(--deep-teal);
+      position: relative;
+      padding-bottom: 5px;
     }
-    .nav-links a:hover {
-      color: var(--gold);
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--terracotta);
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     .contact-phone {
       font-size: 1rem;
       font-weight: 600;
-      color: var(--gold);
-      border: 1px solid var(--gold);
-      padding: 6px 16px;
-      border-radius: 30px;
+      color: var(--deep-teal);
+      border: 2px solid var(--gold);
+      padding: 8px 20px;
+      border-radius: 40px;
       transition: var(--transition);
+      background: transparent;
     }
     .contact-phone:hover {
-      background-color: var(--gold);
-      color: var(--black);
+      background: var(--gold);
+      color: var(--deep-teal);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
     }
 
     .hamburger {
       display: none;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       cursor: pointer;
-      color: var(--black);
+      color: var(--deep-teal);
     }
 
-    /* ===== hero ===== */
+    /* ===== MODERN HERO ===== */
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      background-color: var(--white);
+      background: linear-gradient(135deg, var(--cream) 0%, #fff 100%);
       padding: 140px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "⚖️";
+      font-size: 30rem;
+      opacity: 0.02;
+      position: absolute;
+      right: -50px;
+      bottom: -50px;
+      transform: rotate(15deg);
+      pointer-events: none;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 60px;
       align-items: center;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-left {
@@ -151,58 +201,120 @@
     }
 
     .firm-name {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Inter', sans-serif;
       font-size: 0.9rem;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      color: var(--gold);
+      letter-spacing: 4px;
+      color: var(--terracotta);
       margin-bottom: 20px;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .hero-left h1 {
-      font-size: 4rem;
-      font-weight: 800;
-      line-height: 1.1;
-      color: var(--black);
+      font-size: 5rem;
+      font-weight: 900;
+      line-height: 1;
       margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--deep-teal) 0%, var(--terracotta) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .hero-left h2 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 400;
-      color: var(--gray-600);
+      color: var(--charcoal);
       margin-bottom: 30px;
       font-family: 'Inter', sans-serif;
+      border-left: 4px solid var(--gold);
+      padding-left: 20px;
+    }
+    
+    .hero-left h2 a {
+      color: var(--deep-teal);
+      font-weight: 600;
+      border-bottom: 2px solid var(--gold);
+      transition: var(--transition);
+    }
+    
+    .hero-left h2 a:hover {
+      color: var(--terracotta);
+      border-bottom-color: var(--terracotta);
     }
 
     .address-block {
-      border-left: 3px solid var(--gold);
-      padding-left: 20px;
       margin: 40px 0 30px;
-      font-size: 1rem;
-      color: var(--black);
+      font-size: 1.1rem;
+      color: var(--deep-teal);
       line-height: 1.8;
+      background: rgba(212, 175, 55, 0.05);
+      padding: 25px;
+      border-radius: 0 20px 20px 0;
+      border-left: 4px solid var(--gold);
+    }
+    
+    .address-block strong {
+      color: var(--terracotta);
+      display: block;
+      margin-top: 10px;
+    }
+    
+    .address-block strong:first-of-type {
+      margin-top: 0;
     }
 
     .btn-gold {
-      background: transparent;
-      border: 2px solid var(--gold);
-      color: var(--black);
-      padding: 14px 42px;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
+      background: linear-gradient(135deg, var(--deep-teal), #1e5a5a);
+      border: none;
+      color: var(--white);
+      padding: 16px 48px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       cursor: pointer;
       transition: var(--transition);
       display: inline-block;
+      border-radius: 40px;
+      box-shadow: 0 10px 20px -5px rgba(26, 75, 75, 0.3);
+      position: relative;
+      overflow: hidden;
     }
+
+    .btn-gold::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-gold:hover::before {
+      left: 100%;
+    }
+
     .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px -5px rgba(26, 75, 75, 0.4);
+      background: linear-gradient(135deg, #1e5a5a, var(--deep-teal));
+    }
+    
+    .appointment-badge {
+      display: inline-block;
+      margin-left: 15px;
       background: var(--gold);
-      color: var(--white);
-      border-color: var(--gold);
+      color: var(--deep-teal);
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      vertical-align: middle;
     }
 
     .hero-right {
@@ -212,61 +324,75 @@
     }
 
     .photo-frame {
-      background-color: var(--white);
-      box-shadow: 25px 25px 0 -5px var(--white), 25px 25px 0 0 var(--gold);
       max-width: 450px;
       width: 100%;
+      clip-path: polygon(20% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 20%);
+      background: var(--gold);
+      padding: 8px;
+      box-shadow: var(--shadow-hover);
+      transition: var(--transition);
+    }
+
+    .photo-frame:hover {
+      transform: scale(1.02);
+      box-shadow: 0 25px 50px -12px var(--deep-teal);
     }
 
     .photo-frame img {
       width: 100%;
       height: auto;
       display: block;
-      filter: grayscale(30%);
-      border: 1px solid var(--gold);
+      filter: grayscale(30%) contrast(105%);
+      clip-path: polygon(20% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 20%);
     }
 
     .gold-quote {
       position: absolute;
       bottom: -20px;
-      right: 0;
-      background: var(--gold);
+      right: -20px;
+      background: var(--terracotta);
       color: var(--white);
-      padding: 10px 25px;
-      font-size: 1.2rem;
+      padding: 15px 30px;
+      font-size: 1.3rem;
       font-family: 'Playfair Display', serif;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 1px;
+      box-shadow: 10px 10px 0 var(--gold);
     }
 
-    /* ===== sections ===== */
+    /* ===== MODERN SECTIONS ===== */
     .section-title {
-      font-size: 2.8rem;
-      color: var(--black);
+      font-size: 3.2rem;
+      color: var(--deep-teal);
       margin-bottom: 50px;
-      font-weight: 700;
+      font-weight: 800;
       position: relative;
+      display: inline-block;
     }
     .section-title:after {
       content: '';
       position: absolute;
-      bottom: -12px;
+      bottom: -15px;
       left: 0;
-      width: 70px;
-      height: 3px;
-      background-color: var(--gold);
-    }
-    .section-center .section-title:after {
-      left: 50%;
-      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--terracotta));
+      border-radius: 2px;
     }
 
-    /* expandable education */
+    /* Expandable education - modern */
     .edu-card {
       background: var(--white);
-      border: var(--border-light);
-      padding: 30px;
+      border: none;
+      padding: 35px;
       margin-bottom: 25px;
+      border-radius: 0 30px 30px 0;
+      border-left: 6px solid var(--gold);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .edu-card:hover {
+      box-shadow: var(--shadow-hover);
     }
     .edu-header {
       display: flex;
@@ -275,83 +401,128 @@
       cursor: pointer;
     }
     .edu-header h3 {
-      font-size: 1.8rem;
-      color: var(--black);
+      font-size: 2rem;
+      color: var(--deep-teal);
     }
     .edu-header i {
-      font-size: 1.6rem;
-      color: var(--gold);
-      transition: transform 0.3s;
+      font-size: 1.8rem;
+      color: var(--terracotta);
+      transition: transform 0.4s;
     }
     .edu-content {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.5s ease;
+      transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .edu-content.show {
-      max-height: 500px; /* enough for items */
+      max-height: 500px;
     }
     .edu-item {
-      margin: 25px 0 15px;
+      margin: 30px 0 15px;
+      padding: 20px;
+      background: linear-gradient(135deg, var(--cream) 0%, #fff 100%);
+      border-radius: 12px;
     }
     .edu-item h4 {
-      font-size: 1.3rem;
-      color: var(--black);
-      margin-bottom: 4px;
+      font-size: 1.4rem;
+      color: var(--deep-teal);
     }
     .edu-item .meta {
-      color: var(--gold);
-      font-weight: 500;
+      color: var(--terracotta);
+      font-weight: 600;
     }
     .edu-item .date {
-      color: var(--gray-600);
+      color: var(--charcoal);
       font-size: 0.95rem;
+      opacity: 0.7;
     }
 
+    .skills-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 25px;
+    }
+    
+    .skill-category h3 {
+      font-size: 1.5rem;
+      color: var(--deep-teal);
+      margin-bottom: 15px;
+      border-left: 3px solid var(--gold);
+      padding-left: 15px;
+    }
+    
     .skill-list {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 20px;
     }
     .skill-list span {
-      background: var(--gray-100);
-      border: 1px solid #e0d6c7;
-      padding: 6px 18px;
+      background: var(--white);
+      border: 1px solid var(--gold);
+      padding: 8px 22px;
       border-radius: 40px;
-      font-size: 0.9rem;
-      color: var(--black);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--deep-teal);
+      transition: var(--transition);
+      cursor: default;
+    }
+    .skill-list span:hover {
+      background: var(--deep-teal);
+      color: var(--white);
+      border-color: var(--deep-teal);
+      transform: translateY(-2px);
     }
 
-    /* experience card */
+    /* Experience cards */
     .exp-card {
-      background: var(--white);
-      border: var(--border-light);
-      padding: 35px;
+      background: linear-gradient(135deg, white 0%, #f8f8f8 100%);
+      border: none;
+      padding: 40px;
       margin-bottom: 30px;
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
+      border-radius: 0 40px 40px 0;
+      border-left: 4px solid var(--gold);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .exp-card:hover {
+      transform: translateX(10px);
+      box-shadow: var(--shadow-hover);
     }
     .exp-date {
       min-width: 140px;
       font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      color: var(--gold);
-      font-weight: 600;
+      font-size: 1.4rem;
+      color: var(--terracotta);
+      font-weight: 700;
     }
     .exp-detail h4 {
-      font-size: 1.5rem;
-      color: var(--black);
+      font-size: 1.8rem;
+      color: var(--deep-teal);
       margin-bottom: 8px;
     }
     .exp-detail .sub {
       color: var(--gold);
-      font-weight: 500;
+      font-weight: 600;
       margin-bottom: 15px;
       display: block;
+      font-size: 1.1rem;
+    }
+    
+    .exp-detail a {
+      color: var(--deep-teal);
+      border-bottom: 1px dashed var(--gold);
+    }
+    
+    .exp-detail a:hover {
+      color: var(--terracotta);
     }
 
+    /* Projects grid */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -359,36 +530,72 @@
     }
     .project-item {
       background: var(--white);
-      border: var(--border-light);
-      padding: 30px;
+      border: none;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .project-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--terracotta));
+    }
+    .project-item:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
     }
     .project-tag {
-      color: var(--gold);
+      color: var(--terracotta);
       font-weight: 600;
       text-transform: uppercase;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
       display: block;
     }
 
+    /* Leadership cards */
     .leadership-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 30px;
     }
     .lead-card {
-      border: var(--border-light);
-      padding: 35px 30px;
+      border: none;
+      padding: 40px 30px;
       text-align: center;
       background: var(--white);
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .lead-card:hover {
+      transform: scale(1.03);
+      box-shadow: var(--shadow-hover);
     }
     .lead-card i {
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: var(--gold);
       margin-bottom: 20px;
     }
+    
+    .lead-card a {
+      color: var(--deep-teal);
+      border-bottom: 2px solid var(--gold);
+    }
+    
+    .lead-card a:hover {
+      color: var(--terracotta);
+    }
 
+    /* References */
     .ref-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -396,10 +603,14 @@
     }
     .ref-card {
       background: var(--white);
-      border: var(--border-light);
-      padding: 30px;
+      border: none;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+      border-bottom: 4px solid var(--gold);
     }
 
+    /* Contact section */
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -407,8 +618,24 @@
     }
     .contact-info-box {
       background: var(--white);
-      border: var(--border-light);
-      padding: 40px;
+      border: none;
+      padding: 45px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-info-box::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background: var(--gold);
+      opacity: 0.05;
+      border-radius: 50%;
+      transform: translate(30px, 30px);
     }
     .contact-line {
       display: flex;
@@ -417,9 +644,9 @@
       margin-bottom: 25px;
     }
     .contact-line i {
-      width: 28px;
-      color: var(--gold);
-      font-size: 1.3rem;
+      width: 30px;
+      color: var(--terracotta);
+      font-size: 1.4rem;
     }
     .social-links {
       display: flex;
@@ -430,21 +657,26 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 44px;
-      height: 44px;
-      border: 1px solid var(--gold);
-      color: var(--black);
+      width: 48px;
+      height: 48px;
+      border: 2px solid var(--gold);
+      color: var(--deep-teal);
       transition: var(--transition);
+      border-radius: 50%;
+      font-size: 1.2rem;
     }
     .social-links a:hover {
       background: var(--gold);
-      color: white;
+      color: var(--deep-teal);
+      transform: translateY(-5px);
     }
 
     .contact-form {
       background: var(--white);
-      border: var(--border-light);
-      padding: 40px;
+      border: none;
+      padding: 45px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
     }
     .form-group {
       margin-bottom: 20px;
@@ -452,31 +684,49 @@
     .form-group input, 
     .form-group textarea {
       width: 100%;
-      padding: 12px 18px;
-      border: 1px solid #ddd;
-      background: white;
+      padding: 14px 20px;
+      border: 2px solid transparent;
+      background: var(--cream);
+      border-radius: 12px;
       font-family: 'Inter', sans-serif;
+      transition: var(--transition);
     }
     .form-group input:focus,
     .form-group textarea:focus {
-      outline: 1px solid var(--gold);
+      outline: none;
       border-color: var(--gold);
+      background: var(--white);
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
     }
 
-    /* footer */
+    /* Footer */
     footer {
-      background: var(--black);
+      background: var(--deep-teal);
       color: var(--white);
-      padding: 50px 0 30px;
-      border-top: 3px solid var(--gold);
+      padding: 60px 0 30px;
+      border-top: 6px solid var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+    footer::before {
+      content: "⚖️";
+      font-size: 15rem;
+      opacity: 0.03;
+      position: absolute;
+      left: -50px;
+      bottom: -50px;
+      transform: rotate(-15deg);
     }
     .footer-inner {
       text-align: center;
+      position: relative;
+      z-index: 2;
     }
     .footer-logo {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       color: var(--white);
       margin-bottom: 15px;
+      font-weight: 800;
     }
     .footer-logo span {
       color: var(--gold);
@@ -484,17 +734,20 @@
     .footer-links {
       display: flex;
       justify-content: center;
-      gap: 35px;
-      margin: 25px 0;
+      gap: 40px;
+      margin: 30px 0;
       flex-wrap: wrap;
     }
     .footer-links a {
       color: var(--white);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
+      opacity: 0.8;
+      transition: var(--transition);
     }
     .footer-links a:hover {
+      opacity: 1;
       color: var(--gold);
     }
 
@@ -502,33 +755,53 @@
       position: fixed;
       bottom: 30px;
       right: 30px;
-      width: 50px;
-      height: 50px;
-      background: var(--gold);
-      color: var(--black);
-      border-radius: 0;
+      width: 55px;
+      height: 55px;
+      background: var(--terracotta);
+      color: var(--white);
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       opacity: 0;
       visibility: hidden;
-      transition: 0.3s;
-      border: 1px solid var(--black);
+      transition: var(--transition);
+      border: none;
+      box-shadow: 0 5px 20px rgba(184, 107, 76, 0.4);
+      z-index: 99;
     }
     .back-top.active {
       opacity: 1;
       visibility: visible;
     }
+    .back-top:hover {
+      background: var(--deep-teal);
+      transform: translateY(-5px);
+    }
 
-    /* mobile */
+    /* Mobile */
     @media (max-width: 1000px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .hamburger { display: block; }
-      .contact-phone { display: none; }
-      .projects-grid, .leadership-grid, .ref-grid, .contact-grid {
+      .hero-grid { 
+        grid-template-columns: 1fr; 
+      }
+      .hero-left h1 {
+        font-size: 3.5rem;
+      }
+      .nav-links { 
+        display: none; 
+      }
+      .hamburger { 
+        display: block; 
+      }
+      .contact-phone { 
+        display: none; 
+      }
+      .projects-grid, .leadership-grid, .ref-grid, .contact-grid, .skills-container {
         grid-template-columns: 1fr;
+      }
+      .gold-quote {
+        right: 0;
       }
     }
   </style>
@@ -537,15 +810,17 @@
   <header>
     <div class="container">
       <nav class="navbar">
-        <a href="#" class="logo">IMAM HASAN <span>Associate · LL.M (cand.)</span></a>
+        <div class="logo-container">
+          <div class="logo-img">IH</div>
+          <a href="#" class="logo">IMAM HASAN <span>Associate Lawyer</span></a>
+        </div>
         <div class="nav-links">
           <a href="#home">HOME</a>
           <a href="#about">ABOUT</a>
           <a href="#experience">EXPERIENCE</a>
           <a href="#leadership">LEADERSHIP</a>
           <a href="#contact">CONTACT</a>
-          <a href="#media">IN THE MEDIA</a>
-          <a href="#internship">INTERNSHIP</a>
+          <a href="#media">MEDIA</a>
         </div>
         <a href="tel:+8801721129467" class="contact-phone"><i class="fa-solid fa-phone"></i> 01721-129467</a>
         <div class="hamburger"><i class="fas fa-bars"></i></div>
@@ -558,27 +833,30 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-left">
-          <div class="firm-name">IMAM HASAN · ASSOCIATE</div>
-          <h1>Imam Hasan<br>LL.B, LL.M (candidate)</h1>
-          <h2>Associate at Law Chambers · President, JnUITS</h2>
+          <div class="firm-name">⚖️ ASSOCIATE LAWYER</div>
+          <h1>Imam Hasan<br>LL.B, LL.M</h1>
+          <h2><a href="https://www.azadncompany.com/" target="_blank">Associate Lawyer at Azad & Company</a> · President, <a href="https://jnuits.org.bd/" target="_blank">JnUITS</a></h2>
           <div class="address-block">
-            <strong>📍 110/A, Sarat Gupta Road, Narinda</strong><br>
+            <strong>📌 Present Address:</strong>
+            110/A, Sarat Gupta Road, Narinda<br>
             Dhaka - 1100, Bangladesh<br>
-            <span style="color: var(--gold);">✉ ihnaiem333@gmail.com</span>
+            <strong>🏠 Permanent Address:</strong>
+            Village: Kalmegha, Post Office: Kalmegha,<br>
+            Upazila: Patharghata, District: Barguna, Post Code: 8720
           </div>
-          <a href="#contact" class="btn-gold">CONSULT NOW</a>
+          <a href="#contact" class="btn-gold">CONSULT NOW <span class="appointment-badge">24/7 Open</span></a>
         </div>
         <div class="hero-right">
           <div class="photo-frame">
-            <img src="imam.jpg" alt="Imam Hasan, Associate" onerror="this.src='https://placehold.co/600x700/000000/FFFFFF?text=Imam+Hasan'">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect width='400' height='500' fill='%231a4b4b'/%3E%3Ctext x='50' y='250' fill='%23d4af37' font-family='Arial' font-size='40' font-weight='bold'%3EI. HASAN%3C/text%3E%3Ctext x='50' y='320' fill='%23ffffff' font-family='Arial' font-size='24'%3EAssociate Lawyer%3C/text%3E%3C/svg%3E" alt="Imam Hasan, Associate Lawyer">
           </div>
-          <div class="gold-quote">Associate · LL.M</div>
+          <div class="gold-quote">Azad & Company</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT + EXPANDABLE EDUCATION (no GPA, clickable) -->
+  <!-- ABOUT + EXPANDABLE EDUCATION -->
   <section id="about" style="padding: 70px 0;">
     <div class="container">
       <h2 class="section-title">Areas of Practice & Qualifications</h2>
@@ -613,26 +891,36 @@
 
       <!-- Skills / Legal Areas -->
       <div style="margin-top: 40px;">
-        <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Legal Skills & Expertise</h3>
-        <div class="skill-list">
-          <span>Legal Research</span><span>Contract Drafting</span><span>Corporate Documentation</span>
-          <span>Client Advisory</span><span>Case Preparation</span><span>Corporate Compliance</span>
-          <span>MS Office</span><span>Google Workspace</span><span>Legal Writing</span>
-          <span>Bengali (native)</span><span>English (fluent)</span><span>Advocacy</span>
+        <h3 style="font-size: 2rem; color: var(--deep-teal); margin-bottom: 20px;">Skills & Expertise</h3>
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3>Legal Skills</h3>
+            <div class="skill-list">
+              <span>Legal Research</span><span>Contract Drafting</span><span>Corporate Documentation</span>
+              <span>Client Advisory</span><span>Case Preparation</span><span>Corporate Compliance</span>
+              <span>Legal Writing</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Soft Skills</h3>
+            <div class="skill-list">
+              <span>MS Office</span><span>Google Workspace</span>
+            </div>
+          </div>
         </div>
-        <p style="margin-top: 30px;"><span style="color: var(--gold);">◈</span> Bar Council eligibility – awaiting enrollment</p>
+        <p style="margin-top: 30px;"><span style="color: var(--gold); font-size: 1.2rem;">◈</span> Bar Council eligibility – awaiting enrollment</p>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE (Associate role highlighted) -->
-  <section id="experience" style="background: var(--gray-100); padding: 70px 0;">
+  <!-- EXPERIENCE -->
+  <section id="experience" style="background: var(--cream); padding: 70px 0;">
     <div class="container">
       <h2 class="section-title">Professional Experience</h2>
       <div class="exp-card">
         <div class="exp-date">Dec 2024</div>
         <div class="exp-detail">
-          <h4>Azad & Company, Paltan, Dhaka</h4>
+          <h4><a href="https://www.azadncompany.com/" target="_blank">Azad & Company</a>, Paltan, Dhaka</h4>
           <span class="sub">Associate (Corporate Documentation) — Internship</span>
           <p>Assisted in preparing and reviewing corporate legal documents, contracts, and compliance records. Conducted legal research for case preparation. Gained practical experience in corporate documentation, client communication, and legal drafting under senior advocates.</p>
         </div>
@@ -640,48 +928,48 @@
       <div class="exp-card">
         <div class="exp-date">2024 – present</div>
         <div class="exp-detail">
-          <h4>Independent Associate · Law Chambers</h4>
-          <span class="sub">Collaborating with senior advocates</span>
+          <h4><a href="https://www.azadncompany.com/" target="_blank">Associate Lawyer at Azad & Company</a></h4>
+          <span class="sub">Corporate & Civil Litigation</span>
           <p>Providing research support, drafting pleadings, and assisting in client consultations. Developing expertise in civil litigation and corporate advisory.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS (Labour Law + ICT Training) -->
+  <!-- PROJECTS -->
   <section style="padding: 70px 0;">
     <div class="container">
       <h2 class="section-title">Professional Development</h2>
       <div class="projects-grid">
         <div class="project-item">
           <span class="project-tag">Seminar 2023</span>
-          <h4>Labour Law Seminar</h4>
+          <h4 style="font-size: 1.6rem; color: var(--deep-teal);">Labour Law Seminar</h4>
           <p>Attended seminar organized by 'Ogrogani Foundation' on 26 May 2023. Explored contemporary labour issues, legal reforms, and workplace rights under Bangladesh labour legislation.</p>
         </div>
         <div class="project-item">
           <span class="project-tag">ICT Division, EDGE Project</span>
-          <h4>Computer Fundamentals & Office Apps</h4>
+          <h4 style="font-size: 1.6rem; color: var(--deep-teal);">Computer Fundamentals & Office Apps</h4>
           <p>60‑hour training (May–Dec 2024) by Dept. of CSE, Jagannath University, under Bangladesh Computer Council. Enhanced MS Office, file management, and ICT productivity skills.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- LEADERSHIP (President JnUITS + Leo Club) -->
-  <section id="leadership" style="background: var(--gray-100); padding: 70px 0;">
+  <!-- LEADERSHIP -->
+  <section id="leadership" style="background: var(--cream); padding: 70px 0;">
     <div class="container">
       <h2 class="section-title">Leadership & Bar Association Activities</h2>
       <div class="leadership-grid">
         <div class="lead-card">
           <i class="fas fa-laptop-code"></i>
-          <h4>Jagannath University IT Society</h4>
-          <span class="lead-role" style="color: var(--gold); display: block; margin-bottom: 10px;">President</span>
+          <h4 style="font-size: 1.6rem;"><a href="https://jnuits.org.bd/" target="_blank">Jagannath University IT Society</a></h4>
+          <span class="lead-role" style="color: var(--gold); display: block; margin-bottom: 10px; font-weight: 600;">President</span>
           <p>Led planning and execution of tech & cultural events; managed cross‑functional teams; fostered student ICT engagement. Represented the society at university forums.</p>
         </div>
         <div class="lead-card">
           <i class="fas fa-hands-helping"></i>
-          <h4>Leo Club (Lions International)</h4>
-          <span class="lead-role" style="color: var(--gold); display: block; margin-bottom: 10px;">Former President</span>
+          <h4 style="font-size: 1.6rem;">Leo Club (Lions International)</h4>
+          <span class="lead-role" style="color: var(--gold); display: block; margin-bottom: 10px; font-weight: 600;">Former President</span>
           <p>Directed community service, charity events, and youth leadership programs. Developed public relations & volunteer coordination across multiple districts.</p>
         </div>
       </div>
@@ -694,28 +982,28 @@
       <h2 class="section-title">References</h2>
       <div class="ref-grid">
         <div class="ref-card">
-          <h4>Christine Richardson</h4>
-          <div class="title">Associate Professor</div>
+          <h4 style="font-size: 1.4rem; color: var(--deep-teal);">Christine Richardson</h4>
+          <div class="title" style="color: var(--terracotta); font-weight: 600;">Associate Professor</div>
           <div class="inst">Dept. of Law & Land Admin, Jagannath University</div>
-          <div class="contact" style="margin-top: 15px;"><i class="fas fa-envelope"></i> christiectg@yahoo.com<br><i class="fas fa-phone"></i> +8801716-046874</div>
+          <div class="contact" style="margin-top: 15px;"><i class="fas fa-envelope" style="color: var(--gold);"></i> christiectg@yahoo.com<br><i class="fas fa-phone" style="color: var(--gold);"></i> +8801716-046874</div>
         </div>
         <div class="ref-card">
-          <h4>Ayesha Saleh</h4>
-          <div class="title">Assistant Professor</div>
+          <h4 style="font-size: 1.4rem; color: var(--deep-teal);">Ayesha Saleh</h4>
+          <div class="title" style="color: var(--terracotta); font-weight: 600;">Assistant Professor</div>
           <div class="inst">Dept. of Law & Land Admin, Jagannath University</div>
-          <div class="contact" style="margin-top: 15px;"><i class="fas fa-envelope"></i> ayesha.mhd@gmail.com<br><i class="fas fa-phone"></i> +8801671-424945</div>
+          <div class="contact" style="margin-top: 15px;"><i class="fas fa-envelope" style="color: var(--gold);"></i> ayesha.mhd@gmail.com<br><i class="fas fa-phone" style="color: var(--gold);"></i> +8801671-424945</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" style="background: var(--gray-100); padding: 70px 0;">
+  <section id="contact" style="background: var(--cream); padding: 70px 0;">
     <div class="container">
       <h2 class="section-title">Contact & Consultation</h2>
       <div class="contact-grid">
         <div class="contact-info-box">
-          <h3 style="font-size: 2rem;">Imam Hasan<br><span style="font-size: 1.2rem; color: var(--gold);">Associate · LL.M candidate</span></h3>
+          <h3 style="font-size: 2.4rem; color: var(--deep-teal);">Imam Hasan<br><span style="font-size: 1.3rem; color: var(--terracotta);">Associate Lawyer</span></h3>
           <div class="contact-line"><i class="fas fa-map-pin"></i> 110/A, Sarat Gupta Road, Narinda, Dhaka-1100</div>
           <div class="contact-line"><i class="fas fa-phone-alt"></i> +880 1721-129467</div>
           <div class="contact-line"><i class="fas fa-envelope"></i> ihnaiem333@gmail.com</div>
@@ -727,7 +1015,7 @@
           </div>
         </div>
         <div class="contact-form">
-          <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Schedule a meeting</h3>
+          <h3 style="font-size: 2rem; color: var(--deep-teal); margin-bottom: 25px;">Schedule a meeting</h3>
           <form id="contactForm">
             <div class="form-group"><input type="text" placeholder="Full name" required></div>
             <div class="form-group"><input type="email" placeholder="Email address" required></div>
@@ -740,27 +1028,28 @@
     </div>
   </section>
 
-  <!-- IN THE MEDIA / INTERNSHIP PROGRAM (advocate feature) -->
-  <section id="media" style="padding: 40px 0; border-top: 1px solid rgba(201,168,108,0.3);">
+  <!-- MEDIA / INTERNSHIP -->
+  <section id="media" style="padding: 50px 0;">
     <div class="container" style="text-align: center;">
-      <span style="color: var(--gold); letter-spacing: 3px;">⚖️ IN THE MEDIA · INTERNSHIP PROGRAM · PUBLICATIONS ⚖️</span>
-      <p style="margin-top: 20px;">Featured in university law journal & local bar bulletin. Internship mentorship available for final-year law students. <a href="#contact" style="color: var(--black); border-bottom: none;">→ Inquire within</a></p>
+      <span style="color: var(--gold); letter-spacing: 3px; font-weight: 600;">⚡ IN THE MEDIA · INTERNSHIP PROGRAM · PUBLICATIONS ⚡</span>
+      <p style="margin-top: 20px; font-size: 1.2rem;">Featured in university law journal & local bar bulletin. Internship mentorship available for final-year law students. <a href="#contact" style="color: var(--terracotta); font-weight: 600; border-bottom: 2px solid var(--gold);">→ Inquire within</a></p>
     </div>
   </section>
 
   <footer>
     <div class="container footer-inner">
-      <div class="footer-logo">IMAM HASAN <span>· ASSOCIATE</span></div>
+      <div class="footer-logo">IMAM HASAN <span>· ASSOCIATE LAWYER</span></div>
       <div class="footer-links">
         <a href="#home">HOME</a>
         <a href="#about">ABOUT</a>
         <a href="#experience">EXPERIENCE</a>
         <a href="#contact">CONTACT</a>
-        <a href="#">INTERNSHIP</a>
+        <a href="#media">INTERNSHIP</a>
         <a href="#">REVIEWS</a>
       </div>
-      <p style="color: #999; font-size: 0.9rem;">440 Louisiana, Suite 1115 · Houston, Texas 77002 (reference style)</p>
-      <p style="color: #777; margin-top: 20px;">© 2025 Imam Hasan · Jagannath University, Dhaka</p>
+      <p style="opacity: 0.7;">Present: 110/A Sarat Gupta Road, Narinda · Dhaka, Bangladesh</p>
+      <p style="opacity: 0.7;">Permanent: Village: Kalmegha, PO: Kalmegha, Patharghata, Barguna-8720</p>
+      <p style="opacity: 0.5; margin-top: 20px;">© 2025 Imam Hasan · Associate Lawyer at Azad & Company</p>
     </div>
   </footer>
 
@@ -768,7 +1057,7 @@
 
   <script>
     (function(){
-      // mobile toggle
+      // Mobile menu
       const hamburger = document.querySelector('.hamburger');
       const navLinks = document.querySelector('.nav-links');
       hamburger.addEventListener('click', ()=>{
@@ -781,14 +1070,17 @@
           navLinks.style.top = '80px';
           navLinks.style.left = '0';
           navLinks.style.width = '100%';
-          navLinks.style.background = 'white';
+          navLinks.style.background = 'var(--cream)';
           navLinks.style.padding = '30px';
-          navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.05)';
+          navLinks.style.boxShadow = '0 20px 30px rgba(0,0,0,0.1)';
           navLinks.style.zIndex = '999';
+          navLinks.style.backdropFilter = 'blur(10px)';
+          navLinks.style.gap = '20px';
+          navLinks.style.textAlign = 'center';
         }
       });
 
-      // expandable education (clickable)
+      // Expandable education
       const eduToggle = document.getElementById('eduToggle');
       const eduContent = document.getElementById('eduContent');
       const eduIcon = document.getElementById('eduIcon');
@@ -798,7 +1090,7 @@
         eduIcon.classList.toggle('fa-chevron-up');
       });
 
-      // back to top
+      // Back to top
       const backBtn = document.getElementById('backTop');
       window.addEventListener('scroll', ()=>{
         if(window.scrollY > 400) backBtn.classList.add('active');
@@ -806,20 +1098,19 @@
       });
       backBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
 
-      // contact form alert
+      // Contact form
       document.getElementById('contactForm').addEventListener('submit', function(e){
         e.preventDefault();
         alert('Thank you. Imam Hasan will respond within 24 hours.');
         this.reset();
       });
 
-      // smooth scroll (no underlines)
+      // Smooth scroll
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e){
           e.preventDefault();
           const target = document.querySelector(this.getAttribute('href'));
           if(target) window.scrollTo({top: target.offsetTop - 70, behavior:'smooth'});
-          // if mobile menu open, close it
           if (window.innerWidth <= 1000) {
             navLinks.style.display = 'none';
           }
