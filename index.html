@@ -82,17 +82,30 @@
     }
 
     .logo-img {
-      width: 50px;
-      height: 50px;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      background: var(--deep-teal);
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+      transition: var(--transition);
+    }
+    
+    .logo-img:hover {
+      transform: scale(1.05);
+      border-color: var(--terracotta);
+      box-shadow: 0 0 20px rgba(184, 107, 76, 0.4);
     }
     
     .logo-img img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
+      border-radius: 50%;
     }
 
     .logo {
@@ -811,9 +824,9 @@
     <div class="container">
       <nav class="navbar">
         <div class="logo-container">
-          <!-- YOUR LOGO HERE - Replace the src with your actual logo file -->
+          <!-- YOUR LOGO HERE - Perfectly Round Shape -->
           <div class="logo-img">
-            <img src="imam_web_logo.png" alt="Imam Hasan Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='IH'; this.parentElement.style.background='var(--deep-teal)'; this.parentElement.style.borderRadius='50%'; this.parentElement.style.display='flex'; this.parentElement.style.alignItems='center'; this.parentElement.style.justifyContent='center'; this.parentElement.style.color='var(--gold)'; this.parentElement.style.fontSize='1.5rem'; this.parentElement.style.fontWeight='bold'; this.parentElement.style.border='2px solid var(--gold)';">
+            <img src="imam_web_logo.png" alt="Imam Hasan Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='IH'; this.parentElement.style.background='var(--deep-teal)'; this.parentElement.style.color='var(--gold)'; this.parentElement.style.fontSize='1.5rem'; this.parentElement.style.fontWeight='bold'; this.parentElement.style.display='flex'; this.parentElement.style.alignItems='center'; this.parentElement.style.justifyContent='center';">
           </div>
           <a href="#" class="logo">IMAM HASAN <span>Associate Lawyer</span></a>
         </div>
@@ -1053,7 +1066,7 @@
       </div>
       <p style="opacity: 0.7;">Present: 110/A Sarat Gupta Road, Narinda · Dhaka, Bangladesh</p>
       <p style="opacity: 0.7;">Permanent: Village: Kalmegha, PO: Kalmegha, Patharghata, Barguna-8720</p>
-      <p style="opacity: 0.5; margin-top: 20px;">© 2026 Imam Hasan · Associate Lawyer at Azad & Company</p>
+      <p style="opacity: 0.5; margin-top: 20px;">© 2025 Imam Hasan · Associate Lawyer at Azad & Company</p>
     </div>
   </footer>
 
