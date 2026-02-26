@@ -235,7 +235,7 @@
     }
 
     .hero-left h2 {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 400;
       color: var(--charcoal);
       margin-bottom: 30px;
@@ -275,6 +275,21 @@
     
     .address-block strong:first-of-type {
       margin-top: 0;
+    }
+    
+    .contact-details {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px dashed var(--gold);
+    }
+    
+    .contact-details a {
+      color: var(--deep-teal);
+      transition: var(--transition);
+    }
+    
+    .contact-details a:hover {
+      color: var(--terracotta);
     }
 
     .btn-gold {
@@ -316,19 +331,6 @@
       box-shadow: 0 15px 30px -5px rgba(26, 75, 75, 0.4);
       background: linear-gradient(135deg, #1e5a5a, var(--deep-teal));
     }
-    
-    .appointment-badge {
-      display: inline-block;
-      margin-left: 15px;
-      background: var(--gold);
-      color: var(--deep-teal);
-      padding: 8px 16px;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      vertical-align: middle;
-    }
 
     .hero-right {
       position: relative;
@@ -363,14 +365,32 @@
       position: absolute;
       bottom: -20px;
       right: -20px;
-      background: var(--terracotta);
-      color: var(--white);
-      padding: 15px 30px;
+      background: var(--white);
+      padding: 15px 25px;
+      box-shadow: 8px 8px 0 var(--gold);
+      text-align: center;
+      min-width: 180px;
+    }
+    
+    .gold-quote .name {
       font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--deep-teal);
       font-family: 'Playfair Display', serif;
+    }
+    
+    .gold-quote .title {
+      font-size: 0.9rem;
+      color: var(--terracotta);
+      font-weight: 600;
+      margin: 2px 0;
+    }
+    
+    .gold-quote .firm {
+      font-size: 0.9rem;
+      color: var(--gold);
       font-weight: 700;
       letter-spacing: 1px;
-      box-shadow: 10px 10px 0 var(--gold);
     }
 
     /* ===== MODERN SECTIONS ===== */
@@ -393,8 +413,8 @@
       border-radius: 2px;
     }
 
-    /* Expandable education - modern */
-    .edu-card {
+    /* Expandable cards */
+    .expandable-card {
       background: var(--white);
       border: none;
       padding: 35px;
@@ -404,47 +424,47 @@
       box-shadow: var(--shadow-sm);
       transition: var(--transition);
     }
-    .edu-card:hover {
+    .expandable-card:hover {
       box-shadow: var(--shadow-hover);
     }
-    .edu-header {
+    .card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
     }
-    .edu-header h3 {
+    .card-header h3 {
       font-size: 2rem;
       color: var(--deep-teal);
     }
-    .edu-header i {
+    .card-header i {
       font-size: 1.8rem;
       color: var(--terracotta);
       transition: transform 0.4s;
     }
-    .edu-content {
+    .card-content {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .edu-content.show {
+    .card-content.show {
       max-height: 500px;
     }
-    .edu-item {
+    .content-item {
       margin: 30px 0 15px;
       padding: 20px;
       background: linear-gradient(135deg, var(--cream) 0%, #fff 100%);
       border-radius: 12px;
     }
-    .edu-item h4 {
+    .content-item h4 {
       font-size: 1.4rem;
       color: var(--deep-teal);
     }
-    .edu-item .meta {
+    .content-item .meta {
       color: var(--terracotta);
       font-weight: 600;
     }
-    .edu-item .date {
+    .content-item .date {
       color: var(--charcoal);
       font-size: 0.95rem;
       opacity: 0.7;
@@ -608,21 +628,6 @@
       color: var(--terracotta);
     }
 
-    /* References */
-    .ref-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-    }
-    .ref-card {
-      background: var(--white);
-      border: none;
-      padding: 35px;
-      border-radius: 20px;
-      box-shadow: var(--shadow-sm);
-      border-bottom: 4px solid var(--gold);
-    }
-
     /* Contact section */
     .contact-grid {
       display: grid;
@@ -661,17 +666,19 @@
       color: var(--terracotta);
       font-size: 1.4rem;
     }
+    
     .social-links {
       display: flex;
-      gap: 15px;
-      margin: 40px 0 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 30px 0 20px;
     }
     .social-links a {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       border: 2px solid var(--gold);
       color: var(--deep-teal);
       transition: var(--transition);
@@ -691,11 +698,37 @@
       border-radius: 20px;
       box-shadow: var(--shadow-sm);
     }
+    
+    .appointment-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .appointment-field {
+      width: 100%;
+      padding: 14px 20px;
+      border: 2px solid transparent;
+      background: var(--cream);
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+      transition: var(--transition);
+    }
+    
+    .appointment-field:focus {
+      outline: none;
+      border-color: var(--gold);
+      background: var(--white);
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
+    }
+    
     .form-group {
       margin-bottom: 20px;
     }
     .form-group input, 
-    .form-group textarea {
+    .form-group textarea,
+    .form-group select {
       width: 100%;
       padding: 14px 20px;
       border: 2px solid transparent;
@@ -705,7 +738,8 @@
       transition: var(--transition);
     }
     .form-group input:focus,
-    .form-group textarea:focus {
+    .form-group textarea:focus,
+    .form-group select:focus {
       outline: none;
       border-color: var(--gold);
       background: var(--white);
@@ -810,7 +844,7 @@
       .contact-phone { 
         display: none; 
       }
-      .projects-grid, .leadership-grid, .ref-grid, .contact-grid, .skills-container {
+      .projects-grid, .leadership-grid, .contact-grid, .skills-container {
         grid-template-columns: 1fr;
       }
       .gold-quote {
@@ -851,23 +885,29 @@
         <div class="hero-left">
           <div class="firm-name">⚖️ ASSOCIATE LAWYER</div>
           <h1>Imam Hasan<br>LL.B, LL.M</h1>
-          <h2><a href="https://www.azadncompany.com/" target="_blank">Associate Lawyer at Azad & Company</a> · President, <a href="https://jnuits.org.bd/" target="_blank">JnUITS</a></h2>
+          <h2><a href="https://www.azadncompany.com/" target="_blank">Associate Lawyer at Azad & Company</a> · President at <a href="https://jnuits.org.bd/" target="_blank">JnUITS</a></h2>
           <div class="address-block">
             <strong>📌 Present Address:</strong>
-            110/A, Sarat Gupta Road, Narinda<br>
-            Dhaka - 1100, Bangladesh<br>
+            110/A, Sarat Gupta Road, Narinda, Dhaka - 1100<br>
             <strong>🏠 Permanent Address:</strong>
-            Village: Kalmegha, Post Office: Kalmegha,<br>
-            Upazila: Patharghata, District: Barguna, Post Code: 8720
+            Kalmegha, Patharghata, Barguna - 8720<br>
+            <div class="contact-details">
+              <i class="fas fa-phone-alt" style="color: var(--gold);"></i> <a href="tel:+8801721129467">+880 1721-129467</a> &nbsp;&nbsp; 
+              <i class="fas fa-envelope" style="color: var(--gold);"></i> <a href="mailto:ihnaiem333@gmail.com">ihnaiem333@gmail.com</a>
+            </div>
           </div>
-          <a href="#contact" class="btn-gold">CONSULT NOW <span class="appointment-badge">24/7 Open</span></a>
+          <a href="#contact" class="btn-gold">BOOK AN APPOINTMENT <i class="fas fa-calendar-alt" style="margin-left: 10px;"></i></a>
         </div>
         <div class="hero-right">
           <div class="photo-frame">
             <!-- YOUR PROFILE IMAGE - imam.jpg -->
-            <img src="imam.jpg" alt="Imam Hasan, Associate Lawyer" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'400\' height=\'500\' fill=\'%231a4b4b\'/%3E%3Ctext x=\'50\' y=\'250\' fill=\'%23d4af37\' font-family=\'Arial\' font-size=\'40\' font-weight=\'bold\'%3EI. HASAN%3C/text%3E%3Ctext x=\'50\' y=\'320\' fill=\'%23ffffff\' font-family=\'Arial\' font-size=\'24\'%3EAssociate Lawyer%3C/text%3E%3C/svg%3E'">
+            <img src="imam.jpg" alt="Imam Hasan, Associate Lawyer" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'500\' viewBox=\'0 0 400 500\'%3E%3Crect width=\'400\' height=\'500\' fill=\'%231a4b4b\'/%3E%3Ctext x=\'50\' y=\'250\' fill=\'%23d4af37\' font-family=\'Arial\' font-size=\'40\' font-weight=\'bold\'%3EI. HASAN%3C/text%3E%3C/svg%3E'">
           </div>
-          <div class="gold-quote">Azad & Company</div>
+          <div class="gold-quote">
+            <div class="name">Imam Hasan</div>
+            <div class="title">Associate Lawyer</div>
+            <div class="firm">Azad & Company</div>
+          </div>
         </div>
       </div>
     </div>
@@ -877,31 +917,21 @@
   <section id="about" style="padding: 70px 0;">
     <div class="container">
       <h2 class="section-title">Areas of Practice & Qualifications</h2>
-      <div class="edu-card">
-        <div class="edu-header" id="eduToggle">
+      <div class="expandable-card">
+        <div class="card-header" id="eduToggle">
           <h3>Education ⸻</h3>
           <i class="fas fa-chevron-down" id="eduIcon"></i>
         </div>
-        <div class="edu-content" id="eduContent">
-          <div class="edu-item">
+        <div class="card-content" id="eduContent">
+          <div class="content-item">
             <h4>Bachelor of Laws (LL.B)</h4>
             <div class="meta">Jagannath University, Dhaka</div>
             <div class="date">2023</div>
           </div>
-          <div class="edu-item">
+          <div class="content-item">
             <h4>Master of Laws (LL.M)</h4>
             <div class="meta">Jagannath University, Dhaka</div>
             <div class="date">Present (continuing)</div>
-          </div>
-          <div class="edu-item">
-            <h4>Higher Secondary Certificate (HSC)</h4>
-            <div class="meta">Patharghata College, Barguna</div>
-            <div class="date">2019</div>
-          </div>
-          <div class="edu-item">
-            <h4>Secondary School Certificate (SSC)</h4>
-            <div class="meta">Kalmegha Muslim Secondary School, Barguna</div>
-            <div class="date">2017</div>
           </div>
         </div>
       </div>
@@ -961,7 +991,7 @@
         <div class="project-item">
           <span class="project-tag">Seminar 2023</span>
           <h4 style="font-size: 1.6rem; color: var(--deep-teal);">Labour Law Seminar</h4>
-          <p>Attended seminar organized by 'Ogrogani Foundation' on 26 May 2023. Explored contemporary labour issues, legal reforms, and workplace rights under Bangladesh labour legislation.</p>
+          <p>Attended seminar organized by 'Ogrogami Foundation' on 26 May 2023. Explored contemporary labour issues, legal reforms, and workplace rights under Bangladesh labour legislation.</p>
         </div>
         <div class="project-item">
           <span class="project-tag">ICT Division, EDGE Project</span>
@@ -985,7 +1015,7 @@
         </div>
         <div class="lead-card">
           <i class="fas fa-hands-helping"></i>
-          <h4 style="font-size: 1.6rem;">Leo Club (Lions International)</h4>
+          <h4 style="font-size: 1.6rem;">Jagannath University Leo Club</h4>
           <span class="lead-role" style="color: var(--gold); display: block; margin-bottom: 10px; font-weight: 600;">Former President</span>
           <p>Directed community service, charity events, and youth leadership programs. Developed public relations & volunteer coordination across multiple districts.</p>
         </div>
@@ -993,22 +1023,28 @@
     </div>
   </section>
 
-  <!-- REFERENCES -->
+  <!-- REFERENCES (Expandable) -->
   <section style="padding: 70px 0;">
     <div class="container">
       <h2 class="section-title">References</h2>
-      <div class="ref-grid">
-        <div class="ref-card">
-          <h4 style="font-size: 1.4rem; color: var(--deep-teal);">Christine Richardson</h4>
-          <div class="title" style="color: var(--terracotta); font-weight: 600;">Associate Professor</div>
-          <div class="inst">Dept. of Law & Land Admin, Jagannath University</div>
-          <div class="contact" style="margin-top: 15px;"><i class="fas fa-envelope" style="color: var(--gold);"></i> christiectg@yahoo.com<br><i class="fas fa-phone" style="color: var(--gold);"></i> +8801716-046874</div>
+      <div class="expandable-card">
+        <div class="card-header" id="refToggle">
+          <h3>Professional References ⸻</h3>
+          <i class="fas fa-chevron-down" id="refIcon"></i>
         </div>
-        <div class="ref-card">
-          <h4 style="font-size: 1.4rem; color: var(--deep-teal);">Ayesha Saleh</h4>
-          <div class="title" style="color: var(--terracotta); font-weight: 600;">Assistant Professor</div>
-          <div class="inst">Dept. of Law & Land Admin, Jagannath University</div>
-          <div class="contact" style="margin-top: 15px;"><i class="fas fa-envelope" style="color: var(--gold);"></i> ayesha.mhd@gmail.com<br><i class="fas fa-phone" style="color: var(--gold);"></i> +8801671-424945</div>
+        <div class="card-content" id="refContent">
+          <div class="content-item">
+            <h4>Christine Richardson</h4>
+            <div class="meta">Associate Professor</div>
+            <div>Dept. of Law & Land Admin, Jagannath University</div>
+            <div class="contact" style="margin-top: 10px;"><i class="fas fa-envelope" style="color: var(--gold);"></i> christiectg@yahoo.com<br><i class="fas fa-phone" style="color: var(--gold);"></i> +8801716-046874</div>
+          </div>
+          <div class="content-item">
+            <h4>Ayesha Saleh</h4>
+            <div class="meta">Assistant Professor</div>
+            <div>Dept. of Law & Land Admin, Jagannath University</div>
+            <div class="contact" style="margin-top: 10px;"><i class="fas fa-envelope" style="color: var(--gold);"></i> ayesha.mhd@gmail.com<br><i class="fas fa-phone" style="color: var(--gold);"></i> +8801671-424945</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1022,23 +1058,55 @@
         <div class="contact-info-box">
           <h3 style="font-size: 2.4rem; color: var(--deep-teal);">Imam Hasan<br><span style="font-size: 1.3rem; color: var(--terracotta);">Associate Lawyer</span></h3>
           <div class="contact-line"><i class="fas fa-map-pin"></i> 110/A, Sarat Gupta Road, Narinda, Dhaka-1100</div>
-          <div class="contact-line"><i class="fas fa-phone-alt"></i> +880 1721-129467</div>
-          <div class="contact-line"><i class="fas fa-envelope"></i> ihnaiem333@gmail.com</div>
-          <div class="contact-line"><i class="fab fa-linkedin"></i> linkedin.com/in/imam333hasan</div>
+          <div class="contact-line"><i class="fas fa-phone-alt"></i> <a href="tel:+8801721129467">+880 1721-129467</a></div>
+          <div class="contact-line"><i class="fas fa-envelope"></i> <a href="mailto:ihnaiem333@gmail.com">ihnaiem333@gmail.com</a></div>
+          
           <div class="social-links">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:ihnaiem333@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.facebook.com/imam333hasan" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/imam333hasan" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/imam333hasan" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.threads.net/@imam333hasan" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
+            <a href="https://www.linkedin.com/in/imam333hasan" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/qr/ULMJ5PYVD3GPJ1" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="http://t.me/imam333hasan" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
           </div>
         </div>
+        
         <div class="contact-form">
-          <h3 style="font-size: 2rem; color: var(--deep-teal); margin-bottom: 25px;">Schedule a meeting</h3>
-          <form id="contactForm">
-            <div class="form-group"><input type="text" placeholder="Full name" required></div>
-            <div class="form-group"><input type="email" placeholder="Email address" required></div>
-            <div class="form-group"><input type="text" placeholder="Subject"></div>
-            <div class="form-group"><textarea rows="5" placeholder="Brief description of legal matter..."></textarea></div>
-            <button type="submit" class="btn-gold" style="width:100%;">SEND INQUIRY</button>
+          <h3 style="font-size: 2rem; color: var(--deep-teal); margin-bottom: 25px;">Book an Appointment</h3>
+          <form id="appointmentForm">
+            <div class="appointment-options">
+              <div class="form-group">
+                <input type="date" class="appointment-field" id="appointmentDate" required>
+              </div>
+              <div class="form-group">
+                <input type="time" class="appointment-field" id="appointmentTime" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Full name" id="fullName" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email address" id="email" required>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Phone number" id="phone" required>
+            </div>
+            <div class="form-group">
+              <select id="consultationType" required>
+                <option value="" disabled selected>Select consultation type</option>
+                <option value="Corporate Law">Corporate Law</option>
+                <option value="Civil Litigation">Civil Litigation</option>
+                <option value="Contract Drafting">Contract Drafting</option>
+                <option value="Legal Advisory">Legal Advisory</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea rows="4" placeholder="Brief description of your legal matter..." id="message" required></textarea>
+            </div>
+            <button type="submit" class="btn-gold" style="width:100%;">SEND INQUIRY <i class="fas fa-paper-plane" style="margin-left: 10px;"></i></button>
           </form>
         </div>
       </div>
@@ -1062,10 +1130,9 @@
         <a href="#experience">EXPERIENCE</a>
         <a href="#contact">CONTACT</a>
         <a href="#media">INTERNSHIP</a>
-        <a href="#">REVIEWS</a>
       </div>
       <p style="opacity: 0.7;">Present: 110/A Sarat Gupta Road, Narinda · Dhaka, Bangladesh</p>
-      <p style="opacity: 0.7;">Permanent: Village: Kalmegha, PO: Kalmegha, Patharghata, Barguna-8720</p>
+      <p style="opacity: 0.7;">Permanent: Kalmegha, Patharghata, Barguna - 8720</p>
       <p style="opacity: 0.5; margin-top: 20px;">© 2025 Imam Hasan · Associate Lawyer at Azad & Company</p>
     </div>
   </footer>
@@ -1107,6 +1174,16 @@
         eduIcon.classList.toggle('fa-chevron-up');
       });
 
+      // Expandable references
+      const refToggle = document.getElementById('refToggle');
+      const refContent = document.getElementById('refContent');
+      const refIcon = document.getElementById('refIcon');
+      refToggle.addEventListener('click', ()=>{
+        refContent.classList.toggle('show');
+        refIcon.classList.toggle('fa-chevron-down');
+        refIcon.classList.toggle('fa-chevron-up');
+      });
+
       // Back to top
       const backBtn = document.getElementById('backTop');
       window.addEventListener('scroll', ()=>{
@@ -1115,10 +1192,54 @@
       });
       backBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
 
-      // Contact form
-      document.getElementById('contactForm').addEventListener('submit', function(e){
+      // Appointment form submission - sends email using mailto
+      document.getElementById('appointmentForm').addEventListener('submit', function(e){
         e.preventDefault();
-        alert('Thank you. Imam Hasan will respond within 24 hours.');
+        
+        // Get form values
+        const date = document.getElementById('appointmentDate').value;
+        const time = document.getElementById('appointmentTime').value;
+        const name = document.getElementById('fullName').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const consultType = document.getElementById('consultationType').value;
+        const message = document.getElementById('message').value;
+        
+        // Format date for better readability
+        const formattedDate = new Date(date).toLocaleDateString('en-US', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+        
+        // Create email subject and body
+        const subject = `Appointment Request: ${name} - ${consultType}`;
+        const body = `New Appointment Request Details:
+        
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Date: ${formattedDate}
+Time: ${time}
+Consultation Type: ${consultType}
+
+Message:
+${message}
+
+---
+This appointment request was sent from your website.`;
+        
+        // Create mailto link
+        const mailtoLink = `mailto:ihnaiem333@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Open default email client
+        window.location.href = mailtoLink;
+        
+        // Show confirmation
+        alert('Your appointment request has been prepared. Please send the email from your default email client.');
+        
+        // Reset form
         this.reset();
       });
 
