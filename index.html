@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>Imam Hasan · Associate Lawyer | Azad & Company</title>
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +36,8 @@
       line-height: 1.6;
       font-weight: 400;
       overflow-x: hidden;
+      width: 100%;
+      position: relative;
     }
 
     h1, h2, h3, h4, .logo, .nav-links, .footer-logo {
@@ -53,7 +55,7 @@
       width: 90%;
       max-width: 1300px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 15px;
     }
 
     /* ===== MODERN HEADER ===== */
@@ -61,7 +63,7 @@
       position: fixed;
       width: 100%;
       top: 0;
-      background: rgba(251, 247, 240, 0.95);
+      background: rgba(251, 247, 240, 0.98);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       z-index: 1000;
@@ -72,18 +74,18 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 0;
+      padding: 15px 0;
     }
 
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 12px;
     }
 
     .logo-img {
-      width: 55px;
-      height: 55px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
       overflow: hidden;
       display: flex;
@@ -93,6 +95,7 @@
       border: 2px solid var(--gold);
       box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
       transition: var(--transition);
+      flex-shrink: 0;
     }
     
     .logo-img:hover {
@@ -109,7 +112,7 @@
     }
 
     .logo {
-      font-size: 2.2rem;
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
       font-weight: 800;
       line-height: 1.1;
       color: var(--deep-teal);
@@ -120,25 +123,33 @@
     .logo span {
       color: var(--terracotta);
       font-weight: 500;
-      font-size: 1rem;
+      font-size: clamp(0.7rem, 2.5vw, 1rem);
       display: block;
       font-family: 'Inter', sans-serif;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       text-transform: uppercase;
     }
 
     .nav-links {
       display: flex;
-      gap: 2.5rem;
+      gap: 1.5rem;
       font-size: 0.9rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
+    
+    @media (min-width: 1200px) {
+      .nav-links {
+        gap: 2.5rem;
+      }
+    }
+    
     .nav-links a {
       color: var(--deep-teal);
       position: relative;
       padding-bottom: 5px;
+      white-space: nowrap;
     }
     .nav-links a::after {
       content: '';
@@ -155,14 +166,15 @@
     }
 
     .contact-phone {
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 600;
       color: var(--deep-teal);
       border: 2px solid var(--gold);
-      padding: 8px 20px;
+      padding: 6px 15px;
       border-radius: 40px;
       transition: var(--transition);
       background: transparent;
+      white-space: nowrap;
     }
     .contact-phone:hover {
       background: var(--gold);
@@ -184,14 +196,14 @@
       display: flex;
       align-items: center;
       background: linear-gradient(135deg, var(--cream) 0%, #fff 100%);
-      padding: 140px 0 80px;
+      padding: 120px 0 60px;
       position: relative;
       overflow: hidden;
     }
 
     .hero::before {
       content: "⚖️";
-      font-size: 30rem;
+      font-size: clamp(15rem, 50vw, 30rem);
       opacity: 0.02;
       position: absolute;
       right: -50px;
@@ -202,29 +214,42 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 60px;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
       align-items: center;
       position: relative;
       z-index: 2;
+    }
+
+    @media (max-width: 1000px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
     }
 
     .hero-left {
       padding-right: 20px;
     }
 
+    @media (max-width: 1000px) {
+      .hero-left {
+        padding-right: 0;
+      }
+    }
+
     .firm-name {
       font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
       color: var(--terracotta);
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       font-weight: 600;
     }
 
     .hero-left h1 {
-      font-size: 5rem;
+      font-size: clamp(2.5rem, 8vw, 5rem);
       font-weight: 900;
       line-height: 1;
       margin-bottom: 20px;
@@ -235,13 +260,14 @@
     }
 
     .hero-left h2 {
-      font-size: 1.5rem;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
       font-weight: 400;
       color: var(--charcoal);
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       font-family: 'Inter', sans-serif;
       border-left: 4px solid var(--gold);
-      padding-left: 20px;
+      padding-left: 15px;
+      line-height: 1.4;
     }
     
     .hero-left h2 a {
@@ -249,6 +275,7 @@
       font-weight: 600;
       border-bottom: 2px solid var(--gold);
       transition: var(--transition);
+      word-break: break-word;
     }
     
     .hero-left h2 a:hover {
@@ -257,13 +284,13 @@
     }
 
     .address-block {
-      margin: 40px 0 30px;
-      font-size: 1.1rem;
+      margin: 30px 0 25px;
+      font-size: 1rem;
       color: var(--deep-teal);
-      line-height: 1.8;
+      line-height: 1.7;
       background: rgba(212, 175, 55, 0.05);
-      padding: 25px;
-      border-radius: 0 20px 20px 0;
+      padding: 20px;
+      border-radius: 0 15px 15px 0;
       border-left: 4px solid var(--gold);
     }
     
@@ -271,6 +298,7 @@
       color: var(--terracotta);
       display: block;
       margin-top: 10px;
+      font-size: 0.95rem;
     }
     
     .address-block strong:first-of-type {
@@ -281,34 +309,62 @@
       margin-top: 15px;
       padding-top: 15px;
       border-top: 1px dashed var(--gold);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
     }
     
     .contact-details a {
       color: var(--deep-teal);
       transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.95rem;
+      word-break: break-all;
     }
     
     .contact-details a:hover {
       color: var(--terracotta);
+    }
+    
+    @media (max-width: 480px) {
+      .contact-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
     }
 
     .btn-gold {
       background: linear-gradient(135deg, var(--deep-teal), #1e5a5a);
       border: none;
       color: var(--white);
-      padding: 16px 48px;
+      padding: 14px 35px;
       font-family: 'Inter', sans-serif;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       cursor: pointer;
       transition: var(--transition);
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       border-radius: 40px;
       box-shadow: 0 10px 20px -5px rgba(26, 75, 75, 0.3);
       position: relative;
       overflow: hidden;
+      width: fit-content;
+    }
+
+    @media (max-width: 480px) {
+      .btn-gold {
+        width: 100%;
+        padding: 14px 20px;
+      }
     }
 
     .btn-gold::before {
@@ -339,13 +395,20 @@
     }
 
     .photo-frame {
-      max-width: 450px;
+      max-width: 400px;
       width: 100%;
       clip-path: polygon(20% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 20%);
       background: var(--gold);
-      padding: 8px;
+      padding: 6px;
       box-shadow: var(--shadow-hover);
       transition: var(--transition);
+    }
+
+    @media (max-width: 768px) {
+      .photo-frame {
+        max-width: 350px;
+        margin: 0 auto;
+      }
     }
 
     .photo-frame:hover {
@@ -363,41 +426,59 @@
 
     .gold-quote {
       position: absolute;
-      bottom: -20px;
-      right: -20px;
+      bottom: -15px;
+      right: -10px;
       background: var(--white);
-      padding: 15px 25px;
-      box-shadow: 8px 8px 0 var(--gold);
+      padding: 12px 20px;
+      box-shadow: 6px 6px 0 var(--gold);
       text-align: center;
-      min-width: 180px;
+      min-width: 160px;
+    }
+    
+    @media (max-width: 480px) {
+      .gold-quote {
+        padding: 10px 15px;
+        min-width: 140px;
+        right: 0;
+      }
     }
     
     .gold-quote .name {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: var(--deep-teal);
       font-family: 'Playfair Display', serif;
     }
     
     .gold-quote .title {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: var(--terracotta);
       font-weight: 600;
       margin: 2px 0;
     }
     
     .gold-quote .firm {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: var(--gold);
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
 
     /* ===== MODERN SECTIONS ===== */
+    section {
+      padding: 60px 0;
+    }
+    
+    @media (max-width: 768px) {
+      section {
+        padding: 40px 0;
+      }
+    }
+
     .section-title {
-      font-size: 3.2rem;
+      font-size: clamp(2rem, 6vw, 3.2rem);
       color: var(--deep-teal);
-      margin-bottom: 50px;
+      margin-bottom: 35px;
       font-weight: 800;
       position: relative;
       display: inline-block;
@@ -405,9 +486,9 @@
     .section-title:after {
       content: '';
       position: absolute;
-      bottom: -15px;
+      bottom: -12px;
       left: 0;
-      width: 100px;
+      width: 70px;
       height: 4px;
       background: linear-gradient(90deg, var(--gold), var(--terracotta));
       border-radius: 2px;
@@ -417,13 +498,20 @@
     .expandable-card {
       background: var(--white);
       border: none;
-      padding: 35px;
+      padding: 25px;
       margin-bottom: 25px;
-      border-radius: 0 30px 30px 0;
+      border-radius: 0 20px 20px 0;
       border-left: 6px solid var(--gold);
       box-shadow: var(--shadow-sm);
       transition: var(--transition);
     }
+    
+    @media (max-width: 768px) {
+      .expandable-card {
+        padding: 20px;
+      }
+    }
+    
     .expandable-card:hover {
       box-shadow: var(--shadow-hover);
     }
@@ -434,11 +522,11 @@
       cursor: pointer;
     }
     .card-header h3 {
-      font-size: 2rem;
+      font-size: clamp(1.5rem, 4vw, 2rem);
       color: var(--deep-teal);
     }
     .card-header i {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       color: var(--terracotta);
       transition: transform 0.4s;
     }
@@ -448,54 +536,84 @@
       transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .card-content.show {
-      max-height: 500px;
+      max-height: 800px;
     }
     .content-item {
-      margin: 30px 0 15px;
+      margin: 25px 0 15px;
       padding: 20px;
       background: linear-gradient(135deg, var(--cream) 0%, #fff 100%);
       border-radius: 12px;
     }
+    
+    @media (max-width: 768px) {
+      .content-item {
+        padding: 15px;
+        margin: 20px 0 10px;
+      }
+    }
+    
     .content-item h4 {
-      font-size: 1.4rem;
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
       color: var(--deep-teal);
+      margin-bottom: 5px;
     }
     .content-item .meta {
       color: var(--terracotta);
       font-weight: 600;
+      font-size: 0.95rem;
     }
     .content-item .date {
       color: var(--charcoal);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       opacity: 0.7;
+    }
+    
+    .content-item .contact-info {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      word-break: break-word;
+    }
+    
+    .content-item .contact-info i {
+      color: var(--gold);
+      width: 20px;
+      margin-right: 5px;
     }
 
     .skills-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 30px;
+      gap: 25px;
       margin-top: 25px;
     }
     
+    @media (max-width: 700px) {
+      .skills-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+    
     .skill-category h3 {
-      font-size: 1.5rem;
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
       color: var(--deep-teal);
       margin-bottom: 15px;
       border-left: 3px solid var(--gold);
-      padding-left: 15px;
+      padding-left: 12px;
     }
     
     .skill-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
     }
     .skill-list span {
       background: var(--white);
       border: 1px solid var(--gold);
-      padding: 8px 22px;
+      padding: 6px 18px;
       border-radius: 40px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 500;
       color: var(--deep-teal);
       transition: var(--transition);
@@ -512,38 +630,48 @@
     .exp-card {
       background: linear-gradient(135deg, white 0%, #f8f8f8 100%);
       border: none;
-      padding: 40px;
-      margin-bottom: 30px;
+      padding: 30px;
+      margin-bottom: 25px;
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
-      border-radius: 0 40px 40px 0;
+      gap: 20px;
+      border-radius: 0 30px 30px 0;
       border-left: 4px solid var(--gold);
       box-shadow: var(--shadow-sm);
       transition: var(--transition);
     }
+    
+    @media (max-width: 700px) {
+      .exp-card {
+        padding: 20px;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+    
     .exp-card:hover {
-      transform: translateX(10px);
+      transform: translateX(5px);
       box-shadow: var(--shadow-hover);
     }
     .exp-date {
-      min-width: 140px;
+      min-width: 120px;
       font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       color: var(--terracotta);
       font-weight: 700;
     }
     .exp-detail h4 {
-      font-size: 1.8rem;
+      font-size: clamp(1.3rem, 3.5vw, 1.8rem);
       color: var(--deep-teal);
-      margin-bottom: 8px;
+      margin-bottom: 5px;
+      word-break: break-word;
     }
     .exp-detail .sub {
       color: var(--gold);
       font-weight: 600;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       display: block;
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
     
     .exp-detail a {
@@ -554,18 +682,30 @@
     .exp-detail a:hover {
       color: var(--terracotta);
     }
+    
+    .exp-detail p {
+      font-size: 0.95rem;
+    }
 
     /* Projects grid */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
+      gap: 25px;
     }
+    
+    @media (max-width: 800px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+    
     .project-item {
       background: var(--white);
       border: none;
-      padding: 35px;
-      border-radius: 20px;
+      padding: 25px;
+      border-radius: 15px;
       box-shadow: var(--shadow-sm);
       transition: var(--transition);
       position: relative;
@@ -581,42 +721,67 @@
       background: linear-gradient(90deg, var(--gold), var(--terracotta));
     }
     .project-item:hover {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
       box-shadow: var(--shadow-hover);
     }
     .project-tag {
       color: var(--terracotta);
       font-weight: 600;
       text-transform: uppercase;
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      margin-bottom: 15px;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
       display: block;
+    }
+    
+    .project-item h4 {
+      font-size: clamp(1.3rem, 3vw, 1.6rem);
+      color: var(--deep-teal);
+      margin-bottom: 10px;
+    }
+    
+    .project-item p {
+      font-size: 0.95rem;
     }
 
     /* Leadership cards */
     .leadership-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
+      gap: 25px;
     }
+    
+    @media (max-width: 800px) {
+      .leadership-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+    
     .lead-card {
       border: none;
-      padding: 40px 30px;
+      padding: 30px 25px;
       text-align: center;
       background: var(--white);
-      border-radius: 20px;
+      border-radius: 15px;
       box-shadow: var(--shadow-sm);
       transition: var(--transition);
     }
     .lead-card:hover {
-      transform: scale(1.03);
+      transform: scale(1.02);
       box-shadow: var(--shadow-hover);
     }
     .lead-card i {
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: var(--gold);
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+    }
+    
+    .lead-card h4 {
+      font-size: clamp(1.3rem, 3vw, 1.6rem);
+      color: var(--deep-teal);
+      margin-bottom: 10px;
+      word-break: break-word;
     }
     
     .lead-card a {
@@ -627,22 +792,41 @@
     .lead-card a:hover {
       color: var(--terracotta);
     }
+    
+    .lead-card p {
+      font-size: 0.95rem;
+    }
 
     /* Contact section */
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 30px;
     }
+    
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+    }
+    
     .contact-info-box {
       background: var(--white);
       border: none;
-      padding: 45px;
-      border-radius: 20px;
+      padding: 35px;
+      border-radius: 15px;
       box-shadow: var(--shadow-sm);
       position: relative;
       overflow: hidden;
     }
+    
+    @media (max-width: 768px) {
+      .contact-info-box {
+        padding: 25px;
+      }
+    }
+    
     .contact-info-box::after {
       content: '';
       position: absolute;
@@ -655,88 +839,128 @@
       border-radius: 50%;
       transform: translate(30px, 30px);
     }
+    
+    .contact-info-box h3 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      color: var(--deep-teal);
+      margin-bottom: 20px;
+      word-break: break-word;
+    }
+    
+    .contact-info-box h3 span {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--terracotta);
+      display: block;
+      margin-top: 5px;
+    }
+    
     .contact-line {
       display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 25px;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+      word-break: break-word;
     }
     .contact-line i {
-      width: 30px;
+      width: 25px;
       color: var(--terracotta);
-      font-size: 1.4rem;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    .contact-line a {
+      color: var(--deep-teal);
+      transition: var(--transition);
+    }
+    
+    .contact-line a:hover {
+      color: var(--terracotta);
     }
     
     .social-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin: 30px 0 20px;
+      gap: 10px;
+      margin: 25px 0 15px;
     }
     .social-links a {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
       border: 2px solid var(--gold);
       color: var(--deep-teal);
       transition: var(--transition);
       border-radius: 50%;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
+    
+    @media (max-width: 480px) {
+      .social-links a {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+      }
+    }
+    
     .social-links a:hover {
       background: var(--gold);
       color: var(--deep-teal);
-      transform: translateY(-5px);
+      transform: translateY(-3px);
     }
 
     .contact-form {
       background: var(--white);
       border: none;
-      padding: 45px;
-      border-radius: 20px;
+      padding: 35px;
+      border-radius: 15px;
       box-shadow: var(--shadow-sm);
+    }
+    
+    @media (max-width: 768px) {
+      .contact-form {
+        padding: 25px;
+      }
+    }
+    
+    .contact-form h3 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      color: var(--deep-teal);
+      margin-bottom: 20px;
     }
     
     .appointment-options {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
     
-    .appointment-field {
-      width: 100%;
-      padding: 14px 20px;
-      border: 2px solid transparent;
-      background: var(--cream);
-      border-radius: 12px;
-      font-family: 'Inter', sans-serif;
-      transition: var(--transition);
+    @media (max-width: 480px) {
+      .appointment-options {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
     }
     
-    .appointment-field:focus {
-      outline: none;
-      border-color: var(--gold);
-      background: var(--white);
-      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
-    }
-    
-    .form-group {
-      margin-bottom: 20px;
-    }
+    .appointment-field,
     .form-group input, 
     .form-group textarea,
     .form-group select {
       width: 100%;
-      padding: 14px 20px;
+      padding: 12px 18px;
       border: 2px solid transparent;
       background: var(--cream);
-      border-radius: 12px;
+      border-radius: 10px;
       font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
       transition: var(--transition);
     }
+    
+    .appointment-field:focus,
     .form-group input:focus,
     .form-group textarea:focus,
     .form-group select:focus {
@@ -745,23 +969,27 @@
       background: var(--white);
       box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
     }
+    
+    .form-group {
+      margin-bottom: 18px;
+    }
 
     /* Footer */
     footer {
       background: var(--deep-teal);
       color: var(--white);
-      padding: 60px 0 30px;
+      padding: 50px 0 25px;
       border-top: 6px solid var(--gold);
       position: relative;
       overflow: hidden;
     }
     footer::before {
       content: "⚖️";
-      font-size: 15rem;
+      font-size: 12rem;
       opacity: 0.03;
       position: absolute;
-      left: -50px;
-      bottom: -50px;
+      left: -40px;
+      bottom: -40px;
       transform: rotate(-15deg);
     }
     .footer-inner {
@@ -770,9 +998,9 @@
       z-index: 2;
     }
     .footer-logo {
-      font-size: 2.5rem;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
       color: var(--white);
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       font-weight: 800;
     }
     .footer-logo span {
@@ -781,15 +1009,15 @@
     .footer-links {
       display: flex;
       justify-content: center;
-      gap: 40px;
-      margin: 30px 0;
+      gap: 25px;
+      margin: 20px 0;
       flex-wrap: wrap;
     }
     .footer-links a {
       color: var(--white);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       opacity: 0.8;
       transition: var(--transition);
     }
@@ -797,16 +1025,23 @@
       opacity: 1;
       color: var(--gold);
     }
+    
+    .footer-inner p {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      word-break: break-word;
+      padding: 0 10px;
+    }
 
     .back-top {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 55px;
-      height: 55px;
+      bottom: 20px;
+      right: 20px;
+      width: 45px;
+      height: 45px;
       background: var(--terracotta);
       color: var(--white);
-      border-radius: 12px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -815,7 +1050,7 @@
       visibility: hidden;
       transition: var(--transition);
       border: none;
-      box-shadow: 0 5px 20px rgba(184, 107, 76, 0.4);
+      box-shadow: 0 5px 15px rgba(184, 107, 76, 0.4);
       z-index: 99;
     }
     .back-top.active {
@@ -824,31 +1059,38 @@
     }
     .back-top:hover {
       background: var(--deep-teal);
-      transform: translateY(-5px);
+      transform: translateY(-3px);
     }
 
-    /* Mobile */
+    /* Mobile menu */
     @media (max-width: 1000px) {
-      .hero-grid { 
-        grid-template-columns: 1fr; 
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--cream);
+        padding: 25px;
+        box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        z-index: 999;
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
       }
-      .hero-left h1 {
-        font-size: 3.5rem;
+      
+      .nav-links a {
+        font-size: 1rem;
+        display: block;
       }
-      .nav-links { 
-        display: none; 
+      
+      .hamburger {
+        display: block;
       }
-      .hamburger { 
-        display: block; 
-      }
-      .contact-phone { 
-        display: none; 
-      }
-      .projects-grid, .leadership-grid, .contact-grid, .skills-container {
-        grid-template-columns: 1fr;
-      }
-      .gold-quote {
-        right: 0;
+      
+      .contact-phone {
+        display: none;
       }
     }
   </style>
@@ -892,11 +1134,11 @@
             <strong>🏠 Permanent Address:</strong>
             Kalmegha, Patharghata, Barguna - 8720<br>
             <div class="contact-details">
-              <i class="fas fa-phone-alt" style="color: var(--gold);"></i> <a href="tel:+8801721129467">+880 1721-129467</a> &nbsp;&nbsp; 
-              <i class="fas fa-envelope" style="color: var(--gold);"></i> <a href="mailto:ihnaiem333@gmail.com">ihnaiem333@gmail.com</a>
+              <a href="tel:+8801721129467"><i class="fas fa-phone-alt"></i> +880 1721-129467</a>
+              <a href="mailto:ihnaiem333@gmail.com"><i class="fas fa-envelope"></i> ihnaiem333@gmail.com</a>
             </div>
           </div>
-          <a href="#contact" class="btn-gold">BOOK AN APPOINTMENT <i class="fas fa-calendar-alt" style="margin-left: 10px;"></i></a>
+          <a href="#contact" class="btn-gold">BOOK AN APPOINTMENT <i class="fas fa-calendar-alt"></i></a>
         </div>
         <div class="hero-right">
           <div class="photo-frame">
@@ -914,7 +1156,7 @@
   </section>
 
   <!-- ABOUT + EXPANDABLE EDUCATION -->
-  <section id="about" style="padding: 70px 0;">
+  <section id="about">
     <div class="container">
       <h2 class="section-title">Areas of Practice & Qualifications</h2>
       <div class="expandable-card">
@@ -937,8 +1179,8 @@
       </div>
 
       <!-- Skills / Legal Areas -->
-      <div style="margin-top: 40px;">
-        <h3 style="font-size: 2rem; color: var(--deep-teal); margin-bottom: 20px;">Skills & Expertise</h3>
+      <div style="margin-top: 30px;">
+        <h3 style="font-size: clamp(1.6rem, 4vw, 2rem); color: var(--deep-teal); margin-bottom: 20px;">Skills & Expertise</h3>
         <div class="skills-container">
           <div class="skill-category">
             <h3>Legal Skills</h3>
@@ -955,13 +1197,13 @@
             </div>
           </div>
         </div>
-        <p style="margin-top: 30px;"><span style="color: var(--gold); font-size: 1.2rem;">◈</span> Bar Council eligibility – awaiting enrollment</p>
+        <p style="margin-top: 25px;"><span style="color: var(--gold); font-size: 1.2rem;">◈</span> Bar Council eligibility – awaiting enrollment</p>
       </div>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
-  <section id="experience" style="background: var(--cream); padding: 70px 0;">
+  <section id="experience" style="background: var(--cream);">
     <div class="container">
       <h2 class="section-title">Professional Experience</h2>
       <div class="exp-card">
@@ -984,18 +1226,18 @@
   </section>
 
   <!-- PROJECTS -->
-  <section style="padding: 70px 0;">
+  <section>
     <div class="container">
       <h2 class="section-title">Professional Development</h2>
       <div class="projects-grid">
         <div class="project-item">
           <span class="project-tag">Seminar 2023</span>
-          <h4 style="font-size: 1.6rem; color: var(--deep-teal);">Labour Law Seminar</h4>
+          <h4>Labour Law Seminar</h4>
           <p>Attended seminar organized by 'Ogrogami Foundation' on 26 May 2023. Explored contemporary labour issues, legal reforms, and workplace rights under Bangladesh labour legislation.</p>
         </div>
         <div class="project-item">
           <span class="project-tag">ICT Division, EDGE Project</span>
-          <h4 style="font-size: 1.6rem; color: var(--deep-teal);">Computer Fundamentals & Office Apps</h4>
+          <h4>Computer Fundamentals & Office Apps</h4>
           <p>60‑hour training (May–Dec 2024) by Dept. of CSE, Jagannath University, under Bangladesh Computer Council. Enhanced MS Office, file management, and ICT productivity skills.</p>
         </div>
       </div>
@@ -1003,20 +1245,20 @@
   </section>
 
   <!-- LEADERSHIP -->
-  <section id="leadership" style="background: var(--cream); padding: 70px 0;">
+  <section id="leadership" style="background: var(--cream);">
     <div class="container">
       <h2 class="section-title">Leadership & Bar Association Activities</h2>
       <div class="leadership-grid">
         <div class="lead-card">
           <i class="fas fa-laptop-code"></i>
-          <h4 style="font-size: 1.6rem;"><a href="https://jnuits.org.bd/" target="_blank">Jagannath University IT Society</a></h4>
-          <span class="lead-role" style="color: var(--gold); display: block; margin-bottom: 10px; font-weight: 600;">President</span>
+          <h4><a href="https://jnuits.org.bd/" target="_blank">Jagannath University IT Society</a></h4>
+          <span style="color: var(--gold); display: block; margin-bottom: 10px; font-weight: 600;">President</span>
           <p>Led planning and execution of tech & cultural events; managed cross‑functional teams; fostered student ICT engagement. Represented the society at university forums.</p>
         </div>
         <div class="lead-card">
           <i class="fas fa-hands-helping"></i>
-          <h4 style="font-size: 1.6rem;">Jagannath University Leo Club</h4>
-          <span class="lead-role" style="color: var(--gold); display: block; margin-bottom: 10px; font-weight: 600;">Former President</span>
+          <h4>Jagannath University Leo Club</h4>
+          <span style="color: var(--gold); display: block; margin-bottom: 10px; font-weight: 600;">Former President</span>
           <p>Directed community service, charity events, and youth leadership programs. Developed public relations & volunteer coordination across multiple districts.</p>
         </div>
       </div>
@@ -1024,7 +1266,7 @@
   </section>
 
   <!-- REFERENCES (Expandable) -->
-  <section style="padding: 70px 0;">
+  <section>
     <div class="container">
       <h2 class="section-title">References</h2>
       <div class="expandable-card">
@@ -1036,14 +1278,20 @@
           <div class="content-item">
             <h4>Christine Richardson</h4>
             <div class="meta">Associate Professor</div>
-            <div>Dept. of Law & Land Admin, Jagannath University</div>
-            <div class="contact" style="margin-top: 10px;"><i class="fas fa-envelope" style="color: var(--gold);"></i> christiectg@yahoo.com<br><i class="fas fa-phone" style="color: var(--gold);"></i> +8801716-046874</div>
+            <div style="margin-bottom: 5px;">Department of Law and Land Administration, Jagannath University</div>
+            <div class="contact-info">
+              <i class="fas fa-envelope"></i> <a href="mailto:christiectg@yahoo.com" style="color: var(--deep-teal);">christiectg@yahoo.com</a><br>
+              <i class="fas fa-phone"></i> <a href="tel:+8801716046874" style="color: var(--deep-teal);">+8801716-046874</a>
+            </div>
           </div>
           <div class="content-item">
             <h4>Ayesha Saleh</h4>
             <div class="meta">Assistant Professor</div>
-            <div>Dept. of Law & Land Admin, Jagannath University</div>
-            <div class="contact" style="margin-top: 10px;"><i class="fas fa-envelope" style="color: var(--gold);"></i> ayesha.mhd@gmail.com<br><i class="fas fa-phone" style="color: var(--gold);"></i> +8801671-424945</div>
+            <div style="margin-bottom: 5px;">Department of Law and Land Administration, Jagannath University</div>
+            <div class="contact-info">
+              <i class="fas fa-envelope"></i> <a href="mailto:ayesha.mhd@gmail.com" style="color: var(--deep-teal);">ayesha.mhd@gmail.com</a><br>
+              <i class="fas fa-phone"></i> <a href="tel:+8801671424945" style="color: var(--deep-teal);">+8801671-424945</a>
+            </div>
           </div>
         </div>
       </div>
@@ -1051,12 +1299,12 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" style="background: var(--cream); padding: 70px 0;">
+  <section id="contact" style="background: var(--cream);">
     <div class="container">
       <h2 class="section-title">Contact & Consultation</h2>
       <div class="contact-grid">
         <div class="contact-info-box">
-          <h3 style="font-size: 2.4rem; color: var(--deep-teal);">Imam Hasan<br><span style="font-size: 1.3rem; color: var(--terracotta);">Associate Lawyer</span></h3>
+          <h3>Imam Hasan<br><span>Associate Lawyer</span></h3>
           <div class="contact-line"><i class="fas fa-map-pin"></i> 110/A, Sarat Gupta Road, Narinda, Dhaka-1100</div>
           <div class="contact-line"><i class="fas fa-phone-alt"></i> <a href="tel:+8801721129467">+880 1721-129467</a></div>
           <div class="contact-line"><i class="fas fa-envelope"></i> <a href="mailto:ihnaiem333@gmail.com">ihnaiem333@gmail.com</a></div>
@@ -1074,7 +1322,7 @@
         </div>
         
         <div class="contact-form">
-          <h3 style="font-size: 2rem; color: var(--deep-teal); margin-bottom: 25px;">Book an Appointment</h3>
+          <h3>Book an Appointment</h3>
           <form id="appointmentForm">
             <div class="appointment-options">
               <div class="form-group">
@@ -1091,7 +1339,7 @@
               <input type="email" placeholder="Email address" id="email" required>
             </div>
             <div class="form-group">
-              <input type="text" placeholder="Phone number" id="phone" required>
+              <input type="tel" placeholder="Phone number" id="phone" required>
             </div>
             <div class="form-group">
               <select id="consultationType" required>
@@ -1106,7 +1354,7 @@
             <div class="form-group">
               <textarea rows="4" placeholder="Brief description of your legal matter..." id="message" required></textarea>
             </div>
-            <button type="submit" class="btn-gold" style="width:100%;">SEND INQUIRY <i class="fas fa-paper-plane" style="margin-left: 10px;"></i></button>
+            <button type="submit" class="btn-gold" style="width:100%;">SEND INQUIRY <i class="fas fa-paper-plane"></i></button>
           </form>
         </div>
       </div>
@@ -1114,10 +1362,10 @@
   </section>
 
   <!-- MEDIA / INTERNSHIP -->
-  <section id="media" style="padding: 50px 0;">
+  <section id="media">
     <div class="container" style="text-align: center;">
-      <span style="color: var(--gold); letter-spacing: 3px; font-weight: 600;">⚡ IN THE MEDIA · INTERNSHIP PROGRAM · PUBLICATIONS ⚡</span>
-      <p style="margin-top: 20px; font-size: 1.2rem;">Featured in university law journal & local bar bulletin. Internship mentorship available for final-year law students. <a href="#contact" style="color: var(--terracotta); font-weight: 600; border-bottom: 2px solid var(--gold);">→ Inquire within</a></p>
+      <span style="color: var(--gold); letter-spacing: 2px; font-weight: 600; font-size: 0.9rem;">⚡ IN THE MEDIA · INTERNSHIP PROGRAM · PUBLICATIONS ⚡</span>
+      <p style="margin-top: 15px; font-size: 1.1rem;">Featured in university law journal & local bar bulletin. Internship mentorship available for final-year law students. <a href="#contact" style="color: var(--terracotta); font-weight: 600; border-bottom: 2px solid var(--gold);">→ Inquire within</a></p>
     </div>
   </section>
 
@@ -1131,9 +1379,9 @@
         <a href="#contact">CONTACT</a>
         <a href="#media">INTERNSHIP</a>
       </div>
-      <p style="opacity: 0.7;">Present: 110/A Sarat Gupta Road, Narinda · Dhaka, Bangladesh</p>
-      <p style="opacity: 0.7;">Permanent: Kalmegha, Patharghata, Barguna - 8720</p>
-      <p style="opacity: 0.5; margin-top: 20px;">© 2026 Imam Hasan · Associate Lawyer at Azad & Company</p>
+      <p>Present: 110/A Sarat Gupta Road, Narinda · Dhaka, Bangladesh</p>
+      <p>Permanent: Kalmegha, Patharghata, Barguna - 8720</p>
+      <p style="opacity: 0.5; margin-top: 20px;">© 2025 Imam Hasan · Associate Lawyer at Azad & Company</p>
     </div>
   </footer>
 
@@ -1144,24 +1392,22 @@
       // Mobile menu
       const hamburger = document.querySelector('.hamburger');
       const navLinks = document.querySelector('.nav-links');
+      
       hamburger.addEventListener('click', ()=>{
         if (navLinks.style.display === 'flex') {
           navLinks.style.display = 'none';
         } else {
           navLinks.style.display = 'flex';
-          navLinks.style.flexDirection = 'column';
-          navLinks.style.position = 'absolute';
-          navLinks.style.top = '80px';
-          navLinks.style.left = '0';
-          navLinks.style.width = '100%';
-          navLinks.style.background = 'var(--cream)';
-          navLinks.style.padding = '30px';
-          navLinks.style.boxShadow = '0 20px 30px rgba(0,0,0,0.1)';
-          navLinks.style.zIndex = '999';
-          navLinks.style.backdropFilter = 'blur(10px)';
-          navLinks.style.gap = '20px';
-          navLinks.style.textAlign = 'center';
         }
+      });
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 1000) {
+            navLinks.style.display = 'none';
+          }
+        });
       });
 
       // Expandable education
@@ -1206,12 +1452,19 @@
         const message = document.getElementById('message').value;
         
         // Format date for better readability
-        const formattedDate = new Date(date).toLocaleDateString('en-US', {
-          weekday: 'long',
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        });
+        let formattedDate = date;
+        if (date) {
+          try {
+            formattedDate = new Date(date).toLocaleDateString('en-US', {
+              weekday: 'long',
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            });
+          } catch (e) {
+            formattedDate = date;
+          }
+        }
         
         // Create email subject and body
         const subject = `Appointment Request: ${name} - ${consultType}`;
@@ -1249,10 +1502,24 @@ This appointment request was sent from your website.`;
           e.preventDefault();
           const target = document.querySelector(this.getAttribute('href'));
           if(target) window.scrollTo({top: target.offsetTop - 70, behavior:'smooth'});
-          if (window.innerWidth <= 1000) {
-            navLinks.style.display = 'none';
-          }
         });
+      });
+
+      // Handle window resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 1000) {
+          navLinks.style.display = 'flex';
+          navLinks.style.flexDirection = 'row';
+          navLinks.style.position = 'static';
+          navLinks.style.width = 'auto';
+          navLinks.style.background = 'none';
+          navLinks.style.padding = '0';
+          navLinks.style.boxShadow = 'none';
+          navLinks.style.backdropFilter = 'none';
+          navLinks.style.gap = '2.5rem';
+        } else {
+          navLinks.style.display = 'none';
+        }
       });
     })();
   </script>
