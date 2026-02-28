@@ -2,113 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>Imam Hasan · Associate Lawyer | Azad & Company</title>
-  <!-- Fonts -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Imam Hasan - Associate Lawyer at Azad & Company. Specializing in Corporate & Civil Litigation. President of JnUITS.">
+  <meta name="keywords" content="Imam Hasan, Lawyer Dhaka, Associate Lawyer, Azad & Company, JnUITS, Jagannath University Lawyer">
+  <title>Imam Hasan | Associate Lawyer | Azad & Company</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* ===== MODERN ADVOCATE STYLE ===== */
     :root {
-      --deep-teal: #1a4b4b;
-      --cream: #fbf7f0;
-      --terracotta: #b86b4c;
-      --gold: #d4af37;
-      --charcoal: #2a2a2a;
-      --white: #ffffff;
-      --shadow-sm: 0 10px 30px -10px rgba(26, 75, 75, 0.1);
-      --shadow-hover: 0 20px 40px -15px rgba(26, 75, 75, 0.2);
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      /* আপনার নতুন ব্র্যান্ড কালার প্যালেট */
+      --legal-navy: #0a192f; 
+      --legal-gold: #c5a059;
+      --soft-white: #f8f9fa;
+      --text-gray: #444;
+      --transition: all 0.3s ease;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--cream);
-      color: var(--charcoal);
-      line-height: 1.6;
-      font-weight: 400;
-      overflow-x: hidden;
-      width: 100%;
-      position: relative;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--soft-white); color: var(--text-gray); }
 
-    h1, h2, h3, h4, .logo, .nav-links, .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
-
-    /* ===== MODERN HEADER ===== */
+    /* HEADER & LOGO */
     header {
+      background: var(--legal-navy);
+      padding: 10px 0;
       position: fixed;
       width: 100%;
       top: 0;
-      background: rgba(251, 247, 240, 0.98);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
       z-index: 1000;
-      border-bottom: 2px solid var(--gold);
+      border-bottom: 3px solid var(--legal-gold);
     }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 0;
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo-img {
-      width: 45px;
-      height: 45px;
+    .navbar { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    .logo-box { display: flex; align-items: center; gap: 15px; }
+    .logo-img { 
+      width: 55px; height: 55px; 
+      border: 2px solid var(--legal-gold); 
       border-radius: 50%;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--deep-teal);
-      border: 2px solid var(--gold);
-      box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+      background: white;
+      padding: 2px;
+    }
+
+    .brand-name { color: white; text-decoration: none; }
+    .brand-name h1 { font-family: 'Playfair Display', serif; font-size: 1.5rem; letter-spacing: 1px; }
+    .brand-name span { color: var(--legal-gold); font-size: 0.8rem; display: block; text-transform: uppercase; }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 180px 0 100px;
+      background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('cover.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+    }
+    .hero h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 10px; color: var(--legal-gold); }
+    .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto 30px; }
+
+    /* BUTTONS */
+    .btn-appointment {
+      background: var(--legal-gold);
+      color: var(--legal-navy);
+      padding: 15px 35px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
       transition: var(--transition);
-      flex-shrink: 0;
+      display: inline-block;
+      text-transform: uppercase;
     }
+    .btn-appointment:hover { background: white; transform: translateY(-3px); }
+
+    /* SECTIONS */
+    .section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--legal-navy); margin-bottom: 40px; text-align: center; }
+    .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--legal-gold); margin: 10px auto; }
+
+    /* CARDS */
+    .card { background: white; padding: 30px; border-radius: 10px; border-left: 5px solid var(--legal-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 20px; }
+    .card h3 { color: var(--legal-navy); margin-bottom: 10px; }
+
+    /* FOOTER */
+    footer { background: var(--legal-navy); color: white; padding: 40px 20px; text-align: center; border-top: 5px solid var(--legal-gold); }
     
-    .logo-img:hover {
-      transform: scale(1.05);
-      border-color: var(--terracotta);
-      box-shadow: 0 0 20px rgba(184, 107, 76, 0.4);
+    /* MOBILE MENU */
+    @media (max-width: 768px) {
+      .hero h2 { font-size: 2.5rem; }
+      .nav-links { display: none; } /* সিম্পল রাখার জন্য মোবাইলে হাইড করা হয়েছে */
     }
-    
-    .logo-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <div class="logo-box">
+        <img src="logo.png" alt="Imam Hasan Logo" class="logo-img">
+        <a href="#" class="brand-name">
+          <h1>IMAM HASAN</h1>
+          <span>Associate Lawyer | Azad & Company</span>
+        </a>
+      </div>
+      <a href="tel:+8801721129467" style="color: var(--legal-gold); font-weight: bold; text-decoration: none;"><i class="fas fa-phone"></i> 01721-129467</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="section">
+      <h2>Justice Without Prejudice</h2>
+      <p>Associate Lawyer at Azad & Company | President at JnUITS | Jagannath University Alumnus</p>
+      <a href="#contact" class="btn-appointment">Schedule a Consultation <i class="fas fa-calendar-alt"></i></a>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2 class="section-title">About My Practice</h2>
+    <div class="card">
+      <h3>Corporate & Civil Litigation</h3>
+      <p>Providing expert legal research, drafting pleadings, and assisting in client consultations. Specializing in corporate documentation and civil law compliance.</p>
+    </div>
+    <div class="card">
+      <h3>Academic Foundation</h3>
+      <p>Completed LL.B (Honours) and currently pursuing LL.M at Jagannath University, Dhaka.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Imam Hasan. All Rights Reserved.</p>
+    <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">Managed via GitHub Pages | Powered by Professional Integrity</p>
+  </footer>
+
+</body>
+</html>
     }
 
     .logo {
