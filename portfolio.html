@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imam Hasan · Complete Portfolio</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --deep-teal: #1a4b4b;
+      --cream: #fbf7f0;
+      --terracotta: #b86b4c;
+      --gold: #d4af37;
+      --charcoal: #2a2a2a;
+      --white: #ffffff;
+      --shadow-sm: 0 10px 30px -10px rgba(26, 75, 75, 0.1);
+      --transition: all 0.3s ease;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      background: var(--deep-teal);
+      color: white;
+      padding: 20px 0;
+      border-bottom: 4px solid var(--gold);
+    }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gold);
+    }
+    .back-link a {
+      color: white;
+      text-decoration: none;
+      border: 2px solid var(--gold);
+      padding: 10px 20px;
+      border-radius: 30px;
+    }
+    .back-link a:hover {
+      background: var(--gold);
+      color: var(--deep-teal);
+    }
+    .page-title {
+      font-size: 3rem;
+      color: var(--deep-teal);
+      margin: 40px 0;
+      text-align: center;
+    }
+    .cv-card {
+      background: var(--white);
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      border-left: 6px solid var(--gold);
+      margin-bottom: 40px;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--deep-teal), #1e5a5a);
+      color: white;
+      padding: 15px 40px;
+      border-radius: 40px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
+    }
+    .card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 15px;
+      border-left: 4px solid var(--gold);
+    }
+    .card h3 {
+      color: var(--deep-teal);
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .card h3 i {
+      color: var(--gold);
+      margin-right: 10px;
+    }
+    .skill-tag {
+      background: var(--cream);
+      border: 1px solid var(--gold);
+      padding: 5px 15px;
+      border-radius: 20px;
+      display: inline-block;
+      margin: 5px;
+    }
+    footer {
+      background: var(--deep-teal);
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 50px;
+      border-top: 4px solid var(--gold);
+    }
+    @media (max-width: 768px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo">IMAM HASAN</div>
+      <div class="back-link">
+        <a href="index.html">← BACK TO HOME</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1 class="page-title">Complete Portfolio</h1>
+    
+    <!-- CV Download -->
+    <div class="cv-card">
+      <h2 style="color: var(--deep-teal);">Curriculum Vitae</h2>
+      <p>Download my complete CV with detailed academic and professional history.</p>
+      <a href="imam_hasan_cv.pdf" download class="btn-gold">
+        <i class="fas fa-file-pdf"></i> DOWNLOAD CV (PDF)
+      </a>
+    </div>
+    
+    <!-- Portfolio Grid -->
+    <div class="portfolio-grid">
+      
+      <div class="card">
+        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+        <p><strong>LL.M (International Law)</strong><br>Jagannath University (2024-Present)</p>
+        <p><strong>LL.B</strong><br>Jagannath University (2023)</p>
+      </div>
+      
+      <div class="card">
+        <h3><i class="fas fa-briefcase"></i> Experience</h3>
+        <p><strong>Associate Lawyer</strong><br>Azad & Company (2024-Present)</p>
+        <p><strong>Internship</strong><br>Azad & Company (Dec 2024)</p>
+      </div>
+      
+      <div class="card">
+        <h3><i class="fas fa-trophy"></i> Leadership</h3>
+        <p><strong>President</strong><br>JnUITS</p>
+        <p><strong>Former President</strong><br>Leo Club</p>
+      </div>
+      
+      <div class="card">
+        <h3><i class="fas fa-code"></i> Skills</h3>
+        <div>
+          <span class="skill-tag">Legal Research</span>
+          <span class="skill-tag">Contract Drafting</span>
+          <span class="skill-tag">Corporate Law</span>
+          <span class="skill-tag">MS Office</span>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h3><i class="fas fa-language"></i> Languages</h3>
+        <p><strong>Bengali:</strong> Native</p>
+        <p><strong>English:</strong> Fluent</p>
+      </div>
+      
+      <div class="card">
+        <h3><i class="fas fa-certificate"></i> Certifications</h3>
+        <p>✓ ICT Division Training (2024)</p>
+        <p>✓ Labour Law Seminar (2023)</p>
+      </div>
+    </div>
+    
+    <!-- Bar Status -->
+    <div style="background: var(--white); padding: 20px; border-radius: 15px; text-align: center; border: 2px dashed var(--gold);">
+      <p><strong style="color: var(--gold);">Bar Council:</strong> Awaiting enrollment</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Imam Hasan · Associate Lawyer at Azad & Company</p>
+  </footer>
+</body>
+</html>
