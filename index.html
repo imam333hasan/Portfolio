@@ -4,12 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   
-  <!-- SEO META TAGS - ADDED -->
+  <!-- SEO META TAGS -->
   <meta name="description" content="Imam Hasan - Associate Lawyer at Azad & Company, Dhaka. Specializing in Corporate Law, Civil Litigation, and Contract Drafting. LL.M candidate at Jagannath University with specialization in International Law.">
-  <meta name="keywords" content="Imam Hasan, Lawyer, Azad & Company, Corporate Law, Dhaka, Bangladesh, Legal Services, International Law">
+  <meta name="keywords" content="Imam Hasan, Lawyer, Azad & Company, Corporate Law, Dhaka, Bangladesh, Legal Services, International Law, Labour Law">
   <meta name="author" content="Imam Hasan">
   
   <title>Imam Hasan · Associate Lawyer | Azad & Company</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="favicon.png">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +29,7 @@
       box-sizing: border-box;
     }
 
-    /* ===== MODERN ADVOCATE STYLE ===== */
+    /* ===== MODERN ADVOCATE STYLE WITH DARK MODE ===== */
     :root {
       --deep-teal: #1a4b4b;
       --cream: #fbf7f0;
@@ -37,6 +42,16 @@
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
+    /* DARK MODE VARIABLES */
+    html.dark-mode {
+      --cream: #1a1a1a;
+      --white: #2d2d2d;
+      --charcoal: #e0e0e0;
+      --deep-teal: #7ec8c8;
+      --shadow-sm: 0 10px 30px -10px rgba(126, 200, 200, 0.2);
+      --shadow-hover: 0 20px 40px -15px rgba(126, 200, 200, 0.3);
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--cream);
@@ -46,6 +61,98 @@
       overflow-x: hidden;
       width: 100%;
       position: relative;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* DISCLAIMER MODAL POPUP */
+    .disclaimer-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease;
+    }
+
+    .disclaimer-modal.hidden {
+      display: none;
+    }
+
+    .disclaimer-content {
+      background: var(--white);
+      max-width: 550px;
+      width: 90%;
+      padding: 35px 30px;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      border-top: 5px solid var(--gold);
+      animation: fadeInUp 0.5s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .disclaimer-content i {
+      font-size: 3rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    .disclaimer-content h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--deep-teal);
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .disclaimer-text {
+      text-align: left;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--charcoal);
+      margin: 20px 0;
+      max-height: 60vh;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+
+    .disclaimer-text p {
+      margin-bottom: 12px;
+    }
+
+    .accept-btn {
+      background: linear-gradient(135deg, var(--deep-teal), #1e5a5a);
+      border: none;
+      color: white;
+      padding: 14px 35px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .accept-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(26, 75, 75, 0.3);
     }
 
     h1, h2, h3, h4, .logo, .nav-links, .footer-logo {
@@ -55,7 +162,7 @@
     }
 
     a {
-      text-decoration: none;  /* REMOVES ALL UNDERLINES */
+      text-decoration: none;
       color: inherit;
     }
 
@@ -64,6 +171,40 @@
       max-width: 1300px;
       margin: 0 auto;
       padding: 0 15px;
+    }
+
+    /* ===== DARK MODE TOGGLE ===== */
+    .dark-mode-toggle {
+      position: fixed;
+      top: 100px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--gold);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      z-index: 1001;
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+      transition: var(--transition);
+    }
+
+    .dark-mode-toggle:hover {
+      transform: scale(1.1) rotate(20deg);
+    }
+
+    @media (max-width: 768px) {
+      .dark-mode-toggle {
+        top: 90px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+      }
     }
 
     /* ===== MODERN HEADER ===== */
@@ -76,6 +217,11 @@
       -webkit-backdrop-filter: blur(10px);
       z-index: 1000;
       border-bottom: 2px solid var(--gold);
+      transition: background-color 0.3s ease;
+    }
+
+    html.dark-mode header {
+      background: rgba(26, 26, 26, 0.98);
     }
 
     .navbar {
@@ -128,6 +274,7 @@
       letter-spacing: -0.5px;
       position: relative;
     }
+    
     .logo span {
       color: var(--terracotta);
       font-weight: 500;
@@ -158,11 +305,12 @@
       position: relative;
       padding-bottom: 5px;
       white-space: nowrap;
-      min-height: 44px;  /* TOUCH TARGET IMPROVEMENT */
-      min-width: 44px;   /* TOUCH TARGET IMPROVEMENT */
+      min-height: 44px;
+      min-width: 44px;
       display: inline-flex;
       align-items: center;
     }
+    
     .nav-links a::after {
       content: '';
       position: absolute;
@@ -173,6 +321,7 @@
       background: var(--terracotta);
       transition: width 0.3s ease;
     }
+    
     .nav-links a:hover::after {
       width: 100%;
     }
@@ -187,10 +336,11 @@
       transition: var(--transition);
       background: transparent;
       white-space: nowrap;
-      min-height: 44px;  /* TOUCH TARGET IMPROVEMENT */
+      min-height: 44px;
       display: inline-flex;
       align-items: center;
     }
+    
     .contact-phone:hover {
       background: var(--gold);
       color: var(--deep-teal);
@@ -203,14 +353,14 @@
       font-size: 1.8rem;
       cursor: pointer;
       color: var(--deep-teal);
-      min-height: 44px;  /* TOUCH TARGET IMPROVEMENT */
-      min-width: 44px;   /* TOUCH TARGET IMPROVEMENT */
+      min-height: 44px;
+      min-width: 44px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    /* ===== MODERN HERO - UPDATED WITH PATTERN ===== */
+    /* ===== MODERN HERO ===== */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -220,6 +370,11 @@
       padding: 120px 0 60px;
       position: relative;
       overflow: hidden;
+      transition: background-color 0.3s ease;
+    }
+
+    html.dark-mode .hero {
+      background: linear-gradient(135deg, var(--cream) 0%, #333 100%);
     }
 
     .hero::before {
@@ -267,6 +422,10 @@
       color: var(--terracotta);
       margin-bottom: 15px;
       font-weight: 600;
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.15);
+      padding: 5px 12px;
+      border-radius: 30px;
     }
 
     .hero-left h1 {
@@ -280,7 +439,6 @@
       background-clip: text;
     }
 
-    /* UPDATED HERO TEXT - NO UNDERLINES */
     .hero-left h2 {
       font-size: clamp(1.1rem, 3vw, 1.5rem);
       font-weight: 400;
@@ -295,16 +453,11 @@
     .hero-left h2 a {
       color: var(--deep-teal);
       font-weight: 600;
-      text-decoration: none;  /* NO UNDERLINE */
+      text-decoration: none;
     }
     
     .hero-left h2 a:hover {
       color: var(--terracotta);
-    }
-    
-    .hero-left h2 .designation {
-      color: var(--charcoal);
-      font-weight: 400;
     }
 
     .address-block {
@@ -353,14 +506,6 @@
     .contact-details a:hover {
       color: var(--terracotta);
     }
-    
-    @media (max-width: 480px) {
-      .contact-details {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-    }
 
     .btn-gold {
       background: linear-gradient(135deg, var(--deep-teal), #1e5a5a);
@@ -389,7 +534,7 @@
       .btn-gold {
         width: 100%;
         padding: 14px 20px;
-        min-height: 44px;  /* TOUCH TARGET IMPROVEMENT */
+        min-height: 44px;
       }
     }
 
@@ -450,7 +595,6 @@
       clip-path: polygon(20% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 20%);
     }
 
-    /* UPDATED PHOTO CAPTION - CONSISTENT TITLE */
     .gold-quote {
       position: absolute;
       bottom: -15px;
@@ -491,233 +635,7 @@
       letter-spacing: 0.5px;
     }
 
-    /* ===== MODERN SECTIONS ===== */
-    section {
-      padding: 60px 0;
-    }
-    
-    @media (max-width: 768px) {
-      section {
-        padding: 40px 0;
-      }
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 6vw, 3.2rem);
-      color: var(--deep-teal);
-      margin-bottom: 35px;
-      font-weight: 800;
-      position: relative;
-      display: inline-block;
-    }
-    .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: -12px;
-      left: 0;
-      width: 70px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--gold), var(--terracotta));
-      border-radius: 2px;
-    }
-
-    /* Expandable cards */
-    .expandable-card {
-      background: var(--white);
-      border: none;
-      padding: 25px;
-      margin-bottom: 25px;
-      border-radius: 0 20px 20px 0;
-      border-left: 6px solid var(--gold);
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-    }
-    
-    @media (max-width: 768px) {
-      .expandable-card {
-        padding: 20px;
-      }
-    }
-    
-    .expandable-card:hover {
-      box-shadow: var(--shadow-hover);
-    }
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-    }
-    .card-header h3 {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      color: var(--deep-teal);
-    }
-    .card-header i {
-      font-size: 1.5rem;
-      color: var(--terracotta);
-      transition: transform 0.4s;
-    }
-    .card-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .card-content.show {
-      max-height: 800px;
-    }
-    .content-item {
-      margin: 25px 0 15px;
-      padding: 20px;
-      background: linear-gradient(135deg, var(--cream) 0%, #fff 100%);
-      border-radius: 12px;
-    }
-    
-    @media (max-width: 768px) {
-      .content-item {
-        padding: 15px;
-        margin: 20px 0 10px;
-      }
-    }
-    
-    .content-item h4 {
-      font-size: clamp(1.2rem, 3vw, 1.4rem);
-      color: var(--deep-teal);
-      margin-bottom: 5px;
-    }
-    .content-item .meta {
-      color: var(--terracotta);
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-    .content-item .date {
-      color: var(--charcoal);
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
-    
-    .content-item .contact-info {
-      margin-top: 12px;
-      font-size: 0.95rem;
-      line-height: 1.8;
-      word-break: break-word;
-    }
-    
-    .content-item .contact-info i {
-      color: var(--gold);
-      width: 20px;
-      margin-right: 5px;
-    }
-
-    .skills-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-      margin-top: 25px;
-    }
-    
-    @media (max-width: 700px) {
-      .skills-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-    }
-    
-    .skill-category h3 {
-      font-size: clamp(1.2rem, 3vw, 1.5rem);
-      color: var(--deep-teal);
-      margin-bottom: 15px;
-      border-left: 3px solid var(--gold);
-      padding-left: 12px;
-    }
-    
-    /* IMPROVED INTERACTIVE SKILLS */
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    
-    .skill-list span {
-      background: var(--white);
-      border: 1px solid var(--gold);
-      padding: 8px 18px;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--deep-teal);
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    .skill-list span:hover {
-      background: var(--deep-teal);
-      color: var(--gold);
-      border-color: var(--deep-teal);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(26, 75, 75, 0.2);
-    }
-
-    /* Experience cards */
-    .exp-card {
-      background: linear-gradient(135deg, white 0%, #f8f8f8 100%);
-      border: none;
-      padding: 30px;
-      margin-bottom: 25px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      border-radius: 0 30px 30px 0;
-      border-left: 4px solid var(--gold);
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-    }
-    
-    @media (max-width: 700px) {
-      .exp-card {
-        padding: 20px;
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
-    
-    .exp-card:hover {
-      transform: translateX(5px);
-      box-shadow: var(--shadow-hover);
-    }
-    .exp-date {
-      min-width: 120px;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      color: var(--terracotta);
-      font-weight: 700;
-    }
-    .exp-detail h4 {
-      font-size: clamp(1.3rem, 3.5vw, 1.8rem);
-      color: var(--deep-teal);
-      margin-bottom: 5px;
-      word-break: break-word;
-    }
-    .exp-detail .sub {
-      color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 12px;
-      display: block;
-      font-size: 1rem;
-    }
-    
-    .exp-detail a {
-      color: var(--deep-teal);
-      text-decoration: none;
-    }
-    
-    .exp-detail a:hover {
-      color: var(--terracotta);
-    }
-    
-    .exp-detail p {
-      font-size: 0.95rem;
-    }
-
-    /* NEW: PRACTICE AREAS SECTION */
+    /* Practice Areas */
     .practice-areas {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -763,7 +681,7 @@
       font-size: 1.3rem;
     }
 
-    /* NEW: TESTIMONIALS SECTION */
+    /* Testimonials */
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -791,341 +709,6 @@
       margin-bottom: 15px;
     }
 
-    /* NEW: ARTICLES SECTION */
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      margin: 40px 0;
-    }
-    
-    @media (max-width: 768px) {
-      .articles-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .articles-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    .article-card {
-      padding: 20px;
-      border: 1px solid var(--gold);
-      border-radius: 10px;
-      background: var(--white);
-      transition: var(--transition);
-    }
-    
-    .article-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-    }
-    
-    .article-card h3 {
-      color: var(--deep-teal);
-      margin-bottom: 10px;
-    }
-    
-    .article-card .date {
-      color: var(--terracotta);
-      font-size: 0.9rem;
-      margin-bottom: 10px;
-    }
-    
-    .article-card a {
-      color: var(--gold);
-      font-weight: 600;
-      display: inline-block;
-      margin-top: 10px;
-    }
-
-    /* Projects grid */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
-    
-    @media (max-width: 800px) {
-      .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-    }
-    
-    .project-item {
-      background: var(--white);
-      border: none;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-    .project-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--gold), var(--terracotta));
-    }
-    .project-item:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-hover);
-    }
-    .project-tag {
-      color: var(--terracotta);
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      letter-spacing: 1.5px;
-      margin-bottom: 12px;
-      display: block;
-    }
-    
-    .project-item h4 {
-      font-size: clamp(1.3rem, 3vw, 1.6rem);
-      color: var(--deep-teal);
-      margin-bottom: 10px;
-    }
-    
-    .project-item p {
-      font-size: 0.95rem;
-    }
-
-    /* Leadership cards */
-    .leadership-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
-    
-    @media (max-width: 800px) {
-      .leadership-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-    }
-    
-    .lead-card {
-      border: none;
-      padding: 30px 25px;
-      text-align: center;
-      background: var(--white);
-      border-radius: 15px;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-    }
-    .lead-card:hover {
-      transform: scale(1.02);
-      box-shadow: var(--shadow-hover);
-    }
-    .lead-card i {
-      font-size: 2.5rem;
-      color: var(--gold);
-      margin-bottom: 15px;
-    }
-    
-    .lead-card h4 {
-      font-size: clamp(1.3rem, 3vw, 1.6rem);
-      color: var(--deep-teal);
-      margin-bottom: 10px;
-      word-break: break-word;
-    }
-    
-    .lead-card a {
-      color: var(--deep-teal);
-      text-decoration: none;
-    }
-    
-    .lead-card a:hover {
-      color: var(--terracotta);
-    }
-    
-    .lead-card p {
-      font-size: 0.95rem;
-    }
-
-    /* Contact section */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-    
-    @media (max-width: 900px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-    }
-    
-    .contact-info-box {
-      background: var(--white);
-      border: none;
-      padding: 35px;
-      border-radius: 15px;
-      box-shadow: var(--shadow-sm);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    @media (max-width: 768px) {
-      .contact-info-box {
-        padding: 25px;
-      }
-    }
-    
-    .contact-info-box::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 100px;
-      height: 100px;
-      background: var(--gold);
-      opacity: 0.05;
-      border-radius: 50%;
-      transform: translate(30px, 30px);
-    }
-    
-    /* CONSISTENT TITLE - Associate Lawyer */
-    .contact-info-box h3 {
-      font-size: clamp(1.8rem, 4vw, 2.4rem);
-      color: var(--deep-teal);
-      margin-bottom: 20px;
-      word-break: break-word;
-    }
-    
-    .contact-info-box h3 span {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      color: var(--terracotta);
-      display: block;
-      margin-top: 5px;
-    }
-    
-    .contact-line {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 18px;
-      font-size: 0.95rem;
-      word-break: break-word;
-    }
-    .contact-line i {
-      width: 25px;
-      color: var(--terracotta);
-      font-size: 1.2rem;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    
-    .contact-line a {
-      color: var(--deep-teal);
-      transition: var(--transition);
-      text-decoration: none;
-    }
-    
-    .contact-line a:hover {
-      color: var(--terracotta);
-    }
-    
-    .social-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 25px 0 15px;
-    }
-    .social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      min-width: 44px;    /* TOUCH TARGET IMPROVEMENT */
-      min-height: 44px;   /* TOUCH TARGET IMPROVEMENT */
-      border: 2px solid var(--gold);
-      color: var(--deep-teal);
-      transition: var(--transition);
-      border-radius: 50%;
-      font-size: 1.2rem;
-    }
-    
-    .social-links a:hover {
-      background: var(--gold);
-      color: var(--deep-teal);
-      transform: translateY(-3px);
-    }
-
-    .contact-form {
-      background: var(--white);
-      border: none;
-      padding: 35px;
-      border-radius: 15px;
-      box-shadow: var(--shadow-sm);
-    }
-    
-    @media (max-width: 768px) {
-      .contact-form {
-        padding: 25px;
-      }
-    }
-    
-    .contact-form h3 {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      color: var(--deep-teal);
-      margin-bottom: 20px;
-    }
-    
-    .appointment-options {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-bottom: 15px;
-    }
-    
-    @media (max-width: 480px) {
-      .appointment-options {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-    }
-    
-    .appointment-field,
-    .form-group input, 
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      padding: 12px 18px;
-      border: 2px solid transparent;
-      background: var(--cream);
-      border-radius: 10px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      transition: var(--transition);
-      min-height: 44px;  /* TOUCH TARGET IMPROVEMENT */
-    }
-    
-    .appointment-field:focus,
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: var(--gold);
-      background: var(--white);
-      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
-    }
-    
-    .form-group {
-      margin-bottom: 18px;
-    }
-
     /* Footer */
     footer {
       background: var(--deep-teal);
@@ -1135,6 +718,7 @@
       position: relative;
       overflow: hidden;
     }
+
     footer::before {
       content: "⚖️";
       font-size: 12rem;
@@ -1144,20 +728,24 @@
       bottom: -40px;
       transform: rotate(-15deg);
     }
+
     .footer-inner {
       text-align: center;
       position: relative;
       z-index: 2;
     }
+
     .footer-logo {
       font-size: clamp(1.8rem, 5vw, 2.5rem);
       color: var(--white);
       margin-bottom: 12px;
       font-weight: 800;
     }
+
     .footer-logo span {
       color: var(--gold);
     }
+
     .footer-links {
       display: flex;
       justify-content: center;
@@ -1165,6 +753,7 @@
       margin: 20px 0;
       flex-wrap: wrap;
     }
+
     .footer-links a {
       color: var(--white);
       font-size: 0.9rem;
@@ -1172,10 +761,11 @@
       letter-spacing: 1px;
       opacity: 0.8;
       transition: var(--transition);
-      min-height: 44px;  /* TOUCH TARGET IMPROVEMENT */
+      min-height: 44px;
       display: inline-flex;
       align-items: center;
     }
+
     .footer-links a:hover {
       opacity: 1;
       color: var(--gold);
@@ -1187,18 +777,7 @@
       word-break: break-word;
       padding: 0 10px;
     }
-    
-    /* NEW: FOOTER CTA */
-    .footer-cta {
-      margin: 30px 0;
-    }
-    
-    .footer-cta h3 {
-      color: var(--gold);
-      margin-bottom: 15px;
-    }
 
-    /* NEW: WHATSAPP BUTTON */
     .whatsapp-float {
       position: fixed;
       bottom: 30px;
@@ -1221,16 +800,6 @@
       transform: scale(1.1);
       box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
     }
-    
-    @media (max-width: 768px) {
-      .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        font-size: 1.6rem;
-        bottom: 20px;
-        right: 20px;
-      }
-    }
 
     .back-top {
       position: fixed;
@@ -1252,16 +821,12 @@
       box-shadow: 0 5px 15px rgba(184, 107, 76, 0.4);
       z-index: 98;
     }
+
     .back-top.active {
       opacity: 1;
       visibility: visible;
     }
-    .back-top:hover {
-      background: var(--deep-teal);
-      transform: translateY(-3px);
-    }
 
-    /* Mobile menu */
     @media (max-width: 1000px) {
       .nav-links {
         display: none;
@@ -1293,43 +858,37 @@
         display: none;
       }
     }
-    
-    /* TOUCH TARGET IMPROVEMENTS FOR MOBILE */
-    @media (max-width: 768px) {
-      .btn-gold, 
-      .social-links a, 
-      .nav-links a,
-      .footer-links a,
-      .contact-phone,
-      .whatsapp-float {
-        min-height: 44px;
-        min-width: 44px;
-      }
-      
-      .skill-list span {
-        padding: 10px 20px;
-        font-size: 1rem;
-      }
-    }
   </style>
 </head>
 <body>
+  <!-- DISCLAIMER MODAL -->
+  <div class="disclaimer-modal" id="disclaimerModal">
+    <div class="disclaimer-content">
+      <i class="fas fa-gavel"></i>
+      <h2>Disclaimer</h2>
+      <div class="disclaimer-text">
+        <p>The Bar Council of Bangladesh prohibits all forms of advertising and solicitation by practitioners. By using this website, you recognise and certify that you are seeking information on Imam Hasan (Associate Lawyer, Azad & Company) of your own volition and that you have not been solicited, advertised to, or otherwise induced by the firm or its members.</p>
+        <p>This website's content is only for informative purposes and should not be construed as solicitation or advertising. No content or information on this site should be considered as legal advice. The firm shall not be accountable for any actions taken in reliance on the content or information on this website.</p>
+        <p>Intellectual property rights to the content created on this website are owned by Imam Hasan & Azad & Company.</p>
+      </div>
+      <button class="accept-btn" id="acceptDisclaimer">Accept and Proceed</button>
+    </div>
+  </div>
+
+  <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+
   <header>
     <div class="container">
       <nav class="navbar">
         <div class="logo-container">
-          <div class="logo-img">
-            <img src="imam_web_logo.png" alt="Imam Hasan Logo">
-          </div>
+          <div class="logo-img"><img src="imam_web_logo.png" alt="Imam Hasan Logo"></div>
           <a href="#home" class="logo">IMAM HASAN <span>Associate Lawyer</span></a>
         </div>
         <div class="nav-links">
           <a href="#home">HOME</a>
           <a href="#about">ABOUT</a>
-          <a href="#experience">EXPERIENCE</a>
-          <a href="#leadership">LEADERSHIP</a>
-          <a href="#practice">PRACTICE AREAS</a>
-          <a href="portfolio.html" target="_blank">PORTFOLIO</a>
+          <a href="#practice">PRACTICE</a>
+          <a href="#testimonials">TESTIMONIALS</a>
           <a href="#contact">CONTACT</a>
         </div>
         <a href="tel:+8801721129467" class="contact-phone"><i class="fa-solid fa-phone"></i> 01721-129467</a>
@@ -1338,17 +897,13 @@
     </div>
   </header>
 
-  <!-- HERO SECTION - UPDATED -->
   <section class="hero" id="home">
     <div class="container">
       <div class="hero-grid">
         <div class="hero-left">
           <div class="firm-name">⚖️ ASSOCIATE LAWYER</div>
           <h1>Imam Hasan<br>LL.B, LL.M (International Law)</h1>
-          <h2>
-            <span style="color: var(--charcoal);">Associate Lawyer</span> at <a href="https://www.azadncompany.com/" target="_blank">Azad & Company</a> · 
-            <span style="color: var(--charcoal);">President</span> at <a href="https://jnuits.org.bd/" target="_blank">Jagannath University IT Society (JnUITS)</a>
-          </h2>
+          <h2><span style="color: var(--charcoal);">Associate Lawyer</span> at <a href="https://www.azadncompany.com/" target="_blank">Azad & Company</a></h2>
           <div class="address-block">
             <strong>📌 Present Address:</strong> 110/A, Sarat Gupta Road, Narinda, Dhaka - 1100<br>
             <strong>🏠 Permanent Address:</strong> Kalmegha, Patharghata, Barguna - 8720
@@ -1360,438 +915,82 @@
           <a href="#contact" class="btn-gold">BOOK APPOINTMENT <i class="fas fa-calendar-alt"></i></a>
         </div>
         <div class="hero-right">
-          <div class="photo-frame">
-            <img src="imam.jpg" alt="Imam Hasan, Associate Lawyer">
-          </div>
-          <div class="gold-quote">
-            <div class="name">Imam Hasan</div>
-            <div class="title">Associate Lawyer</div>
-            <div class="firm">Azad & Company</div>
-          </div>
+          <div class="photo-frame"><img src="imam.jpg" alt="Imam Hasan, Associate Lawyer"></div>
+          <div class="gold-quote"><div class="name">Imam Hasan</div><div class="title">Associate Lawyer</div><div class="firm">Azad & Company</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT + EXPANDABLE EDUCATION - UPDATED -->
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">Qualifications</h2>
-      <div class="expandable-card">
-        <div class="card-header" id="eduToggle">
-          <h3>Education ⸻</h3>
-          <i class="fas fa-chevron-down" id="eduIcon"></i>
-        </div>
-        <div class="card-content" id="eduContent">
-          <div class="content-item">
-            <h4>Master of Laws (LL.M) - International Law</h4>
-            <div class="meta">Jagannath University, Dhaka</div>
-            <div class="date">2024 - Present (Continuing)</div>
-          </div>
-          <div class="content-item">
-            <h4>Bachelor of Laws (LL.B)</h4>
-            <div class="meta">Jagannath University, Dhaka</div>
-            <div class="date">2023</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Skills - IMPROVED INTERACTIVE -->
-      <div style="margin-top: 30px;">
-        <h3 style="font-size: clamp(1.6rem, 4vw, 2rem); color: var(--deep-teal); margin-bottom: 20px;">Skills & Expertise</h3>
-        <div class="skills-container">
-          <div class="skill-category">
-            <h3>Legal Skills</h3>
-            <div class="skill-list">
-              <span>Legal Research</span><span>Contract Drafting</span><span>Corporate Documentation</span>
-              <span>Client Advisory</span><span>Case Preparation</span><span>Corporate Compliance</span>
-              <span>Legal Writing</span>
-            </div>
-          </div>
-          <div class="skill-category">
-            <h3>Soft Skills</h3>
-            <div class="skill-list">
-              <span>MS Office</span><span>Google Workspace</span>
-            </div>
-          </div>
-        </div>
-        <p style="margin-top: 25px;"><span style="color: var(--gold); font-size: 1.2rem;">◈</span> Bar Council eligibility – awaiting enrollment</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" style="background: var(--cream);">
-    <div class="container">
-      <h2 class="section-title">Professional Experience</h2>
-      <div class="exp-card">
-        <div class="exp-date">Dec 2024</div>
-        <div class="exp-detail">
-          <h4><a href="https://www.azadncompany.com/" target="_blank">Azad & Company</a>, Paltan, Dhaka</h4>
-          <span class="sub">Associate (Corporate Documentation) — Internship</span>
-          <p>Assisted in preparing and reviewing corporate legal documents, contracts, and compliance records. Conducted legal research for case preparation.</p>
-        </div>
-      </div>
-      <div class="exp-card">
-        <div class="exp-date">2024 – present</div>
-        <div class="exp-detail">
-          <h4><a href="https://www.azadncompany.com/" target="_blank">Associate Lawyer at Azad & Company</a></h4>
-          <span class="sub">Corporate & Civil Litigation</span>
-          <p>Providing research support, drafting pleadings, and assisting in client consultations. Developing expertise in civil litigation and corporate advisory.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEW: PRACTICE AREAS -->
+  <!-- PRACTICE AREAS SECTION with Labour Law -->
   <section id="practice">
     <div class="container">
       <h2 class="section-title">Practice Areas</h2>
       <div class="practice-areas">
-        <div class="practice-card"><i class="fas fa-file-contract"></i><h3>Corporate Law</h3></div>
+        <div class="practice-card"><i class="fas fa-building"></i><h3>Corporate Law</h3></div>
         <div class="practice-card"><i class="fas fa-gavel"></i><h3>Civil Litigation</h3></div>
         <div class="practice-card"><i class="fas fa-file-signature"></i><h3>Contract Drafting</h3></div>
+        <div class="practice-card"><i class="fas fa-globe"></i><h3>International Law</h3></div>
+        <div class="practice-card"><i class="fas fa-briefcase"></i><h3>Labour Law</h3></div>
+        <div class="practice-card"><i class="fas fa-handshake"></i><h3>Alternative Dispute Resolution</h3></div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">Professional Development</h2>
-      <div class="projects-grid">
-        <div class="project-item">
-          <span class="project-tag">Seminar 2023</span>
-          <h4>Labour Law Seminar</h4>
-          <p>Attended seminar organized by 'Ogrogami Foundation' on 26 May 2023.</p>
-        </div>
-        <div class="project-item">
-          <span class="project-tag">ICT Division, EDGE Project</span>
-          <h4>Computer Fundamentals & Office Apps</h4>
-          <p>60‑hour training by Dept. of CSE, Jagannath University.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEADERSHIP -->
-  <section id="leadership" style="background: var(--cream);">
-    <div class="container">
-      <h2 class="section-title">Leadership</h2>
-      <div class="leadership-grid">
-        <div class="lead-card">
-          <i class="fas fa-laptop-code"></i>
-          <h4><a href="https://jnuits.org.bd/" target="_blank">Jagannath University IT Society (JnUITS)</a></h4>
-          <span style="color: var(--gold); display: block; margin-bottom: 10px; font-weight: 600;">President</span>
-          <p>Leading tech events and managing cross-functional teams.</p>
-        </div>
-        <div class="lead-card">
-          <i class="fas fa-hands-helping"></i>
-          <h4>Jagannath University Leo Club</h4>
-          <span style="color: var(--gold); display: block; margin-bottom: 10px; font-weight: 600;">Former President</span>
-          <p>Directed community service and youth leadership programs.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEW: TESTIMONIALS -->
-  <section>
+  <!-- TESTIMONIALS SECTION with updated names -->
+  <section id="testimonials" style="background: var(--cream);">
     <div class="container">
       <h2 class="section-title">Client Testimonials</h2>
       <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <i class="fas fa-quote-left"></i>
-          <p>Working with Imam Hasan was a great experience. Very professional and knowledgeable.</p>
-          <p style="margin-top: 15px;"><strong>- Client Name</strong></p>
-        </div>
-        <div class="testimonial-card">
-          <i class="fas fa-quote-left"></i>
-          <p>Excellent legal advice and support. Highly recommended.</p>
-          <p style="margin-top: 15px;"><strong>- Client Name</strong></p>
-        </div>
+        <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>Working with Imam Hasan was a great experience. Very professional and knowledgeable.</p><h4 style="color: var(--gold); margin-top: 15px;">- Mashraf Jahan Shaiq</h4></div>
+        <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>Excellent legal advice and support. Highly recommended.</p><h4 style="color: var(--gold); margin-top: 15px;">- Mahfuzur Razzak Limon</h4></div>
       </div>
     </div>
   </section>
 
-  <!-- NEW: ARTICLES -->
-  <section style="background: var(--cream);">
-    <div class="container">
-      <h2 class="section-title">Legal Articles</h2>
-      <div class="articles-grid">
-        <div class="article-card">
-          <h3>Understanding Corporate Law</h3>
-          <p class="date">March 2025</p>
-          <a href="#">Read More →</a>
-        </div>
-        <div class="article-card">
-          <h3>Civil Litigation Process</h3>
-          <p class="date">February 2025</p>
-          <a href="#">Read More →</a>
-        </div>
-        <div class="article-card">
-          <h3>Contract Drafting Tips</h3>
-          <p class="date">January 2025</p>
-          <a href="#">Read More →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section id="contact"><div class="container"><h2 class="section-title">Let's Connect</h2><div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;"><div class="contact-info-box" style="background: var(--white); padding: 35px; border-radius: 15px;"><h3>Imam Hasan</h3><div class="contact-line"><i class="fas fa-building"></i><span>Associate Lawyer, Azad & Company</span></div><div class="contact-line"><i class="fas fa-map-marker-alt"></i><span>110/A, Sarat Gupta Road, Narinda, Dhaka - 1100</span></div><div class="contact-line"><i class="fas fa-phone-alt"></i><a href="tel:+8801721129467">+880 1721-129467</a></div><div class="contact-line"><i class="fas fa-envelope"></i><a href="mailto:ihnaiem333@gmail.com">ihnaiem333@gmail.com</a></div><div class="social-links"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="https://wa.me/8801721129467" target="_blank"><i class="fab fa-whatsapp"></i></a></div></div><div class="contact-form" style="background: var(--white); padding: 35px; border-radius: 15px;"><h3>Request a Callback</h3><form action="#" method="post"><div class="form-group"><input type="text" placeholder="Full Name" required style="width:100%; padding:12px; background:var(--cream); border:none; border-radius:10px;"></div><div class="form-group"><input type="email" placeholder="Email Address" required style="width:100%; padding:12px; background:var(--cream); border:none; border-radius:10px;"></div><div class="form-group"><textarea rows="3" placeholder="Brief description of your legal matter" style="width:100%; padding:12px; background:var(--cream); border:none; border-radius:10px;"></textarea></div><div class="form-group"><button type="submit" class="btn-gold" style="width:100%; justify-content:center;">Send Message</button></div></form></div></div></div></section>
 
-  <!-- REFERENCES -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">References</h2>
-      <div class="expandable-card">
-        <div class="card-header" id="refToggle">
-          <h3>Professional References ⸻</h3>
-          <i class="fas fa-chevron-down" id="refIcon"></i>
-        </div>
-        <div class="card-content" id="refContent">
-          <div class="content-item">
-            <h4>Christine Richardson</h4>
-            <div class="meta">Associate Professor</div>
-            <div>Department of Law and Land Administration, Jagannath University</div>
-            <div class="contact-info">
-              <i class="fas fa-envelope"></i> christiectg@yahoo.com<br>
-              <i class="fas fa-phone"></i> +8801716-046874
-            </div>
-          </div>
-          <div class="content-item">
-            <h4>Ayesha Saleh</h4>
-            <div class="meta">Assistant Professor</div>
-            <div>Department of Law and Land Administration, Jagannath University</div>
-            <div class="contact-info">
-              <i class="fas fa-envelope"></i> ayesha.mhd@gmail.com<br>
-              <i class="fas fa-phone"></i> +8801671-424945
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" style="background: var(--cream);">
-    <div class="container">
-      <h2 class="section-title">Contact & Consultation</h2>
-      <div class="contact-grid">
-        <div class="contact-info-box">
-          <h3>Imam Hasan<br><span>Associate Lawyer</span></h3>
-          <div class="contact-line"><i class="fas fa-map-pin"></i> 110/A, Sarat Gupta Road, Narinda, Dhaka-1100</div>
-          <div class="contact-line"><i class="fas fa-phone-alt"></i> <a href="tel:+8801721129467">+880 1721-129467</a></div>
-          <div class="contact-line"><i class="fas fa-envelope"></i> <a href="mailto:ihnaiem333@gmail.com">ihnaiem333@gmail.com</a></div>
-          
-          <div class="social-links">
-            <a href="mailto:ihnaiem333@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.facebook.com/imam333hasan" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/imam333hasan" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/imam333hasan" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.threads.net/@imam333hasan" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
-            <a href="https://www.linkedin.com/in/imam333hasan" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://wa.me/qr/ULMJ5PYVD3GPJ1" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="http://t.me/imam333hasan" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
-          </div>
-        </div>
-        
-        <div class="contact-form">
-          <h3>Book an Appointment</h3>
-          <form id="appointmentForm">
-            <div class="appointment-options">
-              <div class="form-group">
-                <input type="date" class="appointment-field" id="appointmentDate" required>
-              </div>
-              <div class="form-group">
-                <input type="time" class="appointment-field" id="appointmentTime" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <input type="text" placeholder="Full name" id="fullName" required>
-            </div>
-            <div class="form-group">
-              <input type="email" placeholder="Email address" id="email" required>
-            </div>
-            <div class="form-group">
-              <input type="tel" placeholder="Phone number" id="phone" required>
-            </div>
-            <div class="form-group">
-              <select id="consultationType" required>
-                <option value="" disabled selected>Select consultation type</option>
-                <option value="Corporate Law">Corporate Law</option>
-                <option value="Civil Litigation">Civil Litigation</option>
-                <option value="Contract Drafting">Contract Drafting</option>
-                <option value="Legal Advisory">Legal Advisory</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <textarea rows="4" placeholder="Brief description..." id="message" required></textarea>
-            </div>
-            <button type="submit" class="btn-gold" style="width:100%;">SEND INQUIRY <i class="fas fa-paper-plane"></i></button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MEDIA -->
-  <section id="media">
-    <div class="container" style="text-align: center;">
-      <span style="color: var(--gold); letter-spacing: 2px; font-weight: 600;">⚡ IN THE MEDIA · INTERNSHIP PROGRAM · PUBLICATIONS ⚡</span>
-      <p style="margin-top: 15px;">Featured in university law journal & local bar bulletin. <a href="#contact" style="color: var(--terracotta); font-weight: 600;">→ Inquire within</a></p>
-    </div>
-  </section>
-
-  <!-- FOOTER - UPDATED WITH CTA -->
-  <footer>
-    <div class="container footer-inner">
-      <div class="footer-logo">IMAM HASAN <span>· ASSOCIATE LAWYER</span></div>
-      
-      <!-- NEW: FOOTER CTA -->
-      <div class="footer-cta">
-        <h3>Need Legal Assistance?</h3>
-        <p style="margin-bottom: 20px;">Schedule a consultation today</p>
-        <a href="#contact" class="btn-gold" style="display: inline-block;">CONTACT NOW</a>
-      </div>
-      
-      <div class="footer-links">
-        <a href="#home">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#experience">EXPERIENCE</a>
-        <a href="portfolio.html" target="_blank">PORTFOLIO</a>
-        <a href="#contact">CONTACT</a>
-      </div>
-      <p>Present: 110/A Sarat Gupta Road, Narinda · Dhaka</p>
-      <p>Permanent: Kalmegha, Patharghata, Barguna - 8720</p>
-      <p style="opacity: 0.5; margin-top: 20px;">© 2025 Imam Hasan · Associate Lawyer at Azad & Company</p>
-    </div>
-  </footer>
-
-  <!-- NEW: WHATSAPP BUTTON -->
-  <a href="https://wa.me/qr/ULMJ5PYVD3GPJ1" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <div class="back-top" id="backTop"><i class="fas fa-chevron-up"></i></div>
+  <footer><div class="container"><div class="footer-inner"><div class="footer-logo">IMAM HASAN <span>⚖️</span></div><div class="footer-links"><a href="#home">Home</a><a href="#practice">Practice</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a></div><p>© 2026 Imam Hasan – Associate Lawyer, Azad & Company. All rights reserved. | Dhaka, Bangladesh</p><p>This website is for informational purposes only and does not constitute legal advice.</p></div></div></footer>
+  <a href="https://wa.me/8801721129467" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <div class="back-top" id="backTop"><i class="fas fa-arrow-up"></i></div>
 
   <script>
-    (function(){
-      // Mobile menu
-      const hamburger = document.querySelector('.hamburger');
-      const navLinks = document.querySelector('.nav-links');
-      
-      hamburger.addEventListener('click', ()=>{
-        if (navLinks.style.display === 'flex') {
-          navLinks.style.display = 'none';
-        } else {
-          navLinks.style.display = 'flex';
-        }
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener('click', function(event) {
-        if (window.innerWidth <= 1000) {
-          const isClickInside = navLinks?.contains(event.target) || hamburger?.contains(event.target);
-          if (!isClickInside && navLinks?.style.display === 'flex') {
-            navLinks.style.display = 'none';
-          }
-        }
-      });
-
-      // Close mobile menu when clicking on a link
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-          if (window.innerWidth <= 1000) {
-            navLinks.style.display = 'none';
-          }
-        });
-      });
-
-      // Expandable education
-      const eduToggle = document.getElementById('eduToggle');
-      const eduContent = document.getElementById('eduContent');
-      const eduIcon = document.getElementById('eduIcon');
-      if (eduToggle) {
-        eduToggle.addEventListener('click', ()=>{
-          eduContent.classList.toggle('show');
-          eduIcon.classList.toggle('fa-chevron-down');
-          eduIcon.classList.toggle('fa-chevron-up');
-        });
-      }
-
-      // Expandable references
-      const refToggle = document.getElementById('refToggle');
-      const refContent = document.getElementById('refContent');
-      const refIcon = document.getElementById('refIcon');
-      if (refToggle) {
-        refToggle.addEventListener('click', ()=>{
-          refContent.classList.toggle('show');
-          refIcon.classList.toggle('fa-chevron-down');
-          refIcon.classList.toggle('fa-chevron-up');
-        });
-      }
-
-      // Back to top
-      const backBtn = document.getElementById('backTop');
-      window.addEventListener('scroll', ()=>{
-        if(window.scrollY > 400) backBtn.classList.add('active');
-        else backBtn.classList.remove('active');
-      });
-      backBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
-
-      // Appointment form
-      document.getElementById('appointmentForm').addEventListener('submit', function(e){
-        e.preventDefault();
-        
-        const date = document.getElementById('appointmentDate').value;
-        const time = document.getElementById('appointmentTime').value;
-        const name = document.getElementById('fullName').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const consultType = document.getElementById('consultationType').value;
-        const message = document.getElementById('message').value;
-        
-        const subject = `Appointment Request: ${name} - ${consultType}`;
-        const body = `New Appointment Request:
-        
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Date: ${date}
-Time: ${time}
-Type: ${consultType}
-
-Message: ${message}`;
-        
-        window.location.href = `mailto:ihnaiem333@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        alert('Your appointment request has been prepared. Please send the email.');
-        this.reset();
-      });
-
-      // Smooth scroll
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e){
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if(target) window.scrollTo({top: target.offsetTop - 70, behavior:'smooth'});
-        });
-      });
-
-      // Handle window resize
-      window.addEventListener('resize', function() {
-        if (window.innerWidth > 1000) {
-          navLinks.style.display = 'flex';
-          navLinks.style.flexDirection = 'row';
-          navLinks.style.position = 'static';
-          navLinks.style.width = 'auto';
-          navLinks.style.background = 'none';
-          navLinks.style.padding = '0';
-          navLinks.style.boxShadow = 'none';
-        } else {
-          navLinks.style.display = 'none';
-        }
-      });
-    })();
+    // DISCLAIMER MODAL LOGIC
+    const modal = document.getElementById('disclaimerModal');
+    const acceptBtn = document.getElementById('acceptDisclaimer');
+    
+    if(!localStorage.getItem('disclaimerAccepted')) {
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    } else {
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+    
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('disclaimerAccepted', 'true');
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    });
+    
+    // dark mode toggle
+    const toggle = document.getElementById('darkModeToggle');
+    const root = document.documentElement;
+    if(localStorage.getItem('darkMode') === 'enabled') root.classList.add('dark-mode');
+    toggle.addEventListener('click', () => { root.classList.toggle('dark-mode'); localStorage.setItem('darkMode', root.classList.contains('dark-mode') ? 'enabled' : 'disabled'); });
+    
+    // mobile menu
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => { navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex'; });
+    window.addEventListener('resize', () => { if(window.innerWidth > 1000) navLinks.style.display = 'flex'; else if(navLinks.style.display !== 'flex') navLinks.style.display = 'none'; });
+    
+    // back to top
+    const backTop = document.getElementById('backTop');
+    window.addEventListener('scroll', () => { backTop.classList.toggle('active', window.scrollY > 300); });
+    backTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    
+    if(window.innerWidth <= 1000) navLinks.style.display = 'none';
   </script>
 </body>
 </html>
