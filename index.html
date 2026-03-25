@@ -1266,19 +1266,18 @@
 </head>
 <body>
   <!-- DISCLAIMER MODAL POPUP -->
-  <div class="disclaimer-modal" id="disclaimerModal">
-    <div class="disclaimer-content">
-      <i class="fas fa-gavel"></i>
-      <h2>Disclaimer</h2>
-      <div class="disclaimer-text">
-        <p>The Bar Council of Bangladesh prohibits all forms of advertising and solicitation by practitioners. By using this website, you recognise and certify that you are seeking information on Imam Hasan (Associate Lawyer, Azad & Company) of your own volition and that you have not been solicited, advertised to, or otherwise induced by the firm or its members.</p>
-        <p>This website's content is only for informative purposes and should not be construed as solicitation or advertising. No content or information on this site should be considered as legal advice. The firm shall not be accountable for any actions taken in reliance on the content or information on this website.</p>
-        <p>Intellectual property rights to the content created on this website are owned by Imam Hasan & Azad & Company.</p>
-      </div>
-      <button class="accept-btn" id="acceptDisclaimer">Accept and Proceed</button>
+<div class="disclaimer-modal" id="disclaimerModal">
+  <div class="disclaimer-content">
+    <i class="fas fa-gavel"></i>
+    <h2>Disclaimer</h2>
+    <div class="disclaimer-text">
+      <p>The Bar Council of Bangladesh prohibits all forms of advertising and solicitation by practitioners. By using this website, you recognise and certify that you are seeking information on Imam Hasan (Associate Lawyer, Azad & Company) of your own volition and that you have not been solicited, advertised to, or otherwise induced by the firm or its members.</p>
+      <p>This website's content is only for informative purposes and should not be construed as solicitation or advertising. No content or information on this site should be considered as legal advice. The firm shall not be accountable for any actions taken in reliance on the content or information on this website.</p>
+      <p>Intellectual property rights to the content created on this website are owned by Imam Hasan & Azad & Company.</p>
     </div>
+    <button class="accept-btn" id="acceptDisclaimer">Accept and Proceed</button>
   </div>
-
+</div>
   <header>
     <div class="container">
       <nav class="navbar">
@@ -1766,6 +1765,24 @@
         }
       });
     })();
-  </script>
+// Disclaimer Modal Logic
+const modal = document.getElementById('disclaimerModal');
+const acceptBtn = document.getElementById('acceptDisclaimer');
+
+if(!localStorage.getItem('disclaimerAccepted')) {
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+} else {
+  modal.classList.add('hidden');
+  document.body.style.overflow = 'auto';
+}
+
+if(acceptBtn) {
+  acceptBtn.addEventListener('click', () => {
+    localStorage.setItem('disclaimerAccepted', 'true');
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  });
+}  </script>
 </body>
 </html>
