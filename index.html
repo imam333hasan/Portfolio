@@ -11,10 +11,11 @@
   
   <title>Imam Hasan · Associate Lawyer | Azad & Company</title>
   
-<!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <!-- Fallback: if files missing, this ensures icon still shows -->
+  <!-- FAVICON - Use your uploaded file -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  
+  <!-- Fallback: if favicon.ico missing, this shows scale icon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a4b4b'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='%23d4af37' font-family='Arial'%3E⚖️%3C/text%3E%3C/svg%3E">
   
   <!-- Fonts -->
@@ -356,7 +357,6 @@
       }
     }
 
-    /* REMOVED - the ⚖️ ASSOCIATE LAWYER text is gone */
     .firm-name {
       display: none;
     }
@@ -393,7 +393,6 @@
       color: var(--terracotta);
     }
 
-    /* UPDATED: Chamber Address Only - No present/permanent addresses */
     .address-block {
       margin: 30px 0 25px;
       font-size: 1rem;
@@ -834,6 +833,108 @@
       font-size: 1.3rem;
     }
 
+    /* PROJECTS GRID - Fixed with class */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+    
+    @media (max-width: 800px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .project-item {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--terracotta));
+    }
+    
+    .project-item:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .project-tag {
+      color: var(--terracotta);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+      display: block;
+    }
+    
+    .project-item h4 {
+      font-size: clamp(1.3rem, 3vw, 1.6rem);
+      color: var(--deep-teal);
+      margin-bottom: 10px;
+    }
+
+    /* LEADERSHIP GRID - Fixed with class */
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+    
+    @media (max-width: 800px) {
+      .leadership-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .lead-card {
+      background: var(--white);
+      padding: 30px;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    
+    .lead-card:hover {
+      transform: scale(1.02);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .lead-card i {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+    
+    .lead-card h4 {
+      font-size: clamp(1.3rem, 3vw, 1.6rem);
+      color: var(--deep-teal);
+      margin-bottom: 10px;
+    }
+    
+    .lead-card a {
+      color: var(--deep-teal);
+      text-decoration: none;
+    }
+    
+    .lead-card a:hover {
+      color: var(--terracotta);
+    }
+
     /* TESTIMONIALS SECTION */
     .testimonials-grid {
       display: grid;
@@ -860,6 +961,56 @@
       color: var(--gold);
       font-size: 2rem;
       margin-bottom: 15px;
+    }
+
+    /* ARTICLES GRID */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin: 40px 0;
+    }
+    
+    @media (max-width: 768px) {
+      .articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .article-card {
+      background: var(--white);
+      padding: 20px;
+      border-radius: 10px;
+      transition: var(--transition);
+    }
+    
+    .article-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .article-card h3 {
+      color: var(--deep-teal);
+      margin-bottom: 10px;
+    }
+    
+    .article-card .date {
+      color: var(--terracotta);
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+    
+    .article-card a {
+      color: var(--gold);
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 10px;
     }
 
     /* Contact section */
@@ -1175,109 +1326,23 @@
         display: none;
       }
     }
- /* DISCLAIMER MODAL POPUP */
-.disclaimer-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px);
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.disclaimer-modal.hidden {
-  display: none;
-}
-
-.disclaimer-content {
-  background: var(--white);
-  max-width: 550px;
-  width: 90%;
-  padding: 35px 30px;
-  border-radius: 20px;
-  text-align: center;
-  border-top: 5px solid var(--gold);
-  animation: fadeInUp 0.5s ease;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.disclaimer-content i {
-  font-size: 3rem;
-  color: var(--gold);
-  margin-bottom: 15px;
-}
-
-.disclaimer-content h2 {
-  font-family: 'Playfair Display', serif;
-  color: var(--deep-teal);
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-}
-
-.disclaimer-text {
-  text-align: left;
-  font-size: 0.85rem;
-  line-height: 1.6;
-  color: var(--charcoal);
-  margin: 20px 0;
-  max-height: 60vh;
-  overflow-y: auto;
-  padding-right: 10px;
-}
-
-.disclaimer-text p {
-  margin-bottom: 12px;
-}
-
-.accept-btn {
-  background: linear-gradient(135deg, var(--deep-teal), #1e5a5a);
-  border: none;
-  color: white;
-  padding: 14px 35px;
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: var(--transition);
-  margin-top: 10px;
-  width: 100%;
-}
-
-.accept-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(26, 75, 75, 0.3);
-} </style>
+  </style>
 </head>
 <body>
   <!-- DISCLAIMER MODAL POPUP -->
-<div class="disclaimer-modal" id="disclaimerModal">
-  <div class="disclaimer-content">
-    <i class="fas fa-gavel"></i>
-    <h2>Disclaimer</h2>
-    <div class="disclaimer-text">
-      <p>The Bar Council of Bangladesh prohibits all forms of advertising and solicitation by practitioners. By using this website, you recognise and certify that you are seeking information on Imam Hasan (Associate Lawyer, Azad & Company) of your own volition and that you have not been solicited, advertised to, or otherwise induced by the firm or its members.</p>
-      <p>This website's content is only for informative purposes and should not be construed as solicitation or advertising. No content or information on this site should be considered as legal advice. The firm shall not be accountable for any actions taken in reliance on the content or information on this website.</p>
-      <p>Intellectual property rights to the content created on this website are owned by Imam Hasan & Azad & Company.</p>
+  <div class="disclaimer-modal" id="disclaimerModal">
+    <div class="disclaimer-content">
+      <i class="fas fa-gavel"></i>
+      <h2>Disclaimer</h2>
+      <div class="disclaimer-text">
+        <p>The Bar Council of Bangladesh prohibits all forms of advertising and solicitation by practitioners. By using this website, you recognise and certify that you are seeking information on Imam Hasan (Associate Lawyer, Azad & Company) of your own volition and that you have not been solicited, advertised to, or otherwise induced by the firm or its members.</p>
+        <p>This website's content is only for informative purposes and should not be construed as solicitation or advertising. No content or information on this site should be considered as legal advice. The firm shall not be accountable for any actions taken in reliance on the content or information on this website.</p>
+        <p>Intellectual property rights to the content created on this website are owned by Imam Hasan & Azad & Company.</p>
+      </div>
+      <button class="accept-btn" id="acceptDisclaimer">Accept and Proceed</button>
     </div>
-    <button class="accept-btn" id="acceptDisclaimer">Accept and Proceed</button>
   </div>
-</div>
+  
   <header>
     <div class="container">
       <nav class="navbar">
@@ -1302,12 +1367,11 @@
     </div>
   </header>
 
-  <!-- HERO SECTION - REMOVED ⚖️ ASSOCIATE LAWYER text -->
+  <!-- HERO SECTION -->
   <section class="hero" id="home">
     <div class="container">
       <div class="hero-grid">
         <div class="hero-left">
-          <!-- The ⚖️ ASSOCIATE LAWYER text is REMOVED -->
           <h1>Imam Hasan<br>LL.B, LL.M (International Law)</h1>
           <h2>
             <span style="color: var(--charcoal);">Associate Lawyer</span> at <a href="https://www.azadncompany.com/" target="_blank">Azad & Company</a> · 
@@ -1407,7 +1471,7 @@
     </div>
   </section>
 
-  <!-- PRACTICE AREAS - with Labour Law -->
+  <!-- PRACTICE AREAS -->
   <section id="practice">
     <div class="container">
       <h2 class="section-title">Practice Areas</h2>
@@ -1420,39 +1484,39 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- PROJECTS - Fixed with class -->
   <section>
     <div class="container">
       <h2 class="section-title">Professional Development</h2>
-      <div class="projects-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px;">
-        <div class="project-item" style="background: var(--white); padding: 25px; border-radius: 15px; box-shadow: var(--shadow-sm);">
-          <span class="project-tag" style="color: var(--terracotta); font-weight: 600;">Seminar 2023</span>
-          <h4 style="color: var(--deep-teal);">Labour Law Seminar</h4>
+      <div class="projects-grid">
+        <div class="project-item">
+          <span class="project-tag">Seminar 2023</span>
+          <h4>Labour Law Seminar</h4>
           <p>Attended seminar organized by 'Ogrogami Foundation' on 26 May 2023.</p>
         </div>
-        <div class="project-item" style="background: var(--white); padding: 25px; border-radius: 15px; box-shadow: var(--shadow-sm);">
-          <span class="project-tag" style="color: var(--terracotta); font-weight: 600;">ICT Division, EDGE Project</span>
-          <h4 style="color: var(--deep-teal);">Computer Fundamentals & Office Apps</h4>
+        <div class="project-item">
+          <span class="project-tag">ICT Division, EDGE Project</span>
+          <h4>Computer Fundamentals & Office Apps</h4>
           <p>60‑hour training by Dept. of CSE, Jagannath University.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- LEADERSHIP -->
+  <!-- LEADERSHIP - Fixed with class -->
   <section id="leadership" style="background: var(--cream);">
     <div class="container">
       <h2 class="section-title">Leadership</h2>
-      <div class="leadership-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px;">
-        <div class="lead-card" style="background: var(--white); padding: 30px; text-align: center; border-radius: 15px;">
-          <i class="fas fa-laptop-code" style="font-size: 2.5rem; color: var(--gold);"></i>
-          <h4 style="color: var(--deep-teal);"><a href="https://jnuits.org.bd/" target="_blank">Jagannath University IT Society (JnUITS)</a></h4>
+      <div class="leadership-grid">
+        <div class="lead-card">
+          <i class="fas fa-laptop-code"></i>
+          <h4><a href="https://jnuits.org.bd/" target="_blank">Jagannath University IT Society (JnUITS)</a></h4>
           <span style="color: var(--gold); display: block; margin-bottom: 10px; font-weight: 600;">President</span>
           <p>Leading tech events and managing cross-functional teams.</p>
         </div>
-        <div class="lead-card" style="background: var(--white); padding: 30px; text-align: center; border-radius: 15px;">
-          <i class="fas fa-hands-helping" style="font-size: 2.5rem; color: var(--gold);"></i>
-          <h4 style="color: var(--deep-teal);">Jagannath University Leo Club</h4>
+        <div class="lead-card">
+          <i class="fas fa-hands-helping"></i>
+          <h4>Jagannath University Leo Club</h4>
           <span style="color: var(--gold); display: block; margin-bottom: 10px; font-weight: 600;">Former President</span>
           <p>Directed community service and youth leadership programs.</p>
         </div>
@@ -1460,7 +1524,7 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS - with proper names -->
+  <!-- TESTIMONIALS -->
   <section>
     <div class="container">
       <h2 class="section-title">Client Testimonials</h2>
@@ -1483,21 +1547,21 @@
   <section style="background: var(--cream);">
     <div class="container">
       <h2 class="section-title">Legal Articles</h2>
-      <div class="articles-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;">
-        <div class="article-card" style="background: var(--white); padding: 20px; border-radius: 10px;">
-          <h3 style="color: var(--deep-teal);">Understanding Corporate Law</h3>
-          <p class="date" style="color: var(--terracotta);">March 2025</p>
-          <a href="#" style="color: var(--gold);">Read More →</a>
+      <div class="articles-grid">
+        <div class="article-card">
+          <h3>Understanding Corporate Law</h3>
+          <p class="date">March 2025</p>
+          <a href="#">Read More →</a>
         </div>
-        <div class="article-card" style="background: var(--white); padding: 20px; border-radius: 10px;">
-          <h3 style="color: var(--deep-teal);">Civil Litigation Process</h3>
-          <p class="date" style="color: var(--terracotta);">February 2025</p>
-          <a href="#" style="color: var(--gold);">Read More →</a>
+        <div class="article-card">
+          <h3>Civil Litigation Process</h3>
+          <p class="date">February 2025</p>
+          <a href="#">Read More →</a>
         </div>
-        <div class="article-card" style="background: var(--white); padding: 20px; border-radius: 10px;">
-          <h3 style="color: var(--deep-teal);">Contract Drafting Tips</h3>
-          <p class="date" style="color: var(--terracotta);">January 2025</p>
-          <a href="#" style="color: var(--gold);">Read More →</a>
+        <div class="article-card">
+          <h3>Contract Drafting Tips</h3>
+          <p class="date">January 2025</p>
+          <a href="#">Read More →</a>
         </div>
       </div>
     </div>
@@ -1536,7 +1600,7 @@
     </div>
   </section>
 
-  <!-- CONTACT - UPDATED with Chamber Address -->
+  <!-- CONTACT -->
   <section id="contact" style="background: var(--cream);">
     <div class="container">
       <h2 class="section-title">Contact & Consultation</h2>
@@ -1600,7 +1664,7 @@
     </div>
   </section>
 
-  <!-- FOOTER - UPDATED with Chamber Address and 2026 -->
+  <!-- FOOTER -->
   <footer>
     <div class="container footer-inner">
       <div class="footer-logo">IMAM HASAN <span>· ASSOCIATE LAWYER</span></div>
@@ -1632,7 +1696,7 @@
 
   <script>
     (function(){
-      // DISCLAIMER MODAL
+      // DISCLAIMER MODAL - Single instance
       const modal = document.getElementById('disclaimerModal');
       const acceptBtn = document.getElementById('acceptDisclaimer');
       
@@ -1765,24 +1829,6 @@
         }
       });
     })();
-// Disclaimer Modal Logic
-const modal = document.getElementById('disclaimerModal');
-const acceptBtn = document.getElementById('acceptDisclaimer');
-
-if(!localStorage.getItem('disclaimerAccepted')) {
-  modal.classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
-} else {
-  modal.classList.add('hidden');
-  document.body.style.overflow = 'auto';
-}
-
-if(acceptBtn) {
-  acceptBtn.addEventListener('click', () => {
-    localStorage.setItem('disclaimerAccepted', 'true');
-    modal.classList.add('hidden');
-    document.body.style.overflow = 'auto';
-  });
-}  </script>
+  </script>
 </body>
 </html>
