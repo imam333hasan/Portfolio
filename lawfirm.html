@@ -1,3 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Next Justice Chambers - Modern legal solutions in Dhaka, Bangladesh. Specializing in Corporate Law, Civil Litigation, Criminal Defense, Maritime Law, Finance Law, and more.">
+  <meta name="keywords" content="Law Firm Dhaka, Corporate Lawyer, Civil Litigation, Criminal Defense, Maritime Law, Finance Law, Next Justice Chambers, Bangladesh Law Firm">
+  <meta name="author" content="Next Justice Chambers">
+  
+  <title>Next Justice Chambers | Modern Legal Solutions in Dhaka</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --navy: #0A2647;
+      --gold: #D4AF37;
+      --slate: #2C3E50;
+      --light: #F9F9F9;
+      --white: #FFFFFF;
+      --gray: #6c757d;
+      --dark-gray: #343a40;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --shadow-hover: 0 20px 40px rgba(0,0,0,0.12);
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--slate);
+      line-height: 1.6;
+      background: var(--light);
+    }
+
+    h1, h2, h3, h4, .logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      z-index: 1000;
+      padding: 15px 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .logo small {
+      font-size: 0.8rem;
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--navy);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 100%);
+      color: var(--white);
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "⚖️";
+      font-size: 20rem;
+      opacity: 0.03;
+      position: absolute;
+      right: -50px;
+      bottom: -80px;
+      transform: rotate(15deg);
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 35px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .btn-primary:hover {
+      background: var(--white);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      margin-left: 15px;
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--navy);
+      transform: translateY(-3px);
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--navy);
+      margin-bottom: 50px;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 15px auto 0;
+    }
+
+    /* About Section */
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .mission-vision {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .mission-card, .vision-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .mission-card i, .vision-card i {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .mission-card h3, .vision-card h3 {
+      color: var(--navy);
+      margin-bottom: 15px;
+    }
+
+    /* Practice Areas */
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .practice-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .practice-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .practice-card i {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .practice-card h3 {
+      color: var(--navy);
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    .practice-card p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    /* Team Section */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .team-card {
+      background: var(--white);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .team-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    .team-info {
+      padding: 25px;
+    }
+
+    .team-card h3 {
+      color: var(--navy);
+      font-size: 1.6rem;
+      margin-bottom: 5px;
+    }
+
+    .team-title {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .team-specialty {
+      color: var(--slate);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .team-qualification {
+      color: var(--gray);
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+    }
+
+    .team-social {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .team-social a {
+      color: var(--navy);
+      transition: var(--transition);
+    }
+
+    .team-social a:hover {
+      color: var(--gold);
+    }
+
+    /* Stats Section */
+    .stats {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 100%);
+      color: var(--white);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Awards Section */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .award-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .award-card i {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    .award-card h4 {
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .office-card {
+      background: var(--white);
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+    }
+
+    .office-card h3 {
+      color: var(--gold);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--gold);
+      display: inline-block;
+    }
+
+    .office-details {
+      margin-top: 20px;
+    }
+
+    .office-details p {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .office-details i {
+      color: var(--gold);
+      width: 25px;
+      margin-top: 3px;
+    }
+
+    .contact-form {
+      background: var(--white);
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-form h3 {
+      color: var(--navy);
+      font-size: 1.5rem;
+      margin-bottom: 25px;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: inherit;
+      transition: var(--transition);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      color: var(--white);
+      padding: 60px 0 20px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
+
+    .footer-logo span {
+      color: var(--gold);
+    }
+
+    .footer-links a {
+      display: block;
+      color: var(--white);
+      text-decoration: none;
+      margin-bottom: 10px;
+      opacity: 0.8;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--gold);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .hamburger {
+        display: block;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .btn-outline {
+        margin-left: 0;
+        margin-top: 15px;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .mission-vision {
+        grid-template-columns: 1fr;
+      }
+      
+      section {
+        padding: 50px 0;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .practice-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="#home" class="logo">NEXT JUSTICE <span>CHAMBERS</span><small>Modern Legal Solutions</small></a>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#practice">Practice Areas</a>
+          <a href="#team">Our Lawyers</a>
+          <a href="#awards">Recognition</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Justice <span>Reimagined</span></h1>
+        <p>Next Justice Chambers delivers modern legal solutions with traditional values. Based in Dhaka, we're committed to accessible, efficient, and result-oriented legal services for individuals and businesses.</p>
+        <a href="#contact" class="btn btn-primary">Schedule Consultation</a>
+        <a href="#about" class="btn btn-outline">Learn About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section with Mission & Vision -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Our Chambers</h2>
+      <div class="about-content">
+        <p class="about-text">Founded in 2025 by a dynamic group of advocates from Jagannath University, Next Justice Chambers is built on the foundation of integrity, excellence, and accessibility. While we are a new firm, our founding members bring fresh perspectives and unwavering commitment to every case we handle.</p>
+        <p class="about-text">We believe that quality legal representation should be accessible to all. Our approach combines rigorous legal analysis with practical solutions, ensuring that our clients receive not just legal advice, but strategic guidance tailored to their unique needs.</p>
+        
+        <div class="mission-vision">
+          <div class="mission-card">
+            <i class="fas fa-bullseye"></i>
+            <h3>Our Mission</h3>
+            <p>To deliver exceptional legal services with integrity, innovation, and unwavering dedication to client success. We strive to make justice accessible, transparent, and efficient for every client who walks through our doors.</p>
+          </div>
+          <div class="vision-card">
+            <i class="fas fa-eye"></i>
+            <h3>Our Vision</h3>
+            <p>To become a premier law firm in Bangladesh, recognized for our expertise, ethical practice, and commitment to shaping a more just and equitable society through the rule of law.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Practice Areas -->
+  <section id="practice" style="background: var(--light);">
+    <div class="container">
+      <h2 class="section-title">Practice Areas</h2>
+      <div class="practice-grid">
+        <div class="practice-card">
+          <i class="fas fa-building"></i>
+          <h3>Corporate & Commercial</h3>
+          <p>Company formation, compliance, contracts, mergers, and commercial agreements.</p>
+        </div>
+        <div class="practice-card">
+          <i class="fas fa-gavel"></i>
+          <h3>Civil Litigation</h3>
+          <p>Dispute resolution, arbitration, court representation, and settlement negotiations.</p>
+        </div>
+        <div class="practice-card">
+          <i class="fas fa-handcuffs"></i>
+          <h3>Criminal Defense</h3>
+          <p>Bail applications, trial representation, criminal appeals, and advisory.</p>
+        </div>
+        <div class="practice-card">
+          <i class="fas fa-ship"></i>
+          <h3>Maritime & Admiralty</h3>
+          <p>Shipping disputes, maritime claims, vessel arrests, and cargo claims.</p>
+        </div>
+        <div class="practice-card">
+          <i class="fas fa-chart-line"></i>
+          <h3>Finance & Banking</h3>
+          <p>Banking regulations, financial compliance, loan agreements, and debt recovery.</p>
+        </div>
+        <div class="practice-card">
+          <i class="fas fa-globe"></i>
+          <h3>International Law</h3>
+          <p>Cross-border transactions, international arbitration, and trade law.</p>
+        </div>
+        <div class="practice-card">
+          <i class="fas fa-home"></i>
+          <h3>Property & Real Estate</h3>
+          <p>Land transactions, documentation, property disputes, and due diligence.</p>
+        </div>
+        <div class="practice-card">
+          <i class="fas fa-file-invoice-dollar"></i>
+          <h3>Tax Law</h3>
+          <p>Tax planning, compliance, assessment appeals, and dispute resolution.</p>
+        </div>
+        <div class="practice-card">
+          <i class="fas fa-heart"></i>
+          <h3>Family Law</h3>
+          <p>Divorce, child custody, maintenance, marriage registration, and family settlements.</p>
+        </div>
+        <div class="practice-card">
+          <i class="fas fa-briefcase"></i>
+          <h3>Labour & Employment</h3>
+          <p>Employment contracts, workplace disputes, labour law compliance, and termination matters.</p>
+        </div>
+        <div class="practice-card">
+          <i class="fas fa-landmark"></i>
+          <h3>Constitutional Law</h3>
+          <p>Constitutional remedies, writ petitions, fundamental rights, and public interest litigation.</p>
+        </div>
+        <div class="practice-card">
+          <i class="fas fa-file-signature"></i>
+          <h3>Contract Drafting</h3>
+          <p>Comprehensive contract drafting, review, and negotiation for businesses and individuals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Team Section - All 6 Lawyers (Order: Imam, Raihan, Limon, Shaiq, Showrav, Liya) -->
   <section id="team">
     <div class="container">
@@ -19,7 +722,7 @@
           </div>
         </div>
         
-                <!-- 2. Md. Raihan Islam (Boss) - Partner -->
+        <!-- 2. Md. Raihan Islam (Boss) - Partner -->
         <div class="team-card">
           <img src="raihan.jpg" alt="Md. Raihan Islam - Partner" onerror="this.src='https://ui-avatars.com/api/?name=Raihan+Islam&background=0A2647&color=D4AF37&size=300'">
           <div class="team-info">
@@ -101,3 +804,219 @@
       </div>
     </div>
   </section>
+
+  <!-- Stats Section - Updated to 6+ Advocates -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div>
+          <div class="stat-number">6+</div>
+          <p>Expert Lawyers</p>
+        </div>
+        <div>
+          <div class="stat-number">12+</div>
+          <p>Practice Areas</p>
+        </div>
+        <div>
+          <div class="stat-number">50+</div>
+          <p>Clients Served</p>
+        </div>
+        <div>
+          <div class="stat-number">24/7</div>
+          <p>Client Support</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards & Recognition Section -->
+  <section id="awards" style="background: var(--light);">
+    <div class="container">
+      <h2 class="section-title">Memberships & Recognition</h2>
+      <div class="awards-grid">
+        <div class="award-card">
+          <i class="fas fa-gavel"></i>
+          <h4>Dhaka Bar Association</h4>
+          <p>Apprentice Lawyers</p>
+        </div>
+        <div class="award-card">
+          <i class="fas fa-balance-scale"></i>
+          <h4>Supreme Court Bar Association</h4>
+          <p>InshaAllah - Future Members</p>
+        </div>
+        <div class="award-card">
+          <i class="fas fa-university"></i>
+          <h4>Jagannath University Alumni</h4>
+          <p>Department of Law and Land Administration</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact & Consultation</h2>
+      <div class="contact-grid">
+        <!-- Office Address -->
+        <div class="office-card">
+          <h3>Our Chamber</h3>
+          <div class="office-details">
+            <p><i class="fas fa-map-marker-alt"></i> KR Plaza (Level 6 & 7), 31 Purana Paltan<br>Dhaka - 1000, Bangladesh</p>
+            <p><i class="fas fa-phone-alt"></i> +880 1721-129467</p>
+            <p><i class="fas fa-envelope"></i> info@nextjusticechambers.com</p>
+            <p><i class="fas fa-clock"></i> Sunday - Thursday: 10:00 AM - 7:00 PM<br>Friday - Saturday: Closed</p>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <h3>Send Us a Message</h3>
+          <form id="contactForm">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+              <input type="text" placeholder="Your Full Name" id="clientName" required>
+              <input type="text" placeholder="Your Phone Number" id="clientPhone" required>
+            </div>
+            <select id="practiceArea" required>
+              <option value="" disabled selected>Select Practice Area</option>
+              <option>Corporate & Commercial</option>
+              <option>Civil Litigation</option>
+              <option>Criminal Defense</option>
+              <option>Maritime & Admiralty</option>
+              <option>Finance & Banking</option>
+              <option>International Law</option>
+              <option>Property & Real Estate</option>
+              <option>Tax Law</option>
+              <option>Family Law</option>
+              <option>Labour & Employment</option>
+              <option>Constitutional Law</option>
+              <option>Contract Drafting</option>
+            </select>
+            <textarea rows="5" id="clientMessage" placeholder="Briefly describe your legal matter" required></textarea>
+            <button type="submit" class="btn btn-primary" style="width: 100%; cursor: pointer;">Send Message <i class="fas fa-paper-plane"></i></button>
+          </form>
+          <p style="margin-top: 15px; font-size: 0.85rem; color: var(--gray);">We will contact you within 24 hours via phone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-logo">NEXT JUSTICE <span>CHAMBERS</span></div>
+          <p style="margin-top: 15px;">Modern legal solutions with traditional values. Committed to accessible, efficient, and result-oriented legal services.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#practice">Practice Areas</a>
+            <a href="#team">Our Lawyers</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4>Connect With Us</h4>
+          <div class="footer-links">
+            <a href="https://www.facebook.com/imam333hasan" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.linkedin.com/in/imam333hasan" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="https://wa.me/8801721129467" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          </div>
+        </div>
+        <div>
+          <h4>Visit Us</h4>
+          <div class="footer-links">
+            <p><i class="fas fa-map-marker-alt"></i> KR Plaza (Level 6 & 7)<br>31 Purana Paltan, Dhaka - 1000</p>
+            <p><i class="fas fa-phone-alt"></i> +880 1721-129467</p>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2026 Next Justice Chambers. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">The content of this website is for informational purposes only and does not constitute legal advice. Reading this website does not create an attorney-client relationship.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if(hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        if (navLinks.style.display === 'flex') {
+          navLinks.style.display = 'none';
+        } else {
+          navLinks.style.display = 'flex';
+          navLinks.style.flexDirection = 'column';
+          navLinks.style.position = 'absolute';
+          navLinks.style.top = '80px';
+          navLinks.style.left = '0';
+          navLinks.style.width = '100%';
+          navLinks.style.background = 'var(--white)';
+          navLinks.style.padding = '20px';
+          navLinks.style.boxShadow = 'var(--shadow)';
+          navLinks.style.zIndex = '999';
+        }
+      });
+    }
+    
+    // Form submission - sends WhatsApp message
+    const form = document.getElementById('contactForm');
+    if(form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const name = document.getElementById('clientName')?.value || '';
+        const phone = document.getElementById('clientPhone')?.value || '';
+        const area = document.getElementById('practiceArea')?.value || '';
+        const message = document.getElementById('clientMessage')?.value || '';
+        
+        const whatsappMessage = `Hello Next Justice Chambers,%0A%0A*New Consultation Request*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Practice Area:* ${area}%0A*Message:* ${message}%0A%0AThank you.`;
+        
+        window.open(`https://wa.me/8801721129467?text=${whatsappMessage}`, '_blank');
+        
+        alert('Thank you for reaching out! You will be redirected to WhatsApp to complete your inquiry.');
+        form.reset();
+      });
+    }
+    
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if(href && href !== '#' && href !== '#home') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if(target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+            // Close mobile menu if open
+            if(window.innerWidth <= 768 && navLinks.style.display === 'flex') {
+              navLinks.style.display = 'none';
+            }
+          }
+        }
+      });
+    });
+    
+    // Close mobile menu on window resize
+    window.addEventListener('resize', () => {
+      if(window.innerWidth > 768 && navLinks) {
+        navLinks.style.display = 'flex';
+        navLinks.style.flexDirection = 'row';
+        navLinks.style.position = 'static';
+        navLinks.style.background = 'none';
+        navLinks.style.padding = '0';
+        navLinks.style.boxShadow = 'none';
+      } else if(window.innerWidth <= 768 && navLinks) {
+        navLinks.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
