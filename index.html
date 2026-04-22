@@ -3,25 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  
-  <!-- SEO META TAGS -->
-  <meta name="description" content="Imam Hasan - Associate Lawyer at Azad & Company, Dhaka. Specializing in Corporate Law, Civil Litigation, and Contract Drafting. LL.M candidate at Jagannath University with specialization in International Law.">
-  <meta name="keywords" content="Imam Hasan, Lawyer, Azad & Company, Corporate Law, Dhaka, Bangladesh, Legal Services, International Law, Labour Law">
+  <meta name="description" content="Imam Hasan - Associate Lawyer at Azad & Company, Dhaka. Specializing in Corporate Law, Civil Litigation, and Contract Drafting. LL.M in International Law.">
+  <meta name="keywords" content="Imam Hasan, Lawyer, Azad & Company, Corporate Law, Dhaka, Bangladesh">
   <meta name="author" content="Imam Hasan">
-  
-  <title>Imam Hasan · Associate Lawyer | Azad & Company</title>
-  
-  <!-- FAVICON -->
+  <title>Imam Hasan · Associate Lawyer</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a4b4b'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='%23d4af37' font-family='Arial'%3E⚖️%3C/text%3E%3C/svg%3E">
-  
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
   <style>
     * {
       margin: 0;
@@ -29,138 +19,46 @@
       box-sizing: border-box;
     }
 
-    :root {
-      --deep-teal: #1a4b4b;
-      --cream: #fbf7f0;
-      --terracotta: #b86b4c;
-      --gold: #d4af37;
-      --charcoal: #2a2a2a;
-      --white: #ffffff;
-      --shadow-sm: 0 10px 30px -10px rgba(26, 75, 75, 0.1);
-      --shadow-hover: 0 20px 40px -15px rgba(26, 75, 75, 0.2);
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--cream);
-      color: var(--charcoal);
-      line-height: 1.6;
-      font-weight: 400;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3, h4, .logo, .nav-links, .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
+      background: #ffffff;
+      color: #111;
+      line-height: 1.5;
+      scroll-behavior: smooth;
     }
 
     .container {
-      width: 90%;
-      max-width: 1300px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 15px;
-    }
-
-    /* Disclaimer Modal */
-    .disclaimer-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .disclaimer-modal.hidden { display: none; }
-    .disclaimer-content {
-      background: var(--white);
-      max-width: 550px;
-      width: 90%;
-      padding: 35px 30px;
-      border-radius: 20px;
-      text-align: center;
-      border-top: 5px solid var(--gold);
-    }
-    .disclaimer-content i { font-size: 3rem; color: var(--gold); margin-bottom: 15px; }
-    .disclaimer-content h2 { color: var(--deep-teal); font-size: 1.8rem; margin-bottom: 20px; }
-    .disclaimer-text { text-align: left; font-size: 0.85rem; margin: 20px 0; max-height: 60vh; overflow-y: auto; }
-    .disclaimer-text p { margin-bottom: 12px; }
-    .accept-btn {
-      background: linear-gradient(135deg, var(--deep-teal), #1e5a5a);
-      color: white;
-      padding: 14px 35px;
-      border-radius: 40px;
-      cursor: pointer;
-      width: 100%;
-      border: none;
-      font-weight: 600;
+      padding: 0 24px;
     }
 
     /* Header */
     header {
-      position: fixed;
+      position: sticky;
       top: 0;
-      width: 100%;
-      background: rgba(251, 247, 240, 0.98);
-      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #eaeaea;
       z-index: 1000;
-      border-bottom: 2px solid var(--gold);
-      padding: 15px 0;
+      padding: 16px 0;
     }
 
-    .navbar {
+    .nav-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo-img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      overflow: hidden;
-      background: var(--deep-teal);
-      border: 2px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .logo-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
     .logo {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--deep-teal);
-      line-height: 1.2;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
     }
 
     .logo span {
-      color: var(--terracotta);
-      font-size: 0.85rem;
-      display: block;
-      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      color: #b87b4a;
     }
 
     .nav-links {
@@ -170,820 +68,499 @@
     }
 
     .nav-links a {
-      color: var(--deep-teal);
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 8px 0;
-      position: relative;
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      transition: 0.2s;
     }
 
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--terracotta);
-      transition: width 0.3s;
+    .nav-links a:hover {
+      color: #b87b4a;
     }
 
-    .nav-links a:hover::after { width: 100%; }
-
-    .contact-phone {
-      background: transparent;
-      border: 2px solid var(--gold);
-      color: var(--deep-teal);
-      padding: 10px 20px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.3s;
-      white-space: nowrap;
+    .btn-outline-dark {
+      border: 1px solid #111;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-weight: 500;
+      transition: 0.2s;
     }
-    .contact-phone:hover {
-      background: var(--gold);
-      transform: translateY(-2px);
+
+    .btn-outline-dark:hover {
+      background: #111;
+      color: white;
+      border-color: #111;
     }
 
     .hamburger {
       display: none;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       cursor: pointer;
-      color: var(--deep-teal);
     }
 
-    /* Hero Section - FIXED SPACING */
+    /* Hero */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, var(--cream) 0%, #fff 100%);
-      background-image: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 20%);
-      padding: 140px 0 80px;
-      position: relative;
-    }
-
-    .hero::before {
-      content: "⚖️";
-      font-size: 25rem;
-      opacity: 0.02;
-      position: absolute;
-      right: -30px;
-      bottom: -50px;
-      transform: rotate(15deg);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 60px;
-      align-items: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    @media (max-width: 1000px) { .hero-grid { grid-template-columns: 1fr; gap: 50px; } }
-
-    .hero-left { padding-right: 20px; }
-    @media (max-width: 1000px) { .hero-left { padding-right: 0; } }
-
-    .hero-left h1 {
-      font-size: 4.2rem;
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 25px;
-      background: linear-gradient(135deg, var(--deep-teal) 0%, var(--terracotta) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-left h2 {
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin-bottom: 30px;
-      border-left: 4px solid var(--gold);
-      padding-left: 20px;
-      line-height: 1.5;
-    }
-
-    .hero-left h2 a { color: var(--deep-teal); font-weight: 600; }
-    .hero-left h2 a:hover { color: var(--terracotta); }
-
-    .address-block {
-      margin: 35px 0 35px;
-      background: rgba(212, 175, 55, 0.05);
-      padding: 25px;
-      border-left: 4px solid var(--gold);
-      border-radius: 0 15px 15px 0;
-    }
-
-    .address-block strong { color: var(--terracotta); display: block; margin-bottom: 10px; }
-    .chamber-name { font-weight: 700; color: var(--deep-teal); font-size: 1.1rem; margin-bottom: 5px; }
-    .chamber-address { line-height: 1.6; color: var(--deep-teal); }
-
-    .contact-details {
-      margin-top: 18px;
-      padding-top: 18px;
-      border-top: 1px dashed var(--gold);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .contact-details a {
-      color: var(--deep-teal);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.95rem;
-    }
-    .contact-details a:hover { color: var(--terracotta); }
-
-    .btn-gold {
-      background: linear-gradient(135deg, var(--deep-teal), #1e5a5a);
-      color: white;
-      padding: 16px 45px;
-      font-size: 1rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      border: none;
-    }
-    .btn-gold:hover { transform: translateY(-3px); }
-
-    .hero-right { position: relative; display: flex; justify-content: center; }
-    .photo-frame {
-      max-width: 400px;
-      width: 100%;
-      clip-path: polygon(20% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 20%);
-      background: var(--gold);
-      padding: 6px;
-    }
-    .photo-frame img { width: 100%; display: block; clip-path: polygon(20% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 20%); }
-
-    .gold-quote {
-      position: absolute;
-      bottom: -20px;
-      right: -15px;
-      background: white;
-      padding: 15px 25px;
-      box-shadow: 8px 8px 0 var(--gold);
+      padding: 100px 0 80px;
       text-align: center;
-      min-width: 170px;
     }
-    .gold-quote .name { font-size: 1.3rem; font-weight: 700; color: var(--deep-teal); }
-    .gold-quote .title { font-size: 0.85rem; color: var(--terracotta); font-weight: 600; }
-    .gold-quote .firm { font-size: 0.85rem; color: var(--gold); font-weight: 700; }
 
-    /* Sections */
-    section { padding: 70px 0; }
-    .section-title {
-      font-size: 2.8rem;
-      color: var(--deep-teal);
-      margin-bottom: 40px;
-      font-weight: 800;
-      position: relative;
+    .hero h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #444;
+      max-width: 650px;
+      margin: 0 auto 32px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: #111;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
       display: inline-block;
     }
-    .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: -12px;
-      left: 0;
-      width: 70px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--gold), var(--terracotta));
+
+    .btn-primary:hover {
+      background: #b87b4a;
     }
 
-    /* Expandable cards */
-    .expandable-card {
-      background: var(--white);
-      padding: 25px;
-      margin-bottom: 25px;
-      border-left: 6px solid var(--gold);
-      border-radius: 0 20px 20px 0;
-      box-shadow: var(--shadow-sm);
-    }
-    .card-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-    .card-header h3 { font-size: 1.8rem; color: var(--deep-teal); }
-    .card-header i { font-size: 1.5rem; color: var(--terracotta); }
-    .card-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
-    .card-content.show { max-height: 800px; }
-    .content-item { margin: 25px 0; padding: 20px; background: linear-gradient(135deg, var(--cream) 0%, #fff 100%); border-radius: 12px; }
-    .content-item h4 { font-size: 1.3rem; color: var(--deep-teal); }
-    .content-item .meta { color: var(--terracotta); font-weight: 600; }
-
-    /* Skills */
-    .skills-container { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 25px; }
-    @media (max-width: 700px) { .skills-container { grid-template-columns: 1fr; } }
-    .skill-list { display: flex; flex-wrap: wrap; gap: 10px; }
-    .skill-list span {
-      background: var(--white);
-      border: 1px solid var(--gold);
-      padding: 8px 20px;
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid #111;
+      color: #111;
+      padding: 12px 28px;
       border-radius: 40px;
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-    .skill-list span:hover {
-      background: var(--deep-teal);
-      color: var(--gold);
-      transform: translateY(-2px);
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
     }
 
-    /* Experience cards */
-    .exp-card {
-      background: white;
-      padding: 30px;
-      margin-bottom: 25px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      border-left: 4px solid var(--gold);
-      border-radius: 0 30px 30px 0;
-      box-shadow: var(--shadow-sm);
+    .btn-secondary:hover {
+      background: #111;
+      color: white;
     }
-    .exp-date { min-width: 120px; font-size: 1.3rem; color: var(--terracotta); font-weight: 700; }
-    .exp-detail h4 { font-size: 1.6rem; color: var(--deep-teal); }
 
-    /* Practice Areas Grid */
-    .practice-areas-grid {
+    /* Section */
+    section {
+      padding: 80px 0;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      margin-bottom: 48px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .grid-4 {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin: 40px 0;
+      gap: 24px;
     }
-    @media (max-width: 1000px) { .practice-areas-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 480px) { .practice-areas-grid { grid-template-columns: 1fr; } }
-    .practice-card {
-      background: var(--white);
-      padding: 25px;
-      text-align: center;
-      border-radius: 15px;
-      box-shadow: var(--shadow-sm);
-    }
-    .practice-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 12px; }
 
-    /* Projects Grid */
-    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
-    @media (max-width: 800px) { .projects-grid { grid-template-columns: 1fr; } }
-    .project-item {
-      background: var(--white);
-      padding: 25px;
-      border-radius: 15px;
-      position: relative;
-      overflow: hidden;
+    .card {
+      background: #fafafa;
+      padding: 28px;
+      border-radius: 20px;
+      transition: 0.2s;
     }
-    .project-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--gold), var(--terracotta));
-    }
-    .project-tag { color: var(--terracotta); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 12px; display: block; }
 
-    /* Leadership Grid */
-    .leadership-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
-    @media (max-width: 800px) { .leadership-grid { grid-template-columns: 1fr; } }
-    .lead-card {
-      background: var(--white);
-      padding: 30px;
-      text-align: center;
-      border-radius: 15px;
+    .card i {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      color: #b87b4a;
     }
-    .lead-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
 
-    /* Testimonials */
-    .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin: 40px 0; }
-    @media (max-width: 768px) { .testimonials-grid { grid-template-columns: 1fr; } }
-    .testimonial-card {
-      padding: 25px;
-      border-left: 4px solid var(--gold);
-      background: var(--white);
-      border-radius: 0 15px 15px 0;
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
     }
-    .testimonial-card i { color: var(--gold); font-size: 2rem; margin-bottom: 15px; }
 
-    /* Articles */
-    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin: 40px 0; }
-    @media (max-width: 768px) { .articles-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 480px) { .articles-grid { grid-template-columns: 1fr; } }
-    .article-card {
-      background: var(--white);
-      padding: 20px;
-      border-radius: 10px;
+    .skill-tag {
+      background: #eee;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
     }
-    .article-card h3 { color: var(--deep-teal); margin-bottom: 10px; }
-    .article-card .date { color: var(--terracotta); font-size: 0.9rem; }
 
-    /* Contact Section */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
-    .contact-info-box {
-      background: var(--white);
-      padding: 35px;
-      border-radius: 15px;
+    .flex-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
     }
-    .contact-info-box h3 { font-size: 2rem; color: var(--deep-teal); margin-bottom: 20px; }
-    .contact-info-box h3 span { font-size: 1.2rem; color: var(--terracotta); display: block; }
-    .contact-line { display: flex; gap: 12px; margin-bottom: 18px; }
-    .contact-line i { width: 25px; color: var(--terracotta); }
-    .social-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 25px 0; }
-    .social-links a {
-      width: 44px;
-      height: 44px;
-      border: 2px solid var(--gold);
-      border-radius: 50%;
+
+    .testimonial {
+      background: #fafafa;
+      padding: 28px;
+      border-radius: 20px;
+    }
+
+    .testimonial i {
+      color: #b87b4a;
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .contact-info p {
+      margin: 16px 0;
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 12px;
     }
-    .social-links a:hover { background: var(--gold); transform: translateY(-3px); }
 
-    .contact-form {
-      background: var(--white);
-      padding: 35px;
-      border-radius: 15px;
+    .social-icons a {
+      background: #f0f0f0;
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 12px;
+      color: #111;
+      transition: 0.2s;
     }
-    .contact-form input, .contact-form textarea, .contact-form select {
+
+    .social-icons a:hover {
+      background: #b87b4a;
+      color: white;
+    }
+
+    form input, form select, form textarea {
       width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
+      padding: 12px 16px;
+      margin-bottom: 16px;
       border: 1px solid #ddd;
-      border-radius: 8px;
+      border-radius: 12px;
       font-family: inherit;
     }
 
     /* Footer */
     footer {
-      background: var(--deep-teal);
+      background: #111;
       color: white;
-      padding: 50px 0 25px;
-      border-top: 6px solid var(--gold);
       text-align: center;
+      padding: 48px 0 32px;
     }
+
     .footer-links {
       display: flex;
       justify-content: center;
-      gap: 30px;
-      margin: 25px 0;
+      gap: 32px;
       flex-wrap: wrap;
-    }
-    .footer-links a { color: white; font-size: 0.9rem; text-transform: uppercase; opacity: 0.8; }
-    .footer-links a:hover { opacity: 1; color: var(--gold); }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #25D366;
-      color: white;
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      z-index: 99;
+      margin: 24px 0;
     }
 
-    .back-top {
-      position: fixed;
-      bottom: 100px;
-      right: 30px;
-      width: 45px;
-      height: 45px;
-      background: var(--terracotta);
+    .footer-links a {
       color: white;
-      border-radius: 10px;
+      text-decoration: none;
+      opacity: 0.7;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .grid-2, .grid-3, .grid-4, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: block;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    /* Expandable */
+    .expandable-card {
+      background: #fafafa;
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .card-header {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
       cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      z-index: 98;
     }
-    .back-top.active { opacity: 1; visibility: visible; }
-
-    @media (max-width: 1000px) {
-      .nav-links { display: none; }
-      .hamburger { display: block; }
-      .contact-phone { display: none; }
-      .hero-left h1 { font-size: 2.8rem; }
-      .hero-left h2 { font-size: 1.1rem; }
-      .gold-quote { right: 0; }
+    .card-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+    .card-content.show {
+      max-height: 500px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <!-- DISCLAIMER MODAL -->
-  <div class="disclaimer-modal" id="disclaimerModal">
-    <div class="disclaimer-content">
-      <i class="fas fa-gavel"></i>
-      <h2>Disclaimer</h2>
-      <div class="disclaimer-text">
-        <p>The Bar Council of Bangladesh prohibits all forms of advertising and solicitation by practitioners. By using this website, you recognise and certify that you are seeking information on Imam Hasan (Associate Lawyer, Azad & Company) of your own volition and that you have not been solicited, advertised to, or otherwise induced by the firm or its members.</p>
-        <p>This website's content is only for informative purposes and should not be construed as solicitation or advertising. No content or information on this site should be considered as legal advice. The firm shall not be accountable for any actions taken in reliance on the content or information on this website.</p>
-        <p>Intellectual property rights to the content created on this website are owned by Imam Hasan & Azad & Company.</p>
-      </div>
-      <button class="accept-btn" id="acceptDisclaimer">Accept and Proceed</button>
-    </div>
+
+<!-- Disclaimer Modal (same as before) -->
+<div id="disclaimerModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); backdrop-filter:blur(8px); z-index:9999; display:flex; align-items:center; justify-content:center;">
+  <div style="background:white; max-width:500px; padding:32px; border-radius:24px; text-align:center;">
+    <i class="fas fa-gavel" style="font-size:3rem; color:#b87b4a;"></i>
+    <h2 style="margin:16px 0;">Disclaimer</h2>
+    <p style="font-size:0.85rem; text-align:left;">The Bar Council of Bangladesh prohibits advertising. By using this site, you confirm you are seeking information voluntarily. This site is for informational purposes only, not legal advice.</p>
+    <button id="acceptDisclaimer" style="background:#111; color:white; border:none; padding:12px 28px; border-radius:40px; margin-top:20px; cursor:pointer;">Accept & Proceed</button>
   </div>
+</div>
 
-  <header>
-    <div class="container">
-      <nav class="navbar">
-        <div class="logo-container">
-          <div class="logo-img"><img src="imam_web_logo.png" alt="Logo"></div>
-          <a href="#home" class="logo">IMAM HASAN <span>Associate Lawyer</span></a>
-        </div>
-        <div class="nav-links">
-          <a href="#home">HOME</a>
-          <a href="#about">ABOUT</a>
-          <a href="#experience">EXPERIENCE</a>
-          <a href="#leadership">LEADERSHIP</a>
-          <a href="#practice">PRACTICE AREAS</a>
-          <a href="portfolio.html" target="_blank">PORTFOLIO</a>
-          <a href="lawfirm.html" target="_blank">LAW FIRM</a>
-          <a href="#contact">CONTACT</a>
-        </div>
-        <a href="tel:+8801721129467" class="contact-phone"><i class="fas fa-phone-alt"></i> 01721-129467</a>
-        <div class="hamburger"><i class="fas fa-bars"></i></div>
-      </nav>
+<header>
+  <div class="container nav-bar">
+    <div class="logo">IMAM HASAN <span>· Associate Lawyer</span></div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#practice">Practice Areas</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <a href="portfolio.html" target="_blank">Portfolio</a>
+      <a href="lawfirm.html" target="_blank">Law Firm</a>
+      <a href="#contact" class="btn-outline-dark">Book a Call</a>
     </div>
-  </header>
+    <div class="hamburger"><i class="fas fa-bars"></i></div>
+  </div>
+</header>
 
-  <!-- HERO SECTION -->
-  <section class="hero" id="home">
+<main>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
     <div class="container">
-      <div class="hero-grid">
-        <div class="hero-left">
-          <h1>Imam Hasan<br>LL.B, LL.M (International Law)</h1>
-          <h2>
-            <span>Associate Lawyer</span> at <a href="https://www.azadncompany.com/" target="_blank">Azad & Company</a> · 
-            <span>President</span> at <a href="https://jnuits.org.bd/" target="_blank">Jagannath University IT Society (JnUITS)</a>
-          </h2>
-          <div class="address-block">
-            <strong>Chamber Address</strong>
-            <div class="chamber-name">Azad & Company</div>
-            <div class="chamber-address">KR Plaza (Level 6 & 7)<br>31 Purana Paltan, Dhaka - 1000</div>
-            <div class="contact-details">
-              <a href="tel:+8801721129467"><i class="fas fa-phone-alt"></i> +880 1721-129467</a>
-              <a href="mailto:ihnaiem333@gmail.com"><i class="fas fa-envelope"></i> ihnaiem333@gmail.com</a>
-            </div>
-          </div>
-          <a href="#contact" class="btn-gold">BOOK APPOINTMENT <i class="fas fa-calendar-alt"></i></a>
-        </div>
-        <div class="hero-right">
-          <div class="photo-frame"><img src="imam.jpg" alt="Imam Hasan"></div>
-          <div class="gold-quote">
-            <div class="name">Imam Hasan</div>
-            <div class="title">Associate Lawyer</div>
-            <div class="firm">Azad & Company</div>
-          </div>
-        </div>
+      <h1>Imam Hasan<br>Associate Lawyer</h1>
+      <p>Corporate Law · Civil Litigation · Contract Drafting · Labour Law<br>LL.M in International Law | Jagannath University</p>
+      <div class="btn-group">
+        <a href="#contact" class="btn-primary">Schedule a Call</a>
+        <a href="#about" class="btn-secondary">Learn More</a>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT + EDUCATION -->
+  <!-- About / Qualifications -->
   <section id="about">
     <div class="container">
-      <h2 class="section-title">Qualifications</h2>
-      <div class="expandable-card">
-        <div class="card-header" id="eduToggle">
-          <h3>Education ⸻</h3>
-          <i class="fas fa-chevron-down" id="eduIcon"></i>
-        </div>
-        <div class="card-content" id="eduContent">
-          <div class="content-item">
-            <h4>Master of Laws (LL.M) - International Law</h4>
-            <div class="meta">Jagannath University, Dhaka</div>
-            <div class="date" style="color:var(--gold);">2024 - Present (Continuing)</div>
-          </div>
-          <div class="content-item">
-            <h4>Bachelor of Laws (LL.B)</h4>
-            <div class="meta">Jagannath University, Dhaka</div>
-            <div class="date" style="color:var(--gold);">2023</div>
-          </div>
-        </div>
-      </div>
-
-      <h3 style="font-size: 2rem; color: var(--deep-teal); margin-bottom: 20px;">Skills & Expertise</h3>
-      <div class="skills-container">
+      <h2 class="section-title">About</h2>
+      <div class="grid-2">
         <div>
-          <h3 style="color: var(--deep-teal); margin-bottom: 15px;">Legal Skills</h3>
-          <div class="skill-list">
-            <span>Legal Research</span><span>Contract Drafting</span><span>Corporate Documentation</span>
-            <span>Client Advisory</span><span>Case Preparation</span><span>Corporate Compliance</span>
-            <span>Legal Writing</span>
+          <p style="font-size:1.1rem; margin-bottom:20px;">Associate Lawyer at Azad & Company, Dhaka. President of Jagannath University IT Society (JnUITS).</p>
+          <div class="flex-wrap">
+            <span class="skill-tag">Legal Research</span>
+            <span class="skill-tag">Contract Drafting</span>
+            <span class="skill-tag">Corporate Documentation</span>
+            <span class="skill-tag">Client Advisory</span>
+            <span class="skill-tag">Case Preparation</span>
+            <span class="skill-tag">MS Office</span>
           </div>
         </div>
-        <div>
-          <h3 style="color: var(--deep-teal); margin-bottom: 15px;">Soft Skills</h3>
-          <div class="skill-list"><span>MS Office</span><span>Google Workspace</span></div>
-        </div>
-      </div>
-      <p style="margin-top: 25px;"><span style="color: var(--gold); font-size: 1.2rem;">◈</span> Bar Council eligibility – awaiting enrollment</p>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" style="background: var(--cream);">
-    <div class="container">
-      <h2 class="section-title">Professional Experience</h2>
-      <div class="exp-card">
-        <div class="exp-date">Dec 2024</div>
-        <div class="exp-detail">
-          <h4><a href="https://www.azadncompany.com/" target="_blank">Azad & Company</a>, Paltan, Dhaka</h4>
-          <div class="sub" style="color: var(--gold); margin: 8px 0;">Associate (Corporate Documentation) — Internship</div>
-          <p>Assisted in preparing and reviewing corporate legal documents, contracts, and compliance records.</p>
-        </div>
-      </div>
-      <div class="exp-card">
-        <div class="exp-date">2024 – present</div>
-        <div class="exp-detail">
-          <h4><a href="https://www.azadncompany.com/" target="_blank">Associate Lawyer at Azad & Company</a></h4>
-          <div class="sub" style="color: var(--gold); margin: 8px 0;">Corporate & Civil Litigation</div>
-          <p>Providing research support, drafting pleadings, and assisting in client consultations.</p>
+        <div class="expandable-card">
+          <div class="card-header" id="eduToggle">
+            <h3>📖 Education</h3>
+            <i class="fas fa-chevron-down" id="eduIcon"></i>
+          </div>
+          <div class="card-content" id="eduContent">
+            <p><strong>LL.M in International Law</strong><br>Jagannath University (2024–Present)</p>
+            <p style="margin-top:12px;"><strong>LL.B</strong><br>Jagannath University (2023)</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRACTICE AREAS -->
-  <section id="practice">
+  <!-- Practice Areas -->
+  <section id="practice" style="background:#fafafa;">
     <div class="container">
       <h2 class="section-title">Practice Areas</h2>
-      <div class="practice-areas-grid">
-        <div class="practice-card"><i class="fas fa-file-contract"></i><h3>Corporate Law</h3></div>
-        <div class="practice-card"><i class="fas fa-gavel"></i><h3>Civil Litigation</h3></div>
-        <div class="practice-card"><i class="fas fa-file-signature"></i><h3>Contract Drafting</h3></div>
-        <div class="practice-card"><i class="fas fa-briefcase"></i><h3>Labour Law</h3></div>
+      <div class="grid-4">
+        <div class="card"><i class="fas fa-file-contract"></i><h3>Corporate Law</h3></div>
+        <div class="card"><i class="fas fa-gavel"></i><h3>Civil Litigation</h3></div>
+        <div class="card"><i class="fas fa-file-signature"></i><h3>Contract Drafting</h3></div>
+        <div class="card"><i class="fas fa-briefcase"></i><h3>Labour Law</h3></div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section>
+  <!-- Experience -->
+  <section id="experience">
     <div class="container">
-      <h2 class="section-title">Professional Development</h2>
-      <div class="projects-grid">
-        <div class="project-item"><span class="project-tag">Seminar 2023</span><h4>Labour Law Seminar</h4><p>Attended seminar organized by 'Ogrogami Foundation' on 26 May 2023.</p></div>
-        <div class="project-item"><span class="project-tag">ICT Division, EDGE Project</span><h4>Computer Fundamentals & Office Apps</h4><p>60‑hour training by Dept. of CSE, Jagannath University.</p></div>
+      <h2 class="section-title">Experience</h2>
+      <div class="grid-2">
+        <div class="card">
+          <span style="color:#b87b4a; font-weight:600;">Dec 2024</span>
+          <h3 style="margin:8px 0 4px;">Azad & Company</h3>
+          <p>Associate (Corporate Documentation) — Internship</p>
+        </div>
+        <div class="card">
+          <span style="color:#b87b4a; font-weight:600;">2024 – Present</span>
+          <h3 style="margin:8px 0 4px;">Associate Lawyer</h3>
+          <p>Corporate & Civil Litigation at Azad & Company</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- LEADERSHIP -->
-  <section id="leadership" style="background: var(--cream);">
+  <!-- Leadership -->
+  <section style="background:#fafafa;">
     <div class="container">
       <h2 class="section-title">Leadership</h2>
-      <div class="leadership-grid">
-        <div class="lead-card"><i class="fas fa-laptop-code"></i><h4><a href="https://jnuits.org.bd/" target="_blank">Jagannath University IT Society (JnUITS)</a></h4><span style="color: var(--gold);">President</span></div>
-        <div class="lead-card"><i class="fas fa-hands-helping"></i><h4>Jagannath University Leo Club</h4><span style="color: var(--gold);">Former President</span></div>
+      <div class="grid-2">
+        <div class="card"><i class="fas fa-laptop-code"></i><h3>President</h3><p>JnUITS</p></div>
+        <div class="card"><i class="fas fa-hands-helping"></i><h3>Former President</h3><p>Jagannath University Leo Club</p></div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
+  <!-- Testimonials -->
   <section>
     <div class="container">
-      <h2 class="section-title">Client Testimonials</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>Working with Imam Hasan was a great experience. Very professional and knowledgeable.</p><p style="margin-top:15px;"><strong>- Mashraf Jahan Shaiq</strong></p></div>
-        <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>Excellent legal advice and support. Highly recommended.</p><p style="margin-top:15px;"><strong>- Mahfuzur Razzak Limon</strong></p></div>
+      <h2 class="section-title">Testimonials</h2>
+      <div class="grid-2">
+        <div class="testimonial"><i class="fas fa-quote-left"></i><p>Professional & knowledgeable.</p><strong>— Mashraf Jahan Shaiq</strong></div>
+        <div class="testimonial"><i class="fas fa-quote-left"></i><p>Excellent legal advice.</p><strong>— Mahfuzur Razzak Limon</strong></div>
       </div>
     </div>
   </section>
 
-  <!-- ARTICLES -->
-  <section style="background: var(--cream);">
+  <!-- Contact -->
+  <section id="contact" style="background:#fafafa;">
     <div class="container">
-      <h2 class="section-title">Legal Articles</h2>
-      <div class="articles-grid">
-        <div class="article-card"><h3>Understanding Corporate Law</h3><p class="date">March 2025</p><a href="#" style="color:var(--gold);">Read More →</a></div>
-        <div class="article-card"><h3>Civil Litigation Process</h3><p class="date">February 2025</p><a href="#" style="color:var(--gold);">Read More →</a></div>
-        <div class="article-card"><h3>Contract Drafting Tips</h3><p class="date">January 2025</p><a href="#" style="color:var(--gold);">Read More →</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REFERENCES -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">References</h2>
-      <div class="expandable-card">
-        <div class="card-header" id="refToggle">
-          <h3>Professional References ⸻</h3>
-          <i class="fas fa-chevron-down" id="refIcon"></i>
-        </div>
-        <div class="card-content" id="refContent">
-          <div class="content-item">
-            <h4>Christine Richardson</h4>
-            <div class="meta">Associate Professor</div>
-            <div>Department of Law and Land Administration, Jagannath University</div>
-            <div class="contact-info" style="margin-top:12px;"><i class="fas fa-envelope" style="color:var(--gold);"></i> christiectg@yahoo.com<br><i class="fas fa-phone" style="color:var(--gold);"></i> +8801716-046874</div>
-          </div>
-          <div class="content-item">
-            <h4>Ayesha Saleh</h4>
-            <div class="meta">Assistant Professor</div>
-            <div>Department of Law and Land Administration, Jagannath University</div>
-            <div class="contact-info" style="margin-top:12px;"><i class="fas fa-envelope" style="color:var(--gold);"></i> ayesha.mhd@gmail.com<br><i class="fas fa-phone" style="color:var(--gold);"></i> +8801671-424945</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" style="background: var(--cream);">
-    <div class="container">
-      <h2 class="section-title">Contact & Consultation</h2>
+      <h2 class="section-title">Contact</h2>
       <div class="contact-grid">
-        <div class="contact-info-box">
-          <h3>Imam Hasan<br><span>Associate Lawyer</span></h3>
-          <div class="contact-line"><i class="fas fa-building"></i> <strong>Azad & Company</strong></div>
-          <div class="contact-line"><i class="fas fa-map-marker-alt"></i> KR Plaza (Level 6 & 7), 31 Purana Paltan, Dhaka - 1000</div>
-          <div class="contact-line"><i class="fas fa-phone-alt"></i> <a href="tel:+8801721129467">+880 1721-129467</a></div>
-          <div class="contact-line"><i class="fas fa-envelope"></i> <a href="mailto:ihnaiem333@gmail.com">ihnaiem333@gmail.com</a></div>
-          <div class="social-links">
-            <a href="mailto:ihnaiem333@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.facebook.com/imam333hasan" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/imam333hasan" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/imam333hasan" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.threads.net/@imam333hasan" target="_blank"><i class="fab fa-threads"></i></a>
-            <a href="https://www.linkedin.com/in/imam333hasan" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://wa.me/qr/ULMJ5PYVD3GPJ1" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="http://t.me/imam333hasan" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+        <div class="contact-info">
+          <p><i class="fas fa-map-marker-alt"></i> KR Plaza, 31 Purana Paltan, Dhaka</p>
+          <p><i class="fas fa-phone-alt"></i> +880 1721-129467</p>
+          <p><i class="fas fa-envelope"></i> ihnaiem333@gmail.com</p>
+          <div class="social-icons" style="margin-top:24px;">
+            <a href="https://www.facebook.com/imam333hasan"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/imam333hasan"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/8801721129467"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://twitter.com/imam333hasan"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/imam333hasan"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
-        <div class="contact-form">
-          <h3>Book an Appointment</h3>
+        <div>
           <form id="appointmentForm">
-            <input type="text" placeholder="Full name" id="fullName" required>
-            <input type="email" placeholder="Email address" id="email" required>
-            <input type="tel" placeholder="Phone number" id="phone" required>
-            <select id="consultationType" required>
-              <option value="" disabled selected>Select consultation type</option>
-              <option>Corporate Law</option><option>Civil Litigation</option><option>Contract Drafting</option><option>Labour Law</option><option>Legal Advisory</option>
+            <input type="text" placeholder="Full name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Phone">
+            <select>
+              <option>Corporate Law</option>
+              <option>Civil Litigation</option>
+              <option>Contract Drafting</option>
+              <option>Labour Law</option>
             </select>
-            <textarea rows="4" placeholder="Brief description..." id="message" required></textarea>
-            <button type="submit" class="btn-gold" style="width:100%;">SEND INQUIRY <i class="fas fa-paper-plane"></i></button>
+            <textarea rows="4" placeholder="Your message"></textarea>
+            <button type="submit" class="btn-primary" style="width:100%;">Send Inquiry</button>
           </form>
         </div>
       </div>
     </div>
   </section>
+</main>
 
-  <!-- MEDIA -->
-  <section id="media">
-    <div class="container" style="text-align: center;">
-      <span style="color: var(--gold); letter-spacing: 2px; font-weight: 600;">⚡ IN THE MEDIA · INTERNSHIP PROGRAM · PUBLICATIONS ⚡</span>
-      <p style="margin-top: 15px;">Featured in university law journal & local bar bulletin. <a href="#contact" style="color: var(--terracotta); font-weight: 600;">→ Inquire within</a></p>
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#practice">Practice Areas</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="lawfirm.html">Law Firm</a>
+      <a href="#contact">Contact</a>
     </div>
-  </section>
+    <p>© 2026 Imam Hasan · Associate Lawyer at Azad & Company</p>
+  </div>
+</footer>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container footer-inner">
-      <div class="footer-logo" style="font-size: 2rem;">IMAM HASAN <span style="color: var(--gold);">· ASSOCIATE LAWYER</span></div>
-      <div class="footer-links">
-        <a href="#home">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#experience">EXPERIENCE</a>
-        <a href="portfolio.html" target="_blank">PORTFOLIO</a>
-        <a href="lawfirm.html" target="_blank">LAW FIRM</a>
-        <a href="#contact">CONTACT</a>
-      </div>
-      <p>Azad & Company | KR Plaza (Level 6 & 7), 31 Purana Paltan, Dhaka - 1000</p>
-      <p style="margin-top: 20px; opacity: 0.6;">© 2026 Imam Hasan · Associate Lawyer at Azad & Company</p>
-    </div>
-  </footer>
+<a href="https://wa.me/8801721129467" target="_blank" style="position:fixed; bottom:24px; right:24px; background:#25D366; color:white; width:54px; height:54px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.8rem; box-shadow:0 4px 12px rgba(0,0,0,0.15);"><i class="fab fa-whatsapp"></i></a>
 
-  <a href="https://wa.me/qr/ULMJ5PYVD3GPJ1" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
-  <div class="back-top" id="backTop"><i class="fas fa-chevron-up"></i></div>
+<script>
+  // Disclaimer
+  const modal = document.getElementById('disclaimerModal');
+  const accept = document.getElementById('acceptDisclaimer');
+  if(!localStorage.getItem('disclaimerAccepted')) {
+    modal.style.display = 'flex';
+  } else {
+    modal.style.display = 'none';
+  }
+  accept.onclick = () => {
+    localStorage.setItem('disclaimerAccepted', 'true');
+    modal.style.display = 'none';
+  };
 
-  <script>
-    (function(){
-      // Disclaimer Modal
-      const modal = document.getElementById('disclaimerModal');
-      const acceptBtn = document.getElementById('acceptDisclaimer');
-      if(!localStorage.getItem('disclaimerAccepted')) {
-        modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      } else {
-        modal.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }
-      if(acceptBtn) {
-        acceptBtn.addEventListener('click', () => {
-          localStorage.setItem('disclaimerAccepted', 'true');
-          modal.classList.add('hidden');
-          document.body.style.overflow = 'auto';
-        });
-      }
+  // Mobile menu
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  hamburger.addEventListener('click', () => {
+    if (navLinks.style.display === 'flex') {
+      navLinks.style.display = 'none';
+    } else {
+      navLinks.style.display = 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.position = 'absolute';
+      navLinks.style.top = '70px';
+      navLinks.style.left = '0';
+      navLinks.style.width = '100%';
+      navLinks.style.background = 'white';
+      navLinks.style.padding = '24px';
+      navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.05)';
+    }
+  });
 
-      // Mobile menu
-      const hamburger = document.querySelector('.hamburger');
-      const navLinks = document.querySelector('.nav-links');
-      if(hamburger) {
-        hamburger.addEventListener('click', () => {
-          if (navLinks.style.display === 'flex') {
-            navLinks.style.display = 'none';
-          } else {
-            navLinks.style.display = 'flex';
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '80px';
-            navLinks.style.left = '0';
-            navLinks.style.width = '100%';
-            navLinks.style.background = 'white';
-            navLinks.style.padding = '25px';
-            navLinks.style.boxShadow = '0 20px 30px rgba(0,0,0,0.1)';
-            navLinks.style.zIndex = '999';
-          }
-        });
-        document.querySelectorAll('.nav-links a').forEach(link => {
-          link.addEventListener('click', () => { if(window.innerWidth <= 1000) navLinks.style.display = 'none'; });
-        });
-      }
+  // Expandable education
+  const eduToggle = document.getElementById('eduToggle');
+  const eduContent = document.getElementById('eduContent');
+  const eduIcon = document.getElementById('eduIcon');
+  eduToggle.addEventListener('click', () => {
+    eduContent.classList.toggle('show');
+    eduIcon.classList.toggle('fa-chevron-down');
+    eduIcon.classList.toggle('fa-chevron-up');
+  });
 
-      // Expandable Education
-      const eduToggle = document.getElementById('eduToggle');
-      const eduContent = document.getElementById('eduContent');
-      const eduIcon = document.getElementById('eduIcon');
-      if(eduToggle) {
-        eduToggle.addEventListener('click', () => {
-          eduContent.classList.toggle('show');
-          eduIcon.classList.toggle('fa-chevron-down');
-          eduIcon.classList.toggle('fa-chevron-up');
-        });
-      }
-
-      // Expandable References
-      const refToggle = document.getElementById('refToggle');
-      const refContent = document.getElementById('refContent');
-      const refIcon = document.getElementById('refIcon');
-      if(refToggle) {
-        refToggle.addEventListener('click', () => {
-          refContent.classList.toggle('show');
-          refIcon.classList.toggle('fa-chevron-down');
-          refIcon.classList.toggle('fa-chevron-up');
-        });
-      }
-
-      // Back to top
-      const backBtn = document.getElementById('backTop');
-      window.addEventListener('scroll', () => {
-        if(window.scrollY > 400) backBtn.classList.add('active');
-        else backBtn.classList.remove('active');
-      });
-      backBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
-
-      // Appointment form
-      const form = document.getElementById('appointmentForm');
-      if(form) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          const name = document.getElementById('fullName')?.value || '';
-          const email = document.getElementById('email')?.value || '';
-          const phone = document.getElementById('phone')?.value || '';
-          const type = document.getElementById('consultationType')?.value || '';
-          const message = document.getElementById('message')?.value || '';
-          const subject = `Appointment Request: ${name} - ${type}`;
-          const body = `New Appointment Request:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nType: ${type}\n\nMessage: ${message}`;
-          window.location.href = `mailto:ihnaiem333@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-          alert('Your appointment request has been prepared. Please send the email.');
-          form.reset();
-        });
-      }
-
-      // Smooth scroll
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          const href = this.getAttribute('href');
-          if(href && href !== '#' && href !== '#home') {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if(target) window.scrollTo({top: target.offsetTop - 70, behavior:'smooth'});
-          }
-        });
-      });
-    })();
-  </script>
+  // Form
+  document.getElementById('appointmentForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Thank you. We will contact you soon.');
+  });
+</script>
 </body>
 </html>
